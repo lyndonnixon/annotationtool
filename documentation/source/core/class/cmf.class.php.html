@@ -1,0 +1,791 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * CMF
+ *
+ * Contains all methods which are required to transfer data to the CMF. Furthermore it includes methods to create Semantic Web tripes and to display them using the ConnectME ontology.
+ *
+ * IMPORTANT: PEAR HTTP_Request library is used in this class (http://pear.php.net/package/HTTP_Request8)
+ * IMPORTANT: ARC2 ARC2 library is used in this class (https://github.com/semsol/arc2)
+ * IMPORTANT: Graphite Graphite library is used in this class (http://graphite.ecs.soton.ac.uk/)
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+class CMF {
+	
+  /**
+   * Settings of the Hyper Annotation Video Suite
+   *
+   * @var object Contains all annotation tool settings
+   */
+	public $settings	= NULL;
+	
+  /**
+   * Language strings of the Hyper Annotation Video Suite
+   *
+   * @var object Contains all language strings of the annotation tool
+   */
+	public $language = NULL;
+
+	/**
+   * Constructor
+   *
+   * Creates an instance of the cmf class and returns the settings and language object from it. They are passed to local parameters.
+   *
+   * Fills @var settings and @var language
+   *
+   * @return bool true
+   */
+  public function __construct() {
+		try {
+			require_once (__ROOT__. '/core/class/core.class.php');
+			$core = new Core();
+			$this-&gt;language = $core-&gt;language;
+			$this-&gt;settings = $core-&gt;settings;
+			return true;
+		}
+		catch (Exception $e) {
+			print &quot;Error: &quot; .$e;
+		}
+  }
+	
+	/**
+   * Generate Annotation Object
+   *
+   * Reads all data from a specified annotation file on the server and serialized its data using the ConnectME ontology. The output type can be specified by selecting a serializer (n3 triples, turtle, RDF/XML).
+   *
+   * @param string $annotation_file Path of the currently used annotation file on the server
+	 * @param array $video_data Video array which contains the currently selected video ID and its locators
+	 * @param string $selected_serializer Allows selecting a serializer for data display (Supported: n3, rdfxml, turtle)
+   * @return string Contains the serialized data using the ConnectME ontology
+   * @throws PHP Exception
+   */
+	public function generateAnnotationObject($annotation_file, $video_data, $selected_serializer) {
+		try {
+			include_once (__ROOT__. '/libraries/arc2/ARC2.php');
+			include_once (__ROOT__. '/libraries/graphite/Graphite.php');
+			
+			$json_obj = $this-&gt;parseJson($annotation_file);
+			
+			$graph = new Graphite();
+			// add required namespaces (which aren't already loaded by default)
+			$graph-&gt;ns(&quot;ma&quot;, &quot;http://www.w3.org/ns/ma-ont#&quot;);
+			$graph-&gt;ns(&quot;cma&quot;, &quot;http://connectme.at/ontology#&quot;);
+			$graph-&gt;ns(&quot;oac&quot;, &quot;http://www.openannotation.org/ns/&quot;);
+			$graph-&gt;ns(&quot;cmo&quot;, &quot;http://purl.org/twc/ontologies/cmo.owl#&quot;);
+			$graph-&gt;ns(&quot;oax&quot;, &quot;http://www.w3.org/ns/openannotation/extensions/&quot;);
+			$uri = &quot;http://connectme.salzburgresearch.at/CMF/resource/video/yoovis/6306&quot;;
+			
+			// create graph
+			$graph-&gt;resource($json_obj-&gt;video[0]-&gt;uri);
+			$graph-&gt;addCompressedTriple($json_obj-&gt;video[0]-&gt;uri, 'rdf:type', 'ma:MediaResource');
+			foreach ($video_data['source'] as $video_source) {
+				$graph-&gt;addCompressedTriple($json_obj-&gt;video[0]-&gt;uri, 'ma:locator', $video_source['url'], 'xsd:anyURI');
+			}
+			
+			$element_counter = 1;
+			
+			$timestamp = time();
+			
+			// add detailled fragment and annotation information
+			foreach ($json_obj-&gt;annotations as $annotation) {
+				
+				if ($annotation-&gt;active-&gt;value == 1) {
+				
+					// add framgents
+					if (($annotation-&gt;annotation-&gt;value == 'null') || ($annotation-&gt;annotation-&gt;value == '')) {
+						$element_id = md5($element_counter + microtime());
+						$tmp_annotation_uri = $this-&gt;settings-&gt;annotation_uri.$element_id;
+						$annotation-&gt;annotation-&gt;value = $tmp_annotation_uri;
+					}
+					$annotation-&gt;annotation-&gt;value = str_replace(&quot;annotation&quot;, &quot;fragment&quot;, $annotation-&gt;annotation-&gt;value);
+					
+					$graph-&gt;addCompressedTriple($json_obj-&gt;video[0]-&gt;uri, 'ma:hasFragment', $annotation-&gt;annotation-&gt;value);
+					
+					// fragment details
+					$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, 'rdf:type', 'ma:MediaFragment');
+					
+					// generate locator suffix
+					$suffix = '#';
+					if (isset($annotation-&gt;spatial) &amp;&amp; isset($annotation-&gt;spatial-&gt;value)) {
+						// spatial region set
+						// var_dump($annotation-&gt;spatial-&gt;value);
+						$tmp_spatial = explode(',', $annotation-&gt;spatial-&gt;value);
+						$spatial_set = true;
+						foreach ($tmp_spatial as $val) {
+							if (!preg_match('/[0-9]+/', $val)) {
+								$spatial_set = false;
+							}
+						}
+						if ($spatial_set == true) {
+							$suffix .= 'xywh=percent:' .$tmp_spatial[0]. ',' .$tmp_spatial[1]. ',' .$tmp_spatial[4]. ',' .$tmp_spatial[5];
+						}
+					}
+					if (isset($annotation-&gt;starttime-&gt;value)) {
+						// is spatial region set?
+						if (strlen($suffix) &gt; 1) {
+							// add &amp;
+							$suffix	.= '&amp;';
+						}
+						$suffix	.= 't='.$this-&gt;convertToSeconds($annotation-&gt;starttime-&gt;value);
+						if ($annotation-&gt;endtime-&gt;value != '') {
+						$suffix	.= ','.$this-&gt;convertToSeconds($annotation-&gt;endtime-&gt;value);
+						}
+					}
+					
+					foreach ($video_data['source'] as $video_source) {
+						$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, 'ma:locator', $video_source['url'].$suffix, 'xsd:anyURI');
+					}
+					
+					if ($annotation-&gt;relation-&gt;value != '') {
+						$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, $annotation-&gt;relation-&gt;value, $annotation-&gt;resource-&gt;value);
+					}
+					
+					// annotation details
+					$pattern = '/' .preg_quote('bookmark', '/') . '/';
+					if (preg_match($pattern, strtolower($annotation-&gt;annotationtype-&gt;value))) {
+						$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'rdf:type', 'oax:Bookmark');
+					}
+					else {
+						$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'rdf:type', 'oac:Annotation');
+					}
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'oac:hasTarget', $annotation-&gt;annotation-&gt;value);
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'dct:creator', $annotation-&gt;creator-&gt;value);
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'dct:created', date(&quot;Y-m-d&quot;, $timestamp). 'T' .date(&quot;H:i:s&quot;, $timestamp). '' .date(&quot;P&quot;, $timestamp), 'xsd:dateTime');
+					if (($annotation-&gt;preferredlabel-&gt;value != '') &amp;&amp; ($annotation-&gt;preferredlabel-&gt;value != 'null')) {
+						$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'cma:preferredLabel', $annotation-&gt;preferredlabel-&gt;value, 'xsd:string');
+					}
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'oac:hasBody',  $annotation-&gt;resource-&gt;value);
+					
+					$graph-&gt;addCompressedTriple($annotation-&gt;creator-&gt;value, 'rdf:type', 'foaf:Person');
+							
+					$element_counter++;
+				
+				}
+				
+			}
+
+			$return = $graph-&gt;serialize($selected_serializer);
+		
+		}
+		catch (Exception $e) {
+			print &quot;Error: &quot; .$e;
+		}
+		
+		return $return;
+	}
+	
+	/**
+   * Validate URI
+   *
+   * Tries to get response from a specified URI/URL using the private method getResponse
+   *
+   * @param string $video_uri Speified URI/URL
+   * @return bool True if the URI/URL responded and returned HTTP 200
+	 * @return string Error message if URI/URL did not respond
+   * @throws PHP Exception
+   */
+	public function validateURI($video_uri) {
+		// check if the URL responding
+		$response = $this-&gt;getResponse($video_uri);
+		if (is_array($response)) {
+			// no error =&gt; url is working
+			if (eregi('200', $response['0'])) {
+				// url is responding
+				return true;
+			}
+			else {
+				// url not found/error =&gt; throw error message
+				$error_message = 'ERROR: The selected URL is not responding!';
+				$log_message = date('Y-m-d - H:i:s', time()). ': ERROR URL not responding: ' .$video_uri. '!';
+				$this-&gt;toLog($log_message);
+				$this-&gt;unloadVideo('video_uri');
+				return $error_message;
+			}
+		}
+		else {
+			// return error
+			return $response;
+		}
+	}
+	
+	/**
+   * Get Response
+   *
+   * Tries to get response from a specified URI/URL
+   *
+   * @param string $input_url Speified URI/URL
+   * @return array Received headers of specified URI/URL
+   * @throws PHP Exception
+   */
+	private function getResponse($input_url) {
+		// Check if the URL responding
+		try {
+			// remove spaces
+			$input_url = trim($input_url);
+			$input_url = ltrim($input_url);
+			// Check if the URL responding
+			$response = get_headers($input_url, 1);
+		}
+		catch (Exception $e) {
+			$response[] = $e;
+		}
+		return $response;
+	}
+	
+	/**
+   * Parse Json
+   *
+   * Parses a annotation file which is located on the server and tries to extract its containing JSON string.
+   *
+   * @param string $input Annotation file name
+   * @return object JSON object based on file content
+   * @throws PHP Exception
+   */
+	private function parseJson($input) {
+		// parse json string and return eiter json object or error message
+		try {
+		  
+		  if (file_exists($this-&gt;settings-&gt;annotation_path.$input)) {
+			  $file_content = '';
+			  $file = fopen($this-&gt;settings-&gt;annotation_path.$input, 'r');
+		  
+			  while (!feof($file)) {
+			    $file_content .= fgets($file);
+			  }
+			  
+			  fclose($file);
+			  
+			}
+			else {
+				throw new Exception('Annotation file not found! &lt;em&gt;' .$this-&gt;settings-&gt;annotation_path.$input. '&lt;/em&gt;');
+			}
+		  
+			$json = json_decode(stripslashes($file_content));
+			if (!is_object($json)) {
+				throw new Exception('String could not get converted into JSON object!');
+			}
+		} catch (Exception $e) {
+    		$json = 'ERROR: ' .$e-&gt;getMessage();
+		}
+		return $json;
+		
+	}
+	
+	/**
+   * Convert to seconds
+   *
+   * Converts an input time string from hh:mm:ss or mm:ss into seconds
+   *
+   * @param string $input Time string
+   * @return integer Seconds based on input time string
+   * @throws PHP Exception
+   */
+	private function convertToSeconds($input) {
+		try {
+			// switch between minutes and seconds [00:00] and hours, minutes and seconds [00:00:00]
+			switch (strlen($input)) {
+				case 5:
+					// minutes and seconds
+					$minutes	= (int)substr($input, 0, 2);
+					$seconds	= (int)substr($input, 3, 2);
+					$response	= ($minutes * 60 + $seconds);
+					break;
+				case 8:
+					// hours, minutes and seconds
+					$horus		= (int)substr($input, 0, 2);
+					$minutes	= (int)substr($input, 3, 2);
+					$seconds	= (int)substr($input, 6, 2);
+					$response	= ($horus * 60 * 60 + $minutes * 60 + $seconds);
+					break;
+				default:
+					throw new Exception('Time input format could not get identified!');
+			}
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e-&gt;getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * To Log
+   *
+   * Writes specified input string to a log file
+   *
+   * @param string $input String which shall get written to log
+	 * @param string $filename (Optional) Filename of log file; Default gets used, if not set
+   * @return integer Seconds based on input time string
+   * @throws PHP Exception
+   */
+	public function toLog($input, $filename = NULL) {
+		try {
+			if ($filename == NULL) {
+				$filename = $this-&gt;settings-&gt;log_file;
+			}
+			$file = fopen($filename, 'a+');
+			fwrite($file, &quot;\n&quot;.$input);
+			fclose($file);
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e-&gt;getMessage();
+		}
+	}
+	
+	/**
+   * Transmit to LMDB
+	 *
+   * Communicates with the CMF/LMDB by using SPARQL queries. Uses SPARQL UPDATE and the SPARQL webservice of the CMF/LMDB.
+	 * Every query gets logged in the log file and can get accessed by an authorized administrator.
+   *
+   * @param string $lmdb_url Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)
+	 * @param string $service_url Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)
+	 * @param string $sparql_query SPARQL query which gets sent to the CMF/LMDB
+   * @return object HTTP response generated by PEAR HTTP_Request library
+   * @throws PHP Exception
+   */
+	private function transmitToLMDB($lmdb_url, $service_url, $sparql_query) {
+		try {
+			// http request required
+			require_once (__ROOT__. '/libraries/HTTP_Request/Request.php');
+			
+			if (session_id() === &quot;&quot;) {
+				session_start();
+			}
+			
+			// create new http request
+			$request	= new HTTP_Request();
+			$request-&gt;setURL($lmdb_url.$service_url);
+			$request-&gt;setMethod(HTTP_REQUEST_METHOD_POST);
+			$request-&gt;setBody($sparql_query);
+			
+			// write sparql query to log file
+			$now = time();
+			$tmp_log_file = $this-&gt;settings-&gt;base_path.'log/'.$now.'_query.log';
+			$this-&gt;toLog($sparql_query, $tmp_log_file);
+			
+			// add query to log list
+			$this-&gt;toLog(trim(ltrim($_SESSION['cmf']['userid'])). ',' .$now, $this-&gt;settings-&gt;log_list);
+	
+			$request-&gt;addHeader('Content-Type', 'application/sparql-update');
+			$response	= $request-&gt;sendRequest();
+			
+			// print $lmdb_url.$service_url;
+			
+			if (PEAR::isError($response)) {
+				// return PEAR error
+				Throw new Exception($response-&gt;getMessage());
+			}
+			else {
+				$response = $request;
+				// add response to log file
+				$this-&gt;toLog('Code: ' .$response-&gt;getResponseCode(). '; Message: ' .$response-&gt;getResponseBody(), $tmp_log_file);
+			}
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e-&gt;getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * Update annotations
+	 *
+   * Parses the currently used annotation file and loops through all existing annotation. Every new annotation gets added to the CMF, existing ones get updated and deleted ones get removed from the CMF instande.
+	 * The HTTP resspose of the CMF gets returned by this method.
+   *
+   * @param string $lmdb_url Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)
+	 * @param string $service_url Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)
+	 * @param string $video_locators Video array which contains the currently selected video ID and its locators
+	 * @param string $annotations_file Currently used annotation file name
+   * @return object HTTP response generated by PEAR HTTP_Request library
+   * @throws PHP Exception
+   */
+	public function updateAnnotations($lmdb_url, $service_url, $video_locators, $annotations_file) {
+		try {
+			// switch between create or update
+			// if (file_exists($this-&gt;settings-&gt;annotation_path.$existing_annotations_file)) {
+			// update annotations
+			// $existing_annotations = $this-&gt;parseJson($existing_annotations_file);
+			$updated_annotations =  $this-&gt;parseJson($annotations_file);
+			// var_dump($existing_annotations);
+			 // var_dump($updated_annotations);
+			// loop updated annotations and update/add annotations
+			$sparql_querys = array();
+				
+			foreach ($updated_annotations-&gt;annotations as $annotation_number =&gt; $annotation) {				
+				// update/add annotation
+				// get annotation from existing ones
+				if ($annotation-&gt;active-&gt;value == 1) {
+					// annotation needs to get added/updated
+					if (isset($annotation-&gt;annotation-&gt;value) &amp;&amp; ($annotation-&gt;annotation-&gt;value != '')) {
+						// update annotation
+						$sparql_query = '';
+						$sparql_query = $this-&gt;createAnnotationTriples($annotation, $annotation_number, $video_locators, $updated_annotations-&gt;video[0]-&gt;uri, 'update');
+						$sparql_querys[] = $sparql_query;
+					}
+					else {
+						// add annotation
+						$sparql_query = '';
+						$sparql_query .= 'INSERT DATA {'. &quot;\n&quot;;
+						$sparql_query .= '  GRAPH &lt;' .$updated_annotations-&gt;video[0]-&gt;uri. '&gt; {'. &quot;\n&quot;;
+						$sparql_query .= $this-&gt;createAnnotationTriples($annotation, $annotation_number, $video_locators, $updated_annotations-&gt;video[0]-&gt;uri, 'insert');
+						$sparql_query .= '  }'. &quot;\n&quot;;
+						$sparql_query .= '}'. &quot;\n&quot;;
+						$sparql_querys[] = $sparql_query;
+					}
+				}
+				else if ($annotation-&gt;active-&gt;value == 0) {
+					// annotation needs to get removed
+					$sparql_query = '';
+					$sparql_query = $this-&gt;createAnnotationTriples($annotation, $annotation_number, $video_locators, $updated_annotations-&gt;video[0]-&gt;uri, 'delete');
+					$sparql_querys[] = $sparql_query;
+				}
+			}
+		
+			// loop through generated queries and submit them to the cmf
+			if (is_array($sparql_querys) &amp;&amp; (count($sparql_querys) &gt; 0)) {
+				// at least one annotation has been added/modified or needs to get deleted
+				$sparql_update_query = '';
+				$cnt = 0;
+				foreach ($sparql_querys as $query) {
+					$sparql_update_query .= $query;
+					$cnt++;
+					if ($cnt &lt; count($sparql_querys)) {
+						$sparql_update_query .= ';'.&quot;\n&quot;;
+					}
+				}
+				
+				// send query to cmf
+				$response = $this-&gt;transmitToLMDB($lmdb_url, $service_url, $sparql_update_query);
+				$response-&gt;ResponseCode = $response-&gt;getResponseCode();
+				
+				if ($response-&gt;ResponseCode == 200) {
+					// update successfully performed
+					// write updated annotations to file // both files: backup and regular annotation file
+					$file_response = $this-&gt;writeToFile($updated_annotations, $annotations_file);
+					if ($file_response != true) {
+						throw new Exception($file_response);
+					}
+					unset($file_response);
+					$file_response = $this-&gt;writeToFile($updated_annotations, $annotations_file);
+					if ($file_response != true) {
+						throw new Exception($file_response);
+					}
+					unset($file_response);
+					
+				}
+				
+			}
+			else {
+				// no modification in the cmf needed
+	
+				// set response manually if no modifications have been made
+				$tmp_response-&gt;_response-&gt;_code = '304';
+				$tmp_response-&gt;_response-&gt;_reason = $this-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_NO_MODIFICATIONS;
+				$response = $tmp_response;
+				
+			}
+			
+		}
+		catch (Exception $e) {
+			$tmp_response-&gt;_response-&gt;_code = '400';
+			$tmp_response-&gt;_response-&gt;_reason = 'ERROR: ' .$e-&gt;getMessage();
+			$response = $tmp_response;
+		}
+		
+		return $response;
+	}
+	
+	/**
+   * Create Annotations
+	 *
+   * Parses the currently used annotation file and uses the private method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+	 * (no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.
+   *
+   * @param string $lmdb_url Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)
+	 * @param string $service_url Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)
+	 * @param string $video_locators Video array which contains the currently selected video ID and its locators
+	 * @param string $annotations_file Currently used annotation file name
+   * @return object HTTP response generated by PEAR HTTP_Request library
+   * @throws PHP Exception
+   */
+	public function createAnnotations($lmdb_url, $service_url, $video_locators, $annotations_file) {
+		try {
+			$new_annotations = $this-&gt;parseJson($annotations_file);
+			// insert query
+			$sparql_query = '';
+			$sparql_query .= 'INSERT DATA {'. &quot;\n&quot;;
+			$sparql_query .= '  GRAPH &lt;' .$new_annotations-&gt;video[0]-&gt;uri. '&gt; {'. &quot;\n&quot;;
+			foreach ($new_annotations-&gt;annotations as $annotation_number =&gt; $new_annotation) {
+				$sparql_query .= $this-&gt;createAnnotationTriples($new_annotation, $annotation_number, $video_locators, $new_annotations-&gt;video[0]-&gt;uri, 'insert');	
+			}
+			$sparql_query .= '  }'. &quot;\n&quot;;
+			$sparql_query .= '}'. &quot;\n&quot;;
+			// print $sparql_query;
+			$response = $this-&gt;transmitToLMDB($lmdb_url, $service_url, $sparql_query);
+		}
+		catch (Exception $e) {
+			$tmp_response-&gt;_response-&gt;_code = '400';
+			$tmp_response-&gt;_response-&gt;_reason = 'ERROR: ' .$e-&gt;getMessage();
+			$response = $tmp_response;
+		}
+		return $response;
+	}
+	
+	/**
+   * Create Annotation Triples
+	 *
+   * Parses the currently used annotation file and uses the method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+	 * (no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.
+   *
+   * @param string $annotation Data of the currently selected annotation
+	 * @param string $annotation_number Number of the currently selected annotation (annotation array row identifier)
+	 * @param string $video_data Video array which contains the currently selected video ID and its locators
+	 * @param string $video_id ID of the currently selected video
+	 * @param string $type Type of operation which shall get performed in the CMF with the selected annotation (INSERT, UPDATE, DELETE)
+   * @return object HTTP response generated by PEAR HTTP_Request library
+   * @throws PHP Exception
+   */
+	private function createAnnotationTriples($annotation, $annotation_number, $video_data, $video_id, $type) {
+		try {
+			
+			include_once (__ROOT__. '/libraries/arc2/ARC2.php');
+			include_once (__ROOT__. '/libraries/graphite/Graphite.php');
+			
+			$graph = new Graphite();
+			// add required namespaces (which aren't already loaded by default)
+			$graph-&gt;ns(&quot;ma&quot;, &quot;http://www.w3.org/ns/ma-ont#&quot;);
+			$graph-&gt;ns(&quot;cma&quot;, &quot;http://connectme.at/ontology#&quot;);
+			$graph-&gt;ns(&quot;oac&quot;, &quot;http://www.openannotation.org/ns/&quot;);
+			$graph-&gt;ns(&quot;cmo&quot;, &quot;http://purl.org/twc/ontologies/cmo.owl#&quot;);
+			$graph-&gt;ns(&quot;oax&quot;, &quot;http://www.w3.org/ns/openannotation/extensions/&quot;);
+			// $uri = &quot;http://connectme.salzburgresearch.at/CMF/resource/video/yoovis/6306&quot;;
+			
+			 $timestamp = time();
+			
+			// create graph
+			$graph-&gt;resource($video_id);
+			
+			if ($type == 'delete') {
+				
+				// sparql delete query
+				$prefix['oac'] = 'http://www.openannotation.org/ns/';
+				$prefix['ma'] = 'http://www.w3.org/ns/ma-ont#';
+				$query = 'DELETE {'.&quot;\n&quot;;
+				$query .= '	?annotation ?p ?v.'.&quot;\n&quot;;
+				$query .= '	?fragment ?r ?s.'.&quot;\n&quot;;
+				$query .= '	&lt;' .$video_id. '&gt;  &lt;' .$prefix['ma']. 'hasFragment&gt; ?fragment.'.&quot;\n&quot;;
+				$query .= '}'.&quot;\n&quot;;
+				$query .= 'WHERE {'.&quot;\n&quot;;
+				$query .= '	?annotation &lt;' .$prefix['oac']. 'hasTarget&gt; ?fragment.'.&quot;\n&quot;;
+				$query .= '	?annotation ?p ?v.'.&quot;\n&quot;;
+				$query .= '	OPTIONAL {'.&quot;\n&quot;;
+				$query .= '		?fragment ?r ?s'.&quot;\n&quot;;
+				$query .= '	}'.&quot;\n&quot;;
+				$query .= '	FILTER (?fragment = &lt;' .str_replace(&quot;annotation&quot;, &quot;fragment&quot;, $annotation-&gt;annotation-&gt;value). '&gt;)'.&quot;\n&quot;;
+				$query .= '}';
+				
+				$response = $query;
+				
+			}
+			else if ($type == 'update') {
+				$sparql_query = '';
+				$prefix['oac'] = 'http://www.openannotation.org/ns/';
+				$prefix['ma'] = 'http://www.w3.org/ns/ma-ont#';
+				$sparql_query .= 'WITH &lt;' .$video_id. '&gt;'. &quot;\n&quot;;
+				$sparql_query .= 'DELETE {'.&quot;\n&quot;;
+				$sparql_query .= '	?annotation ?p ?v.'.&quot;\n&quot;;
+				$sparql_query .= '	?fragment ?r ?s.'.&quot;\n&quot;;
+				$sparql_query .= '	&lt;' .$video_id. '&gt;  &lt;' .$prefix['ma']. 'hasFragment&gt; ?fragment.'.&quot;\n&quot;;
+				$sparql_query .= '}'.&quot;\n&quot;;
+				$sparql_query .= 'INSERT {'. &quot;\n&quot;;
+				$sparql_query .= $this-&gt;createAnnotationTriples($annotation, $annotation_number, $video_data, $video_id, 'insert');
+				$sparql_query .= '}'. &quot;\n&quot;;
+				$sparql_query .= 'WHERE {'.&quot;\n&quot;;
+				$sparql_query .= '	?annotation &lt;' .$prefix['oac']. 'hasTarget&gt; ?fragment.'.&quot;\n&quot;;
+				$sparql_query .= '	?annotation ?p ?v.'.&quot;\n&quot;;
+				$sparql_query .= '	OPTIONAL {'.&quot;\n&quot;;
+				$sparql_query .= '		?fragment ?r ?s'.&quot;\n&quot;;
+				$sparql_query .= '	}'.&quot;\n&quot;;
+				$sparql_query .= '	FILTER (?fragment = &lt;' .str_replace(&quot;annotation&quot;, &quot;fragment&quot;, $annotation-&gt;annotation-&gt;value). '&gt;)'.&quot;\n&quot;;
+				$sparql_query .= '}';
+				
+				$response = $sparql_query;
+				
+			}
+			else if ($type == 'insert') {
+				
+				// sparql insert query
+
+				$timestamp = time();	
+				
+				// add framgents
+				if (($annotation-&gt;annotation-&gt;value == 'null') || ($annotation-&gt;annotation-&gt;value == '')) {
+					$element_id = md5($annotation_number + microtime());
+					$tmp_annotation_uri = $this-&gt;settings-&gt;annotation_uri.$element_id;
+					$annotation-&gt;annotation-&gt;value = $tmp_annotation_uri;
+				}
+				$annotation-&gt;annotation-&gt;value = str_replace(&quot;annotation&quot;, &quot;fragment&quot;, $annotation-&gt;annotation-&gt;value);
+				
+				$graph-&gt;addCompressedTriple($video_id, 'ma:hasFragment', $annotation-&gt;annotation-&gt;value);
+				
+				// fragment details
+				$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, 'rdf:type', 'ma:MediaFragment');
+				
+				// generate locator suffix
+				$suffix = '#';
+				if (isset($annotation-&gt;spatial) &amp;&amp; isset($annotation-&gt;spatial-&gt;value)) {
+					// spatial region set
+					// var_dump($annotation-&gt;spatial-&gt;value);
+					$tmp_spatial = explode(',', $annotation-&gt;spatial-&gt;value);
+					$spatial_set = true;
+					foreach ($tmp_spatial as $val) {
+						if (!preg_match('/[0-9]+/', $val)) {
+							$spatial_set = false;
+						}
+					}
+					if ($spatial_set == true) {
+						$suffix .= 'xywh=percent:' .$tmp_spatial[0]. ',' .$tmp_spatial[1]. ',' .$tmp_spatial[4]. ',' .$tmp_spatial[5];
+					}
+				}
+				if (isset($annotation-&gt;starttime-&gt;value)) {
+					// is spatial region set?
+					if (strlen($suffix) &gt; 1) {
+						// add &amp;
+						$suffix	.= '&amp;';
+					}
+					$suffix	.= 't='.$this-&gt;convertToSeconds($annotation-&gt;starttime-&gt;value);
+					if ($annotation-&gt;endtime-&gt;value != '') {
+					$suffix	.= ','.$this-&gt;convertToSeconds($annotation-&gt;endtime-&gt;value);
+					}
+				}
+				
+				foreach ($video_data['source'] as $video_source) {
+					$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, 'ma:locator', $video_source['url'].$suffix, 'xsd:anyURI');
+				}
+				
+				if ($annotation-&gt;relation-&gt;value != '') {
+					$graph-&gt;addCompressedTriple($annotation-&gt;annotation-&gt;value, $annotation-&gt;relation-&gt;value, $annotation-&gt;resource-&gt;value);
+				}
+				
+				// annotation details
+				$pattern = '/' .preg_quote('bookmark', '/') . '/';
+				if (preg_match($pattern, strtolower($annotation-&gt;annotationtype-&gt;value))) {
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'rdf:type', 'oax:Bookmark');
+				}
+				else {
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'rdf:type', 'oac:Annotation');
+				}
+				$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'oac:hasTarget', $annotation-&gt;annotation-&gt;value);
+				$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'dct:creator', $annotation-&gt;creator-&gt;value);
+				$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'dct:created', date(&quot;Y-m-d&quot;, $timestamp). 'T' .date(&quot;H:i:s&quot;, $timestamp). '' .date(&quot;P&quot;, $timestamp), 'xsd:dateTime');
+				if (($annotation-&gt;preferredlabel-&gt;value != '') &amp;&amp; ($annotation-&gt;preferredlabel-&gt;value != 'null')) {
+					$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'cma:preferredLabel', $annotation-&gt;preferredlabel-&gt;value, 'xsd:string');
+				}
+				$graph-&gt;addCompressedTriple(str_replace(&quot;fragment&quot;, &quot;annotation&quot;, $annotation-&gt;annotation-&gt;value), 'oac:hasBody',  $annotation-&gt;resource-&gt;value);
+				
+				$graph-&gt;addCompressedTriple($annotation-&gt;creator-&gt;value, 'rdf:type', 'foaf:Person');
+					
+				$response = $graph-&gt;serialize('NTriples');
+			
+			}
+			
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e-&gt;getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * Write To File
+	 *
+   * Parses the currently used annotation file and uses the method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+	 * (no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.
+   *
+   * @param object $input Object which shall get written into file (will get JSON encoded before writing to file)
+	 * @param string $filename Name of file to write to
+   * @return bool True if $input successfully written to file
+	 * @return string Error message in case of error
+   * @throws PHP Exception
+   */
+	private function writeToFile($input, $filename) {
+		try {
+		  
+		  // delete file (if it already exists), to make sure that it contains only 1 annotations JSON string
+			if (file_exists($this-&gt;settings-&gt;annotation_path.$filename)) {
+				unlink($this-&gt;settings-&gt;annotation_path.$filename);
+			}
+				
+			$file = fopen($this-&gt;settings-&gt;annotation_path.$filename, 'a+');
+				
+			if (fwrite($file, stripslashes(json_encode($input)))) {
+				$response = true;
+			}
+			else {
+				$response = 'ERROR: while writing to ' .$filename;
+			}
+			
+			fclose($file);
+			
+			chmod($this-&gt;settings-&gt;annotation_path.$filename, 0777);
+		  
+		} catch (Exception $e) {
+    		$response = 'ERROR: ' .$e-&gt;getMessage();
+		}
+		
+		return $response;
+		
+	}
+
+}
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

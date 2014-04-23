@@ -1,0 +1,42 @@
+/**
+ * Annotator v2.0 - Admin interface
+ *
+ * Copyright 2013 STI International, Inc
+ * mba <matthias.bauer@sti2.org>
+ *
+ */
+
+ul.settings {
+	padding: 0 0 25px 0; 
+}
+
+ul.settings li {
+	list-style: none !important;
+	list-style-type: none !important;
+}
+ul.settings li label {
+	font-weight: bold;
+	padding-top: 10px;
+}
+ul.settings li ul li label {
+	font-weight: normal;
+}
+ul.settings li input[type="text"] {
+	width: 350px;
+	margin-right: 5px !important;
+}
+ul.settings li input {
+	margin: 0 !important;
+}
+.error {
+	border: 1px solid #F00 !important;
+	color: #FFF !important;
+	background-color: #F00 !important;
+	font-weight: bold !important;
+}
+.error-headline {
+	border: 3px solid #F00 !important;
+	padding: 20px 20px 20px 20px;
+	margin: 20px 20px !important;
+	color: #F00 !important;
+}

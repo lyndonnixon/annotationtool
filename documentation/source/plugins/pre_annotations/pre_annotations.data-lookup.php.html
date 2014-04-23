@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+/**
+ * Pre annotations data lookup
+ *
+ * Tries to find pre-annotatins in CMF and tries to create pre-annotation file based on the results
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/Pre_Annotations
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$ann_core = new Core();
+
+header('Content-type: application/json');
+
+if (!isset($_POST['uri'])) {
+	print '{&quot;response&quot;: &quot;No resource URI specified!&quot;}';
+}
+else if (!isset($_POST['parameters'])) {
+	print '{&quot;response&quot;: &quot;No response parameters specified!&quot;}';
+}
+else {
+	
+	// include configurable settings file (admins, cmf sources, ...)
+	if (file_exists(__ROOT__. '/core/includes/administration.inc.php')) {
+		include_once(__ROOT__. '/core/includes/administration.inc.php');
+	}
+	
+	// get video source
+	$video_data = $core-&gt;video;
+	
+	$lmdb_sources = $ann_core-&gt;cmf;
+	
+	$plugin_root_url = $ann_core-&gt;settings-&gt;base_url;
+	
+	$resource_uri = urldecode($_POST['uri']);	
+	
+	$query = 'PREFIX oac: &lt;http://www.openannotation.org/ns/&gt;'.&quot;\n&quot;.'PREFIX ma: &lt;http://www.w3.org/ns/ma-ont#&gt;'.&quot;\n&quot;.'PREFIX dct: &lt;http://purl.org/dc/terms/&gt;'.&quot;\n&quot;.'PREFIX cma: &lt;http://connectme.at/ontology#&gt;'.&quot;\n&quot;.'SELECT ?recommendation WHERE'.&quot;\n&quot;.'{'.&quot;\n&quot;.'  &lt;' .trim(rtrim($resource_uri)). '&gt; dct:subject ?recommendation.'.&quot;\n&quot;.'}';
+	
+	$req = new HTTP_Request($ann_core-&gt;cmf['url'].'sparql/select?query=' .urlencode($query). '&amp;output=json');
+	$req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	
+	$req-&gt;_timeout = 20;
+	  
+	$response = $req-&gt;sendRequest();
+	
+	if (PEAR::isError($response)) {
+		print '{&quot;response&quot;: &quot;' .$response-&gt;getMessage(). '&quot;}';
+	}
+	else {
+		if ($req-&gt;getResponseCode() != 200) {
+			print '{&quot;response&quot;: &quot;' .$req-&gt;getResponseCode(). '&quot;}'; die();
+		}
+		else {
+			$response_json = json_decode(stripslashes(urldecode($req-&gt;getResponseBody())));
+			// var_dump($response_json);
+			
+			$var_name = $response_json-&gt;head-&gt;vars[0];
+			$pre_annotation_data = array();
+			// loop through results and search for name, description, ...
+			foreach ($response_json-&gt;results-&gt;bindings as $val) {
+				$url_pattern = '/de.dbpedia/';
+				if (preg_match($url_pattern, $val-&gt;$var_name-&gt;value)) {
+					// loop through search plugins and find the matching one (ONLY FOR GERMAN DBPEDIA!!!!!!)
+					$url = $plugin_root_url.'plugins/';
+					if (!preg_match(&quot;~^(?:f|ht)tps?://~i&quot;, $url)) {
+							$url = &quot;http://&quot; . $url;
+					}
+					$inputs = array('uri' =&gt; $val-&gt;$var_name-&gt;value, 'parameters' =&gt; $_POST['parameters']);
+					$req_plugin = new HTTP_Request($url.'dbpedia/dbpedia.data-lookup.php');
+					$req_plugin-&gt;setMethod(HTTP_REQUEST_METHOD_POST);
+					$req_plugin-&gt;_timeout = 20;
+					if ($inputs != null) {
+						foreach ($inputs as $key =&gt; $value) {
+							$req_plugin-&gt;addPostData($key, urldecode($value));
+							// print $key. ': ' .urldecode($value);
+						}
+					}
+							
+					$res_plugin = $req_plugin-&gt;sendRequest();
+					
+					if (PEAR::isError($res_plugin)) {
+						print '{&quot;response&quot;: &quot;' .$res_plugin-&gt;getMessage(). '&quot;}';
+					}
+					else {
+						// var_dump($req_plugin-&gt;getResponseBody());
+						if (($req_plugin-&gt;getResponseCode() != 302) &amp;&amp; ($req_plugin-&gt;getResponseCode() != 200)) {
+							// no result found
+							// print '{&quot;response&quot;: &quot;ERROR: URL did not respond! [' .'http://'.$plugin_root_url.$plugin. '/'.$plugin.'.data-lookup.php'. '], [HTTP ' .$req_plugin-&gt;getResponseCode(). ']&quot;}';
+						}
+						else {
+							// result found =&gt; add information to return array
+							$detaildata = json_decode(stripslashes(urldecode($req_plugin-&gt;getResponseBody())));
+							if (is_object($detaildata) &amp;&amp; is_object($detaildata-&gt;response)) {
+								$pre_annotation_data[] = array('uri' =&gt; $val-&gt;$var_name-&gt;value, 'response' =&gt; $detaildata-&gt;response);
+							}
+						}
+					}
+				}
+				
+				unset($req_plugin, $res_plugin);
+				
+				/*
+				foreach ($ann_core-&gt;settings-&gt;active_plugins as $plugin) {
+					print $plugin;
+					unset($req_plugin, $res_plugin);
+					$url = $plugin_root_url.'plugins/';
+					if (!preg_match(&quot;~^(?:f|ht)tps?://~i&quot;, $url)) {
+							$url = &quot;http://&quot; . $url;
+					}
+					print $val-&gt;$var_name-&gt;value. ' - ' .$url.$plugin. ':';
+					$inputs = array('uri' =&gt; $val-&gt;$var_name-&gt;value, 'parameters' =&gt; $_POST['parameters']);
+					$req_plugin = new HTTP_Request($url.$plugin. '/'.$plugin.'.data-lookup.php');
+					$req_plugin-&gt;setMethod(HTTP_REQUEST_METHOD_POST);
+					$req-&gt;_timeout = 20;
+					if ($inputs != null) {
+						foreach ($inputs as $key =&gt; $value) {
+							$req_plugin-&gt;addPostData($key, urldecode($value));
+						}
+					}
+					
+					var_dump($req_plugin);
+						
+					$res_plugin = $req_plugin-&gt;sendRequest();					
+					
+					if (PEAR::isError($res_plugin)) {
+						print '{&quot;response&quot;: &quot;' .$res_plugin-&gt;getMessage(). '&quot;}';
+					}
+					else {
+						if ($req_plugin-&gt;getResponseCode() != 200) {
+							// no result found
+							print '{&quot;response&quot;: &quot;ERROR: URL did not respond! [' .'http://'.$plugin_root_url.$plugin. '/'.$plugin.'.data-lookup.php'. '], [HTTP ' .$req_plugin-&gt;getResponseCode(). ']&quot;}';
+						}
+						else {
+							// result found =&gt; add information to return array
+							$detaildata = json_decode(stripslashes(urldecode($req_plugin-&gt;getResponseBody())));
+							if (is_object($detaildata) &amp;&amp; is_object($detaildata-&gt;response)) {
+								$pre_annotation_data[] = array('uri' =&gt; $val-&gt;$var_name-&gt;value, 'response' =&gt; $detaildata-&gt;response);
+							}
+						}
+					}
+				}
+				*/
+			}
+			
+			// write result to pre-annotation file
+			$json_string = json_encode($pre_annotation_data);
+			$filename = $resource_uri;
+			$pattern = '/[\s\W]+/';
+			$filename = preg_replace($pattern, '', $filename).'.pre';
+			
+			if (file_exists($ann_core-&gt;settings-&gt;base_path.'plugins/pre_annotations/pre_annotation_data/'.$filename)) {
+				unlink($ann_core-&gt;settings-&gt;base_path.'plugins/pre_annotations/pre_annotation_data/'.$filename);
+			}
+				
+			$file = fopen($ann_core-&gt;settings-&gt;base_path.'plugins/pre_annotations/pre_annotation_data/'.$filename, 'a+');
+				
+			if (fwrite($file, $json_string)) {
+				print 'true';
+			}
+			else {
+				print 'Error while writing to ' .$url.$filename;
+			}
+				
+			fclose($file);
+			
+		}
+	}
+}
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

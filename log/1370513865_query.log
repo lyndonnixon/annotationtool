@@ -1,0 +1,17 @@
+
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/3be0822b136b2b875bfcba7a03ffc77c> .
+<http://connectme.at/fragment/3be0822b136b2b875bfcba7a03ffc77c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/3be0822b136b2b875bfcba7a03ffc77c> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=3,11"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/3be0822b136b2b875bfcba7a03ffc77c> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2768723> .
+<http://connectme.at/annotation/3be0822b136b2b875bfcba7a03ffc77c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/3be0822b136b2b875bfcba7a03ffc77c> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/3be0822b136b2b875bfcba7a03ffc77c> .
+<http://connectme.at/annotation/3be0822b136b2b875bfcba7a03ffc77c> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/3be0822b136b2b875bfcba7a03ffc77c> <http://purl.org/dc/terms/created> "2013-06-06T10:17:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/3be0822b136b2b875bfcba7a03ffc77c> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2768723> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+
+Code: 200; Message: 

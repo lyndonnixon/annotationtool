@@ -1,0 +1,367 @@
+
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=3,11"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2768723> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2768723> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=3,11"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2781124> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2781124> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=3,11"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2775886> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2775886> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=27,40"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Pulsatilla_alpina> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/afe75cc0e3cb964c3d5b9b13ef5d3127> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/afe75cc0e3cb964c3d5b9b13ef5d3127> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Pulsatilla_alpina> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=53,63"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Sledding> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Sledding> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/4242ff67292876e1633b838b7b88f35b> .
+<http://connectme.at/fragment/4242ff67292876e1633b838b7b88f35b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/4242ff67292876e1633b838b7b88f35b> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=53,63"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/4242ff67292876e1633b838b7b88f35b> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Go-Karting> .
+<http://connectme.at/annotation/4242ff67292876e1633b838b7b88f35b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/4242ff67292876e1633b838b7b88f35b> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/4242ff67292876e1633b838b7b88f35b> .
+<http://connectme.at/annotation/4242ff67292876e1633b838b7b88f35b> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/4242ff67292876e1633b838b7b88f35b> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/4242ff67292876e1633b838b7b88f35b> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Go-Karting> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/10a89c5ade041a293fcd1d7d3909175a> .
+<http://connectme.at/fragment/10a89c5ade041a293fcd1d7d3909175a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/10a89c5ade041a293fcd1d7d3909175a> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=66,77"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/10a89c5ade041a293fcd1d7d3909175a> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Downhill_mountain_biking> .
+<http://connectme.at/annotation/10a89c5ade041a293fcd1d7d3909175a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/10a89c5ade041a293fcd1d7d3909175a> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/10a89c5ade041a293fcd1d7d3909175a> .
+<http://connectme.at/annotation/10a89c5ade041a293fcd1d7d3909175a> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/10a89c5ade041a293fcd1d7d3909175a> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/10a89c5ade041a293fcd1d7d3909175a> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Downhill_mountain_biking> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/be81e02cda0cf562a17251d169633162> .
+<http://connectme.at/fragment/be81e02cda0cf562a17251d169633162> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/be81e02cda0cf562a17251d169633162> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=105,116"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/be81e02cda0cf562a17251d169633162> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Rock_climbing> .
+<http://connectme.at/annotation/be81e02cda0cf562a17251d169633162> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/be81e02cda0cf562a17251d169633162> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/be81e02cda0cf562a17251d169633162> .
+<http://connectme.at/annotation/be81e02cda0cf562a17251d169633162> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/be81e02cda0cf562a17251d169633162> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/be81e02cda0cf562a17251d169633162> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Rock_climbing> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=120,129"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Paragliding> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/1185dd49a0425802853fd5ed325a9f1f> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/1185dd49a0425802853fd5ed325a9f1f> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Paragliding> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/e711ca4cc0ea8d96c71d7f44e181a838> .
+<http://connectme.at/fragment/e711ca4cc0ea8d96c71d7f44e181a838> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/e711ca4cc0ea8d96c71d7f44e181a838> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=130,135"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/e711ca4cc0ea8d96c71d7f44e181a838> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Archery> .
+<http://connectme.at/annotation/e711ca4cc0ea8d96c71d7f44e181a838> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/e711ca4cc0ea8d96c71d7f44e181a838> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/e711ca4cc0ea8d96c71d7f44e181a838> .
+<http://connectme.at/annotation/e711ca4cc0ea8d96c71d7f44e181a838> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/e711ca4cc0ea8d96c71d7f44e181a838> <http://purl.org/dc/terms/created> "2013-06-06T11:43:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/e711ca4cc0ea8d96c71d7f44e181a838> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Archery> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/af8afdd12081404de2cf39d14a4b8cb5> .
+<http://connectme.at/fragment/af8afdd12081404de2cf39d14a4b8cb5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/af8afdd12081404de2cf39d14a4b8cb5> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=137,150"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/af8afdd12081404de2cf39d14a4b8cb5> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Rafting> .
+<http://connectme.at/annotation/af8afdd12081404de2cf39d14a4b8cb5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/af8afdd12081404de2cf39d14a4b8cb5> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/af8afdd12081404de2cf39d14a4b8cb5> .
+<http://connectme.at/annotation/af8afdd12081404de2cf39d14a4b8cb5> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/af8afdd12081404de2cf39d14a4b8cb5> <http://purl.org/dc/terms/created> "2013-06-06T11:43:46+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/af8afdd12081404de2cf39d14a4b8cb5> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Rafting> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/9bdf53691ffb7cec90daf2914732586d> .
+<http://connectme.at/fragment/9bdf53691ffb7cec90daf2914732586d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/9bdf53691ffb7cec90daf2914732586d> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=140,145"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/9bdf53691ffb7cec90daf2914732586d> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Neoprene> .
+<http://connectme.at/annotation/9bdf53691ffb7cec90daf2914732586d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/9bdf53691ffb7cec90daf2914732586d> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/9bdf53691ffb7cec90daf2914732586d> .
+<http://connectme.at/annotation/9bdf53691ffb7cec90daf2914732586d> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/9bdf53691ffb7cec90daf2914732586d> <http://purl.org/dc/terms/created> "2013-06-06T11:43:46+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/9bdf53691ffb7cec90daf2914732586d> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Neoprene> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/f67cd19bfd4665fd9b7eb1587da7b198> .
+<http://connectme.at/fragment/f67cd19bfd4665fd9b7eb1587da7b198> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/f67cd19bfd4665fd9b7eb1587da7b198> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=159,170"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/f67cd19bfd4665fd9b7eb1587da7b198> <http://connectme.at/ontology#hasContent> <http://www.planai.at/> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/openannotation/extensions/Bookmark> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/f67cd19bfd4665fd9b7eb1587da7b198> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://purl.org/dc/terms/created> "2013-06-06T11:43:46+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://connectme.at/ontology#preferredLabel> "Planai"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://connectme.at/annotation/f67cd19bfd4665fd9b7eb1587da7b198> <http://www.openannotation.org/ns/hasBody> <http://www.planai.at/> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/c84834842d47a7bb7c45890023319e77>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/c84834842d47a7bb7c45890023319e77>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/7346d8006d39a19a3df41d0df43ae58e>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/51535aa5eaf02d1630fdd4e344793db9>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/77971fc329addfaf6148467ecd11b21f>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/40e8688537fb0e2810d4bb7884ba1c11>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/7a7a982722987b7e9b67c271d52e377b>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/83d92b7f7dd032027813331aa538a397>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/bbfa0d7a9c4e7bcd89e8cede28548ab1>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/c88a9cae5f218de7da2b7f71c6f8756a>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/c84834842d47a7bb7c45890023319e77>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/2e3b5be2130300b899b1e9503296560b>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/31f213fa46c87ef5224e38ec34f54e64>)
+}
+Code: 200; Message: 

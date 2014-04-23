@@ -1,0 +1,74 @@
+<?php
+/**
+ * Google Maps search preview
+ *
+ * Generates preview for a place by specifying longitude and latidude of it.
+ *
+ * @author Matthias Bauer <matthias.bauer@sti2.org>
+ * @version v2.3
+ * @package Core/Plugins/Maps_Search 
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+$_GET;
+?>
+<?php if (isset($_GET['lat']) && isset($_GET['lng']) && is_numeric($_GET['lat'])  && is_numeric($_GET['lng'])): ?>
+<?php
+	include_once('settings.inc.php');
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style type="text/css">
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyCo9Wug3Lw6-PrVu9Y44lHLaWUvnFZ5_fQ"></script>
+    <script>
+		$(document).ready(function () {
+			var geocoder = new google.maps.Geocoder();
+			function initialize() {
+				var coords = [<?php print $_GET['lat']; ?>, <?php print $_GET['lng']; ?>]
+				var latlng = new google.maps.LatLng(coords[0], coords[1]);
+				var mapOptions = {
+					zoom: 10,
+					center: latlng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+			
+				var marker = new google.maps.Marker({
+						position: latlng,
+						map: map,
+				});
+				
+				var infowindow = new google.maps.InfoWindow();
+				
+				geocoder.geocode({'latLng': latlng}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						if (results[0]) {
+							contentString = results[0].formatted_address;
+							marker.title = contentString;
+							infowindow.setContent(contentString);
+							infowindow.open(map, marker);
+						}
+					}
+				})
+			}
+			
+			google.maps.event.addDomListener(window, 'load', initialize);
+		})
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas" style="width: <?php print $gmapsimg["width"]; ?>px; height: <?php print $gmapsimg["height"]; ?>px; border: 1px solid #000;"></div>
+  </body>
+</html>
+<?php endif; ?>

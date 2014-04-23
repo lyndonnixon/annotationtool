@@ -1,0 +1,168 @@
+<?php
+/**
+ * Administrator
+ *
+ * Administration functions of the ConnectME hypervideo annotation tool.
+ *
+ * Those are:
+ *
+ ** Check if a given URL responds and return the HTTP response
+ ** Parse the common log file and return its content
+ ** Parse the sparql query log and create a array out of it (with detail links to every query)
+ ** Parse a given file and return its content
+ *
+ * IMPORTANT: PEAR HTTP_Request library is used in this class (http://pear.php.net/package/HTTP_Request8)
+ *
+ * @author Matthias Bauer <matthias.bauer@sti2.org>
+ * @version v2.3
+ * @package Core\Administrator
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+class Administrator {
+  
+  /**
+   * Settings of the Hyper Annotation Video Suite
+   *
+   * @var object Contains all annotation tool settings
+   */
+  public $settings = NULL;
+  
+  /**
+   * Contains all language strings of the selected language to enable multi language support
+   *
+   * @var object Contains language strings
+   */ 
+  public $language = NULL;
+		
+	/**
+   * Constructor
+   *
+   * Creates an instance of the core class and returns the settings and language object from it. They are passed to local parameters.
+   *
+   * Fills @var settings and @var language
+   *
+   * @return bool true
+   */
+  public function __construct() {
+		try {
+			require_once(__ROOT__. '/core/class/core.class.php');
+			$core = new Core();
+			$this->language = $core->language;
+			$this->settings = $core->settings;
+			return true;
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e->getMessage();
+		}
+  }
+	
+	/**
+   * Get Response
+   *
+   * Validates a given URL by performing an HTTP GET request and delivering the response back.
+   *
+   * @param string $url URL which gets validated
+   * @return object HTTP response object
+   * @throws PEAR HTTP request exception
+   * @throws PHP Exception
+   */
+	public function getResponse($url) {
+		try {
+			// http request required
+			require_once (__ROOT__. '/libraries/HTTP_Request/Request.php');
+			// create new http request
+			$request	= new HTTP_Request();
+			$request->setURL($url);
+			$request->setMethod(HTTP_REQUEST_METHOD_GET);
+			$request->addHeader('Content-Type', 'text/plain');
+			$response	= $request->sendRequest();
+			if (PEAR::isError($response)) {
+				// return PEAR error
+				Throw new Exception($response->getMessage());
+			}
+			else {
+				$response = $request;
+			}
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e->getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * Get Log
+   *
+   * Reads all data from the common log file (path specified in the settings file) and returns it as string.
+   *
+   * @return string file content
+   * @throws common PHP exception
+   */
+	public function getLog() {
+		try {
+			$response = $this->getFileContent($this->settings->log_file);
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e->getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * Get query list
+   *
+   * Reads all data from the query list file (path specified in the settings file) and returns an array of those queries.
+   *
+   * @return array one query in every row with a link to the query details file
+   * @throws PHP Exception
+   */
+	public function getQueryList() {
+		try {
+			$file = $this->settings->log_list	;
+			if (file_exists($file)) {
+				$response = array();
+				$delimiter = ',';
+				if (($handle = fopen($file, 'r')) !== FALSE) {
+					while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+						 $response[] = $row;
+					}
+					fclose($handle);
+				}
+			}
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e->getMessage();
+		}
+		return $response;
+	}
+	
+	/**
+   * Get file content
+   *
+   * Reads all data from a specified file and returns it as string.
+   *
+   * @param string $file file path and name
+   * @return string file content
+   * @throws PHP Exception
+   */
+	public function getFileContent($file) {
+		try {			
+			if (file_exists($file)) {
+			  $file_content = '';
+			  $file_handler = fopen($file, 'r');		  
+			  while (!feof($file_handler)) {
+			    $file_content .= fgets($file_handler);
+			  }			  
+			  fclose($file_handler);
+			  $response = $file_content;				
+			}
+		}
+		catch (Exception $e) {
+			$response = 'ERROR: ' .$e->getMessage();
+		}
+		return $response;
+	}
+}
+?>

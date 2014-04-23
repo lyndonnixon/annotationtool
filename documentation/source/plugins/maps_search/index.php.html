@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Google Maps search
+ *
+ * Allows serching via Google Maps API for locations
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/Geonames
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$core = new Core();
+
+// plugin settings
+include('settings.inc.php');
+ 
+if (isset($_POST['query']) &amp;&amp; ($_POST['query'] != '')) {
+  // search for results at DBpedia
+  
+	$request_url = $core-&gt;settings-&gt;interactive_gmaps['search_url'];
+	$cnt = 0;
+	foreach ($core-&gt;settings-&gt;interactive_gmaps['parameters'] as $key =&gt; $value) {
+		if ($cnt == 0) {
+			$request_url .= '?';
+		}
+		else {
+			$request_url .= '&amp;';
+		}
+		$request_url .= $key. '=' .$value;
+		$cnt++;
+	}
+	
+	$request_url .= urlencode($_POST['query']);
+	
+  $req = new HTTP_Request($request_url);
+  $req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+  
+  $response = $req-&gt;sendRequest();
+
+  if (PEAR::isError($response)) {
+    print $response-&gt;getMessage();
+  } else {
+
+		if ($req-&gt;getResponseCode() != 200) {
+			// no error =&gt; return response header for further investigation
+			$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;strings-&gt;RESULTS_EMPTY. ' ' .$_POST['query']. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;strings-&gt;RESULTS_EMPTY. ' &lt;strong&gt;' .$_POST['query']. '&lt;/strong&gt;&quot;}]}';
+			print $result_select;
+		}
+		else {
+			$query_result = json_decode($req-&gt;getResponseBody());
+			if (is_object($query_result)) {
+				if ($query_result-&gt;status == 'OK') {
+					$arr_json = array();
+					foreach ($query_result-&gt;results as $result) {
+						$tmp_res-&gt;label = $result-&gt;formatted_address;
+						$tmp_res-&gt;description = &quot;&lt;iframe src='http://&quot;.$core-&gt;settings-&gt;base_url.&quot;plugins/maps_search/show_map.php?lng=&quot; .$result-&gt;geometry-&gt;location-&gt;lng. &quot;&amp;lat=&quot; .$result-&gt;geometry-&gt;location-&gt;lat. &quot;' width='&quot; .$gmapsimg[&quot;width&quot;]. &quot;' height='&quot; .$gmapsimg[&quot;height&quot;]. &quot;' scrolling='no' frameborder='0'&gt;&lt;/iframe&gt;&quot;;
+						$tmp_res-&gt;uri = 'http://'.$core-&gt;settings-&gt;base_url.'plugins/maps_search/show_map.php?lng=' .$result-&gt;geometry-&gt;location-&gt;lng. '&amp;lat=' .$result-&gt;geometry-&gt;location-&gt;lat;
+						foreach ($result-&gt;address_components as $component) {
+							if ($component-&gt;types[0] == 'route') {
+								$tmp_res-&gt;route = $component-&gt;long_name;
+							}
+							else if ($component-&gt;types[0] == 'street_number') {
+								$tmp_res-&gt;street_number = $component-&gt;long_name;
+							}
+							else if ($component-&gt;types[0] == 'locality') {
+								$tmp_res-&gt;locality = $component-&gt;long_name;
+							}
+							else if ($component-&gt;types[0] == 'postal_code') {
+								$tmp_res-&gt;postal_code = $component-&gt;long_name;
+							}
+							else if ($component-&gt;types[0] == 'country') {
+								$tmp_res-&gt;country = $component-&gt;long_name;
+							}
+						}
+						$tmp_res-&gt;lng = $result-&gt;geometry-&gt;location-&gt;lng;
+						$tmp_res-&gt;lat = $result-&gt;geometry-&gt;location-&gt;lat;
+						$arr_json[] = $tmp_res;
+						unset($tmp_res);
+					}
+					$obj_json-&gt;results = $arr_json;
+					print json_encode($obj_json);
+				}
+			}
+		}
+	}
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

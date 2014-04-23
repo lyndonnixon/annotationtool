@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Geonames plugin settings
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Cores/Plugins/Geonames
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+$geonames	= array('search_url' =&gt; 'http://api.geonames.org/searchJSON',
+									'resource_url' =&gt; 'http://sws.geonames.org/',
+									'parameters' =&gt; array(
+											'maxRows' =&gt; '30',
+											'style' =&gt; 'LONG',
+											'lang' =&gt; 'en',
+											'username' =&gt; 'sti2research',
+											'q' =&gt; '')
+									);
+
+// google maps
+$gmaps		= array('search_url' =&gt; 'http://maps.googleapis.com/maps/api/js',
+									'parameters' =&gt; array(
+										'key' =&gt; 'AIzaSyCo9Wug3Lw6-PrVu9Y44lHLaWUvnFZ5_fQ',
+										'sensor' =&gt; 'false'
+									)
+								);
+$gmapsimg = array('url' =&gt; 'http://maps.googleapis.com/maps/api/staticmap',
+									'width' =&gt; '420',
+									'height' =&gt; '300',
+									'zoom' =&gt; '12'
+								);
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,270 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**	DBPedia resource extraction
+ *	2012-11-23
+ */
+ 
+define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+require_once(__ROOT__. '/libraries/HTTP_Request/Request.php');
+require_once(__ROOT__. '/core/class/core.class.php');
+require_once('includes/settings.inc.php');
+$core = new Core();
+$plugin_settings = new DBPedia_settings();
+ 
+if (isset($_POST['query']) &amp;&amp; ($_POST['query'] != '')) {
+  // search for results at DBpedia
+	
+	$preferred_language = $core-&gt;settings-&gt;default_language;
+	if (isset($_COOKIE['lang'])) {
+		if (in_array($_COOKIE['lang'], $core-&gt;settings-&gt;available_languages)) {
+			$preferred_language = $_COOKIE['lang'];
+		}
+	}
+	$plugin_settings-&gt;preferred_language = $preferred_language;
+	
+	// add search query to parameters
+	$plugin_settings-&gt;search['parameters']['name'] = $_POST['query'];
+  $req = new HTTP_Request($plugin_settings-&gt;search['url']);
+  $req-&gt;setMethod(HTTP_REQUEST_METHOD_POST);
+	foreach ($plugin_settings-&gt;search['parameters'] as $key =&gt; $val) {
+		if (isset($preferred_language)) {
+			$val = str_replace('[@en]', '[@' .$preferred_language. ']', $val);
+		}
+		$req-&gt;addPostData($key, $val);
+	}
+	$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+  
+  $response = $req-&gt;sendRequest();
+
+  if (PEAR::isError($response)) {
+    print $response-&gt;getMessage();
+  } else {
+
+    // parse result xml and extract neccessary values
+	
+	// ----- Development helper -------
+	// header('Content-type: text/xml');
+    // print $req-&gt;getResponseBody();
+	// ----- Development helper -------
+	
+	// var_dump($req-&gt;getResponseCode(), $req-&gt;getResponseBody());
+	
+	// Label, URI, Description
+	
+	if ($req-&gt;getResponseCode() != 200) {
+		// no error =&gt; return response header for further investigation
+		$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}]}';
+	  print $result_select;
+	}
+	else {
+		
+		$empty = false;
+		
+		$query_result = json_decode($req-&gt;getResponseBody());
+		
+		// print $req-&gt;getResponseBody();
+		
+		$result_json	= '{&quot;results&quot;:[';
+		$result_select	= '&lt;ul id=&quot;search-results&quot; name=&quot;search-results&quot; size=&quot;11&quot;&gt;';
+		
+		if (is_object($query_result)) {
+			$result_container = array();
+			if (count($query_result-&gt;results) &gt; 0) {
+				// parse results by preferred language
+				foreach ($query_result-&gt;results as $result) {
+					if (isset($result-&gt;redirect)) {
+						$redirect_extracted = checkForRedirect($result, 0, $plugin_settings);
+						if (is_object($redirect_extracted)) {
+							$comment_label = 'http://www.w3.org/2000/01/rdf-schema#comment';
+							$label_label = 'http://www.w3.org/2000/01/rdf-schema#label';
+							$lang_label = 'xml:lang';
+							foreach ($redirect_extracted-&gt;representation as $key =&gt; $val) {
+								// print $key;
+								if ($key == $comment_label) {
+									foreach ($val as $comment) {
+										foreach ($comment as $c_key =&gt; $c_val) {
+											if(($c_key == $lang_label) &amp;&amp; ($c_val == $plugin_settings-&gt;preferred_language) &amp;&amp; isset($comment-&gt;value)) {
+												$comment = $comment-&gt;value;
+											}
+											if(($c_key == $lang_label) &amp;&amp; ($c_val == $core-&gt;settings-&gt;default_language) &amp;&amp; isset($comment-&gt;value)) {
+												$comment_default = $comment-&gt;value;
+											}
+										}
+									}
+								}
+								if ($key == $label_label) {
+									foreach ($val as $comment) {
+										foreach ($comment as $c_key =&gt; $c_val) {
+											if(($c_key == $lang_label) &amp;&amp; ($c_val == $plugin_settings-&gt;preferred_language) &amp;&amp; isset($comment-&gt;value)) {
+												$label = $comment-&gt;value;
+											}
+											if(($c_key == $lang_label) &amp;&amp; ($c_val == $core-&gt;settings-&gt;default_language) &amp;&amp; isset($comment-&gt;value)) {
+												$label_default = $comment-&gt;value;
+											}
+										}
+									}
+								}
+								if (isset($label)) {
+									$redirect_extracted-&gt;name = array($label);
+								}
+								else if(isset($label_default)) {
+									$redirect_extracted-&gt;name = array($label_default);
+								}
+								else {
+									$label_default-&gt;value = '&amp;nbsp;';
+									$redirect_extracted-&gt;name = array($label_default);
+								}
+								if (isset($comment)) {
+									$redirect_extracted-&gt;comment = array($comment);
+								}
+								else if(isset($comment_default)) {
+									$redirect_extracted-&gt;comment = array($comment_default);
+								}
+								else {
+									$comment_default-&gt;value = '&amp;nbsp;';
+									$redirect_extracted-&gt;comment = array($comment_default);
+								}
+							}
+							$result = $redirect_extracted;
+							unset($comment, $comment_default);
+						}						
+					}
+					print $result-&gt;id. '; ' .$result-&gt;name[0]-&gt;value. '; '. $result-&gt;comment[0]-&gt;value;
+					$tmp_arr = array();
+					if (isset($result-&gt;id)) {
+						$tmp_arr['uri'] = $result-&gt;id;
+					}
+					if (isset($result-&gt;name)) {
+						$tmp_arr['label'] = $result-&gt;name[0]-&gt;value;
+					}
+					if (isset($result-&gt;comment)) {
+						$tmp_arr['description'] = $result-&gt;comment[0]-&gt;value;
+					}
+					else {
+						$tmp_arr['description'] = '';
+					}
+					if (isset($tmp_arr['uri']) &amp;&amp; isset($tmp_arr['label'])) {
+						$result_container[] = $tmp_arr;
+					}
+				}
+			}
+			else {
+				$result_select	.= '&lt;li&gt;Sorry, nothing found&lt;/li&gt;';
+				$result_json	.= '{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}';
+				$empty = true;
+			}	
+			
+			foreach ($result_container as $res) {
+				$result_select	.= '&lt;li class=&quot;result&quot;&gt;&lt;ul class=&quot;content&quot;&gt;&lt;li class=&quot;value&quot;&gt;'.$res['uri'].'&lt;/li&gt;&lt;li class=&quot;label&quot;&gt;'.$res['label'].'&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;';
+				$result_json 		.= '{&quot;label&quot;:&quot;'.str_replace('&quot;', &quot;'&quot;, $res['label']).'&quot;,&quot;uri&quot;:&quot;'.$res['uri'].'&quot;,&quot;description&quot;:&quot;'.str_replace('&quot;', &quot;'&quot;, $res['description']).'&quot;},';
+			}
+			
+		}
+		
+		else {
+			$result_select	.= '&lt;li&gt;Sorry, nothing found&lt;/li&gt;';
+			$result_json	.= '{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}';
+			$empty = true;
+		}
+		
+		$result_select .= '&lt;/ul&gt;';
+		if ($empty != true) {
+			$result_json	= substr($result_json, 0, strlen($result_json) - 1);
+		}
+		$result_json	.= ']}';
+		
+		// print $result_select;
+		print $result_json;
+	
+	}
+	
+  }
+  
+}
+else {
+	$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}]}';
+	print $result_select;
+}
+
+function checkForRedirect($entity, $current_depth, $plugin_settings) {
+	if (isset($entity-&gt;redirect) &amp;&amp; ($current_depth &lt; $plugin_settings-&gt;max_redirect_depth)) {
+		// redirect identified =&gt; get data from redirect if maximum depth not exceeded
+		// follow redirect and try to extract data
+		// add search query to parameters
+		$plugin_settings-&gt;browse['parameters']['id'] = stripslashes($entity-&gt;redirect[0]-&gt;value);
+		// print $plugin_settings-&gt;browse['url'].'?id='.$plugin_settings-&gt;browse['parameters']['id'];
+		$req = new HTTP_Request($plugin_settings-&gt;browse['url'].'?id='.urlencode($plugin_settings-&gt;browse['parameters']['id']));
+		$req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+		$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+		
+		$response = $req-&gt;sendRequest();
+	
+		if (PEAR::isError($response)) {
+			return false;
+		} else {
+			//print &quot;no error: &quot; .$req-&gt;getResponseCode(). &quot;;&quot;;
+			$query_result = json_decode($req-&gt;getResponseBody());
+			// var_dump($req);
+			if (is_object($query_result)) {
+				// print &quot;obj&quot;;
+				if (isset($query_result-&gt;representation-&gt;redirect) &amp;&amp; ($current_depth &lt; $plugin_settings-&gt;max_redirect_depth)) {
+					checkForRedirect($query_result, ($current_depth + 1), $plugin_settings);
+				}
+				else {
+					return $query_result;
+				}
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	else {
+		return false;
+	}
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

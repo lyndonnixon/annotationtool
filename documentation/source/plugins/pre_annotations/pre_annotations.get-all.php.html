@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+/**
+ * Get all pre annotations
+ *
+ * Tries to get all pre-annotations from pre-annotation file
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/Pre_Annotations
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$pre_ann_core = new Core();
+ 
+	// include configurable settings file (admins, cmf sources, ...)
+	if (file_exists(__ROOT__. '/core/includes/administration.inc.php')) {
+		include_once(__ROOT__. '/core/includes/administration.inc.php');
+	}
+		
+	$preferred_language = 'en';
+	if (isset($_COOKIE['lang'])) {
+		if (in_array($_COOKIE['lang'], $pre_ann_core-&gt;settings-&gt;available_languages)) {
+			$preferred_language = $_COOKIE['lang'];
+		}
+	}
+	
+	// get video source
+	$video_data = $core-&gt;video;
+	
+	$base_mod = 'http://' .$pre_ann_core-&gt;settings-&gt;base_url;
+	
+	$filename = $video_data['id'];
+	$pattern = '/[\s\W]+/';
+	$filename = preg_replace($pattern, '', $filename).'.pre';
+	
+	$request_url = $base_mod.'plugins/pre_annotations/pre_annotation_data/'.$filename;
+	
+  $req = new HTTP_Request($request_url);
+  $req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+  
+  $response = $req-&gt;sendRequest();
+
+  if (PEAR::isError($response)) {
+    print $response-&gt;getMessage();
+  } else {
+
+		if ($req-&gt;getResponseCode() != 200) {
+			// no error =&gt; return response header for further investigation
+			$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}]}';
+			print $result_select;
+		}
+		else {
+			$query_result = json_decode($req-&gt;getResponseBody());
+			$print_result = '{&quot;results&quot;:[';
+			$counter = 0;
+			foreach ($query_result as $result) {
+				
+				// get file content to show pre-annotations
+				$label = 'http://www.w3.org/2000/01/rdf-schema#label';
+				$print_result .= '{&quot;label&quot;: &quot;';
+				if ($result-&gt;response-&gt;$label != '') {
+					$print_result .= $result-&gt;response-&gt;$label;
+				}
+				else if (isset($result-&gt;response-&gt;name) &amp;&amp; ($result-&gt;response-&gt;name != '')) {
+					$print_result .= $result-&gt;response-&gt;name;
+				}
+				$print_result .= '&quot;, &quot;uri&quot;:&quot;' .$result-&gt;uri. '&quot;, &quot;description&quot;: &quot;';
+				$description = 'http://dbpedia.org/ontology/abstract';
+				if ($result-&gt;response-&gt;$description != '') {
+					$print_result .= $result-&gt;response-&gt;$description;
+				}
+				else if (isset($result-&gt;response-&gt;map) &amp;&amp; ($result-&gt;response-&gt;map != '')) {
+				$print_result .= $result-&gt;response-&gt;map;
+				}
+				$print_result .= '&quot;}';
+				$print_result .= ', ';
+			}
+			$counter++;
+				
+			if (substr($print_result, (strlen($print_result) - 2), 1) == ',') {
+				$print_result = substr($print_result, 0, (strlen($print_result) - 2));
+			}
+			$print_result .= ']}';
+			print $print_result;
+		}
+	}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^annotator? annotator-main.php
+RewriteRule ^login? login.php
+RewriteRule ^yoovis? yoovis.php
+RewriteRule ^open? open-video.php
+RewriteRule ^logout? logout.php
+RewriteRule ^(.*)-download-annotations? core/ajax/download-annotations.php?serializer=$1
+RewriteRule ^save-to-cmf? core/ajax/save-to-cmf.php
+RewriteRule ^select-lang-(.*)? language-switch.php?language=$1
+RewriteRule ^help? help.php
+
+DirectoryIndex login.php

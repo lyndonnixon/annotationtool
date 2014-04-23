@@ -1,0 +1,96 @@
+<?php
+/**
+ * Annotator file functions
+ *
+ * Handles all file funtions of the annotation tool. Gets called via AJAX using HTTP POST from jQuery annotator.
+ *
+ ** write: tries to open specified file and writes data to it.
+ ** read: tries to open specified file and read data from it. Prints content.
+ ** error: no file specified, can't read from file, empty file content
+ *
+ * @author Matthias Bauer <matthias.bauer@sti2.org>
+ * @version v2.3
+ * @package Core/Ajax
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+// start session
+session_start();
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// init classes
+$cmf	= new CMF();
+
+	
+if (isset($_POST['type']) && ($_POST['type'] == 'write')) {
+
+	if (isset($_POST['data']) && ($_POST['data'] != '') && isset($_POST['file']) && ($_POST['file'] != '')) {
+		
+		// delete file (if it already exists), to make sure that it contains only 1 annotations JSON string
+		if (file_exists($cmf->settings->annotation_path.$_POST['file'])) {
+			unlink($cmf->settings->annotation_path.$_POST['file']);
+		}
+			
+		$file = fopen($cmf->settings->annotation_path.$_POST['file'], 'a+');
+			
+		if (fwrite($file, stripslashes(urldecode($_POST['data'])))) {
+			print 'true';
+		}
+		else {
+			print 'Error while writing to ' .$cmf->settings->annotation_path.$_POST['file'];
+		}
+			
+		fclose($file);
+	}
+	else {
+		print 'No POST data recieved!';
+	}
+}
+else if (isset($_POST['type']) && ($_POST['type'] == 'read')) {
+
+	if (isset($_POST['file']) && ($_POST['file'] != '')) {
+		
+			if (file_exists($cmf->settings->annotation_path.$_POST['file'])) {
+				$file_content = '';
+				$file = fopen($cmf->settings->annotation_path.$_POST['file'], 'r');
+		
+				while (!feof($file)) {
+						$file_content .= fgets($file, 4096);
+			}
+		
+			fclose($file);
+		
+			print stripslashes($file_content);
+		}
+		else {
+			// create file
+			$file = fopen($cmf->settings->annotation_path.$_POST['file'], 'a+');
+			if (fwrite($file, '{"video":[], "annotations":[]}')) {
+			}
+			fclose($file);
+			// print 'The requested file ' .$annotation_path.$_POST['file']. ' does not exist!';
+		}
+	}
+	else
+	{
+		print 'Error while reading from ' .$cmf->settings->annotation_path.$_POST['file'];
+	}
+
+}
+else {
+	print 'Nothing found';
+}
+
+
+?>

@@ -1,0 +1,107 @@
+
+WITH <http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise>
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+INSERT {
+<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> .
+<http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.mp4#t=68,77"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.webm#t=68,77"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.w3.org/ns/ma-ont#hasKeyword> <http://dbpedia.org/resource/Piracy> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://purl.org/dc/terms/creator> <https://www.google.com/accounts/o8/id?id=AItOawn-e-bVyKyMqlyFJKi8Thk2OftBQ3jdr6I> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://purl.org/dc/terms/created> "2013-06-18T15:55:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://connectme.at/ontology#preferredLabel> "Act of Piracy"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://connectme.at/annotation/1d08ba5301fb4eb45550f4a2eb7ab5d9> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Piracy> .
+<https://www.google.com/accounts/o8/id?id=AItOawn-e-bVyKyMqlyFJKi8Thk2OftBQ3jdr6I> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/1d08ba5301fb4eb45550f4a2eb7ab5d9>)
+};
+WITH <http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise>
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+INSERT {
+<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> .
+<http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.mp4#xywh=percent:26,54,22,28&t=8,18"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.webm#xywh=percent:26,54,22,28&t=8,18"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Vienna> .
+<http://connectme.at/annotation/11cf4ce5683de34206ddd59bc9fbf375> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/11cf4ce5683de34206ddd59bc9fbf375> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375> .
+<http://connectme.at/annotation/11cf4ce5683de34206ddd59bc9fbf375> <http://purl.org/dc/terms/creator> <https://www.google.com/accounts/o8/id?id=AItOawmAKxH-aazOCL-MXTQG8HCYfejqb8wT9Vg> .
+<http://connectme.at/annotation/11cf4ce5683de34206ddd59bc9fbf375> <http://purl.org/dc/terms/created> "2013-06-18T15:55:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/11cf4ce5683de34206ddd59bc9fbf375> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Vienna> .
+<https://www.google.com/accounts/o8/id?id=AItOawmAKxH-aazOCL-MXTQG8HCYfejqb8wT9Vg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/11cf4ce5683de34206ddd59bc9fbf375>)
+};
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> {
+<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> .
+<http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.mp4#t=18,28"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.webm#t=18,28"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2775216/> .
+<http://connectme.at/annotation/a8fb5e95281754c30397c8c7da465ea0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/a8fb5e95281754c30397c8c7da465ea0> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/a8fb5e95281754c30397c8c7da465ea0> .
+<http://connectme.at/annotation/a8fb5e95281754c30397c8c7da465ea0> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/a8fb5e95281754c30397c8c7da465ea0> <http://purl.org/dc/terms/created> "2013-06-18T15:55:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/a8fb5e95281754c30397c8c7da465ea0> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2775216/> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> {
+<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> .
+<http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.mp4#xywh=percent:16,58,35,24&t=16,26"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.webm#xywh=percent:16,58,35,24&t=16,26"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> <http://connectme.at/ontology#explicitlyShows> <http://dbpedia.org/resource/Pitchfork_Media> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/78d129df16aabd5fd1b25a8c70127c56> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://purl.org/dc/terms/created> "2013-06-18T15:55:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://connectme.at/ontology#preferredLabel> "PFMed"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://connectme.at/annotation/78d129df16aabd5fd1b25a8c70127c56> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Pitchfork_Media> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> {
+<http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> .
+<http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.mp4#xywh=percent:26,43,31,38&t=36,46"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/mediaconnect/resources/Sin_City_Jamaica-Pirate_Paradise.webm#xywh=percent:26,43,31,38&t=36,46"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> <hasContent> <http://www.google.at/> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/openannotation/extensions/Bookmark> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/44809fb8efe26b71f9845fd61f44d8e0> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://purl.org/dc/terms/created> "2013-06-18T15:55:45+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://connectme.at/ontology#preferredLabel> "Search engine GOOGLE"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://connectme.at/annotation/44809fb8efe26b71f9845fd61f44d8e0> <http://www.openannotation.org/ns/hasBody> <http://www.google.at/> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+
+Code: 200; Message: 

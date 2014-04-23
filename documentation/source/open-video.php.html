@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Open video
+ *
+ * Renders the template for laoding videos from the CMF
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core 
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(__FILE__));
+}
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$smarty	= new Smarty();
+$core = new Core();
+
+// include language file
+$smarty-&gt;assign('language', $core-&gt;language);
+
+//$smarty-&gt;force_compile = true;
+$smarty-&gt;debugging = false;
+$smarty-&gt;caching = false;
+$smarty-&gt;cache_lifetime = 120;
+
+// page template
+$template_name = 'open-video.tpl';
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	header('Location: http://' .$base_url);
+}
+
+// menu parameters
+$userid = $_SESSION['cmf']['userid'];
+$smarty-&gt;assign('userid', $userid);
+
+$video_data = array();
+$video_data['id'] = 'http://my-video.com/id1';
+// $video_data['source'] = array(array('url' =&gt; 'http://video-js.zencoder.com/oceans-clip.mp4', 'type' =&gt; 'video/mp4'), array('url' =&gt; 'http://video-js.zencoder.com/oceans-clip.webm', 'type' =&gt; 'video/webm'), array('url' =&gt; 'http://video-js.zencoder.com/oceans-clip.ogv', 'type' =&gt; 'video/ogg'));
+
+$video_data['source'] = array(array('url' =&gt; 'https://s3-eu-west-1.amazonaws.com/yoo.120/connectme/6306_519_20120508125738_standard.mp4', 'type' =&gt; 'video/mp4'));
+
+$smarty-&gt;assign('video_data', $video_data);
+
+if (isset($admin[&quot;lmdb_sources&quot;]) &amp;&amp; (count($admin[&quot;lmdb_sources&quot;]) &gt; 0)) {
+	foreach ($admin[&quot;lmdb_sources&quot;] as $lmdb) {
+		if ($lmdb[&quot;selected&quot;] == 1) {
+			if (substr($lmdb['url'], 4, 1) == ':') {
+				// http
+				if (isset($lmdb['username']) &amp;&amp; isset($lmdb['password']) &amp;&amp; ($lmdb['username'] != '') &amp;&amp; ($lmdb['password'] != '')) {
+					$tmp_url = 'http://'.substr($lmdb['url'], 7, strlen($lmdb['url']));
+				}
+				else {
+					$tmp_url = $lmdb['url'];
+				}
+			}
+			else if (substr($lmdb['url'], 4, 1) == 's') {
+				// https
+				if (isset($lmdb['username']) &amp;&amp; isset($lmdb['password']) &amp;&amp; ($lmdb['username'] != '') &amp;&amp; ($lmdb['password'] != '')) {
+					$tmp_url = 'https://'.substr($lmdb['url'], 8, strlen($lmdb['url']));
+				}
+				else {
+					$tmp_url = $lmdb['url'];
+				}
+			}
+			else {
+				$tmp_url = $lmdb['url'];
+			}
+			$lmdb['url'] = $tmp_url;
+			$lmdb_sources = $lmdb;
+		}
+	}
+}
+else {
+	$lmdb_sources = $core-&gt;settings-&gt;lmdb_default;
+}
+$smarty-&gt;assign('lmdb_sources', $lmdb_sources);
+$smarty-&gt;assign('base_relative', $core-&gt;settings-&gt;base_relative);
+
+if (isset($_GET['video_id']) &amp;&amp; ($_GET['video_id'] != '')) {
+	$smarty-&gt;assign('video_id', $_GET['video_id']);
+}
+
+$smarty-&gt;assign('current_version', $core-&gt;settings-&gt;current_version);
+$smarty-&gt;assign('base_url', $core-&gt;settings-&gt;base_relative);
+
+// render template
+$smarty-&gt;display($template_name);
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

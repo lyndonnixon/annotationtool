@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Save to CMF
+ *
+ * Implements saving to CMF by using the CMF class.
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Ajax
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// start session
+session_start();
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// init classes
+$cmf	= new CMF();
+$core = new Core();
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	$message = '{&quot;RESPONSES&quot;: [';
+	$message .= '{&quot;CODE&quot;: &quot;403&quot;, &quot;MESSAGE&quot;: &quot;' .$cmf-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_ERROR_5. '&quot;}';
+	$message .= ']}';
+	print $message;
+	die();
+}
+
+if (isset($_GET['type']) &amp;&amp; ($_GET['type'] != '')) {
+	
+	$allowed = false;
+	
+	$video_data= $core-&gt;video;
+	$lmdb_sources = $core-&gt;cmf;
+
+	
+		$updated_annotations = $_COOKIE['annotationlist'];
+		$old_annotations = str_replace('annotations_', 'backup_', $_COOKIE['annotationlist']);
+		$video_locators = $video_data;
+		$service_url = 'sparql/update';
+		
+		if ($_GET['type'] == 'update') {
+			// update annotations
+			$insert_query = $cmf-&gt;updateAnnotations($lmdb_sources['protected_url'], $service_url, $video_data, $updated_annotations, $old_annotations);
+			
+			// var_dump($insert_query);
+			
+			// get response details
+			$success = false;
+			$message = '';
+			if ($insert_query-&gt;_response-&gt;_code == 200) {
+					$success = true;
+			}
+			
+			if ($success == false) {
+				// error ocurred
+				header('Content-type: application/json');
+				$message = '{&quot;RESPONSES&quot;: [';
+				$cnt = 0;
+				$message .= '{&quot;CODE&quot;: &quot;' .$insert_query-&gt;_response-&gt;_code. '&quot;, &quot;MESSAGE&quot;: &quot;' .$insert_query-&gt;_response-&gt;_reason. '&quot;}';
+				$message .= ']}';
+				print $message;
+			}
+			else {
+				
+				header('Content-type: application/json');
+			
+				// print '{&quot;CODE&quot;: &quot;304&quot;, &quot;MESSAGE&quot;: &quot;' .$cmf-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_NO_MODIFICATIONS. '&quot;}';
+					
+				// set annotations_loaded cookie (=&gt; now annotations exist =&gt; further inserts should update them)
+				setcookie('annotationsloaded', 'true', (time() + (60*60*24)), '/');
+				$_SESSION['annotationsloaded'] = 'true';
+					
+				// changes submitted
+				print '{&quot;CODE&quot;: &quot;200&quot;, &quot;MESSAGE&quot;: &quot;' .$cmf-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_SUCCESS. '&quot;}';
+				
+			}
+		}
+		else if ($_GET['type'] == 'new') {
+			// create new annotations in the cmf
+			// update annotations
+			$insert_query = $cmf-&gt;createAnnotations($lmdb_sources['protected_url'], $service_url, $video_data, $updated_annotations);
+			// get response details
+			$success = false;
+			$message = '';
+			if ($insert_query-&gt;_response-&gt;_code == 200) {
+				$success = true;
+			}
+			
+			if ($success == false) {
+				// error ocurred
+				header('Content-type: application/json');
+				$message = '{&quot;RESPONSES&quot;: [';
+				$cnt = 0;
+				$message .= '{&quot;CODE&quot;: &quot;' .$insert_query-&gt;_response-&gt;_code. '&quot;, &quot;MESSAGE&quot;: &quot;' .$insert_query-&gt;_response-&gt;_reason. '&quot;}';
+				$message .= ']}';
+				print $message;
+			}
+			else {
+				
+					header('Content-type: application/json');
+					
+				// no changes
+				// print '{&quot;CODE&quot;: &quot;304&quot;, &quot;MESSAGE&quot;: &quot;' .$cmf-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_NO_MODIFICATIONS. '&quot;}';
+					
+				// set annotations_loaded cookie (=&gt; now annotations exist =&gt; further inserts should update them)
+				setcookie('annotationsloaded', 'true', (time() + (60*60*24)), '/');
+						
+				// changes submitted
+				print '{&quot;CODE&quot;: &quot;200&quot;, &quot;MESSAGE&quot;: &quot;' .$cmf-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_SUCCESS. '&quot;}';
+					
+			}
+		}
+		else {
+			print &quot;not allowed&quot;;
+		}
+
+}
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

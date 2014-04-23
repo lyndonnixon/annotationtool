@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Login
+ *
+ * Login page for logging in via open ID
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core 
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(__FILE__));
+}
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$smarty	= new Smarty();
+$core = new Core();
+
+// include language file
+$smarty-&gt;assign('language', $core-&gt;language);
+ 	
+if (isset($_SESSION['cmf']['userid'])) {
+	// user is already logged in =&gt; redirect to annotator main page
+	header('Location: http://' .$core-&gt;settings-&gt;base_url.'annotator');
+}
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+&lt;base href=&quot;http://&lt;?php print $core-&gt;settings-&gt;base_url; ?&gt;&quot;&gt;
+
+&lt;!-- Styles --&gt;
+&lt;link href=&quot;assets/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/css/bootstrap-responsive.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/js/jquery-ui/css/cupertino/jquery-ui-1.9.2.custom.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/js/video-js/video-js.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/js/jquery.imgareaselect/css/imgareaselect-default.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/css/annotator.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/js/timeline/timeline.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;assets/js/colorbox/colorbox.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements --&gt;
+&lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+
+&lt;!-- Fav and touch icons --&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;assets/ico/favicon.ico&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;assets/ico/apple-touch-icon-144-precomposed.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;assets/ico/apple-touch-icon-114-precomposed.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;assets/ico/apple-touch-icon-72-precomposed.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;assets/ico/apple-touch-icon-57-precomposed.png&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+  &lt;div class=&quot;navbar-inner&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt; &lt;a class=&quot;brand&quot; href=&quot;&quot;&gt;&lt;img src=&quot;assets/img/connectme_logo_web.png&quot; alt=&quot;ConnectME&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;container-fluid&quot; id=&quot;main-content&quot;&gt;
+  &lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span12&quot;&gt;
+      &lt;?php if (isset($error) || isset($msg)): ?&gt;
+      &lt;div class=&quot;message&quot;&gt; &lt;?php print $error; print $msg; ?&gt; &lt;/div&gt;
+      &lt;?php endif; ?&gt;
+      &lt;h1&gt;You have to sign in before you can use the ConnectME Hypervideo Annotation Suite!&lt;/h1&gt;
+      &lt;form id=&quot;signin-form&quot; method=&quot;get&quot; action=&quot;libraries/openid/try_auth.php&quot;&gt;
+        &lt;div class=&quot;login-container&quot;&gt;
+          &lt;div class=&quot;line&quot;&gt;If you already have an account on one of these sites, you can click on the logo to log in with it:&lt;/div&gt;
+          &lt;div class=&quot;openid-providers line&quot;&gt; &lt;span class=&quot;provider&quot;&gt;&lt;img src=&quot;assets/img/google-logo.png&quot; id=&quot;google-sign-in&quot; alt=&quot;Sign in with Google&quot; /&gt;&lt;/span&gt; &lt;span class=&quot;provider&quot;&gt;&lt;img src=&quot;assets/img/yahoo-logo.png&quot; id=&quot;yahoo-sign-in&quot; alt=&quot;Sign in with Yahoo!&quot; /&gt;&lt;/span&gt; &lt;/div&gt;
+          &lt;div class=&quot;line&quot;&gt;You can also manually enter your OpenID instead:&lt;/div&gt;
+          &lt;div class=&quot;openid line&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;openid_identifier&quot; id=&quot;openid_identifier&quot; value=&quot;&quot; /&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;
+            	Login with
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;verify&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;!--/span--&gt; 
+  &lt;/div&gt;
+  &lt;!--/row--&gt;
+  
+  &lt;footer id=&quot;footer&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;p&gt;&amp;copy; &lt;a href=&quot;http://www.connectme.at/&quot; target=&quot;_blank&quot;&gt;ConnectME&lt;/a&gt; 2012&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+&lt;!--/.fluid-container--&gt; 
+
+&lt;!-- Javascripts
+    ================================================== --&gt; 
+&lt;!-- Placed at the end of the document so the pages load faster --&gt; 
+&lt;script src=&quot;assets/js/jquery-1.7.1.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/bootstrap.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/bootstrap.hover-dropdown.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/video-js/video.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/jquery.imgareaselect/scripts/jquery.imgareaselect.pack.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/jquery.cookie.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/colorbox/jquery.colorbox-min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/timeline/timeline-modified.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/underscore.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/cmf.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;assets/js/jquery.annotator.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+		$(document).ready(function() {
+			if ((($('body').height() - $('#header').height() - $('#footer').height())) &gt; 440) {
+				$('#main-content .content').css('height', ($('body').height() - $('#header').height() - $('#footer').height()) + 'px');
+			}
+			else {
+				$('#main-content .content').css('height', '440px');
+			}
+			$(window).resize(function() {
+				if ((($('body').height() - $('#header').height() - $('#footer').height()))  &gt; 440) {
+					$('#main-content .content').css('height', ($('body').height() - $('#header').height() - $('#footer').height()) + 'px');
+				}
+				else {
+					$('#main-content .content').css('height', '435px');
+				}
+			});
+			$('#google-sign-in').click(function() {
+				$('#openid_identifier').val('https://www.google.com/accounts/o8/id');
+				$('#signin-form').submit();
+			});
+			$('#yahoo-sign-in').click(function() {
+				$('#openid_identifier').val('https://me.yahoo.com');
+				$('#signin-form').submit();
+			});
+		});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

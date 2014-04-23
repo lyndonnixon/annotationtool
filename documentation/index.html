@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta charset="utf-8"/>
+<title>API Documentation</title>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/prism.css" rel="stylesheet" media="all"/>
+<link href="css/template.css" rel="stylesheet" media="all"/>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script src="js/prism.min.js"></script>
+<!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <i class="icon-ellipsis-vertical"></i> </a> <a class="brand" href="index.html">ConnectME Annotation Tool Documentation</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"> <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Documentation<b class="caret"></b> </a>
+            <ul class="dropdown-menu">
+            	<li><a href="index.html#annotation-tool-classes"> <i class="icon-list-alt"></i>&#160;Classes</a></li>
+              <li><a href="index.html#annotation-tool-files"> <i class="icon-file"></i>&#160;PHP files</a></li>
+              <li><a href="index.html#annotation-tool-jquery"> <i class="icon-file"></i>&#160;jQuery files</a></li>
+              <li><a href="index.html#annotation-tool-plugins"> <i class="icon-file"></i>&#160;Plugins</a></li>
+            </ul>
+          </li>
+          <li class="dropdown" id="charts-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Charts <b class="caret"></b> </a>
+            <ul class="dropdown-menu">
+              <li> <a href="graphs/class.html"> <i class="icon-list-alt"></i>&#160;Class hierarchy diagram </a> </li>
+            </ul>
+          </li>
+          <li class="dropdown" id="reports-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Reports <b class="caret"></b> </a>
+            <ul class="dropdown-menu">
+              <li> <a href="reports/errors.html"> <i class="icon-list-alt"></i>&#160;Errors </a> </li>
+              <li> <a href="reports/markers.html"> <i class="icon-list-alt"></i>&#160;Markers </a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--<div class="go_to_top">-->
+  <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+  <!--</div>-->
+</div>
+<div id="___" class="container-fluid">
+  <section class="row-fluid">
+    <div class="span2 sidebar">
+      <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+          <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024795"></a> <p style="padding-top: 3px; color: #6495ED;">Classes</p> </div>
+          <div id="namespace-913024795" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              <ul>
+                <li class="class"><a href="classes/Settings.html">Settings</a></li>
+                <li class="class"><a href="classes/Core.html">Core</a></li>
+                <li class="class"><a href="classes/Administrator.html">Administrator</a></li>
+                <li class="class"><a href="classes/CMF.html">CMF</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+          <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024796"></a> <p style="padding-top: 3px; color: #6495ED;">Files</p> </div>
+          <div id="namespace-913024796" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              <ul>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024797"></a> <p style="padding-top: 3px; color: #6495ED;">Core</p> </div>
+                      <div id="namespace-913024797" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/annotator-main.php.html"><i class="icon-file"></i> Annotatior main screen</a></li>
+                            <li class="file"><a href="files/open-video.php.html"><i class="icon-file"></i> Open video</a></li>
+                            <li class="file"><a href="files/login.php.html"><i class="icon-file"></i> Login</a></li>
+                            <li class="file"><a href="files/logout.php.html"><i class="icon-file"></i> Logout</a></li>
+                            <li class="file"><a href="files/help.php.html"><i class="icon-file"></i> Help</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024798"></a> <p style="padding-top: 3px; color: #6495ED;">Administrator</p> </div>
+                      <div id="namespace-913024798" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/administrator.administrator-main.php.html"><i class="icon-file"></i> Administrator interface</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024799"></a> <p style="padding-top: 3px; color: #6495ED;">Ajax</p> </div>
+                      <div id="namespace-913024799" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/core.ajax.annotation-file-functions.php.html"><i class="icon-file"></i> File functions</a></li>
+                            <li class="file"><a href="files/core.ajax.download-annotations.php.html"><i class="icon-file"></i> Download annotations</a></li>
+                            <li class="file"><a href="files/core.ajax.get-settings.php.html"><i class="icon-file"></i> Get settings</a></li>
+                            <li class="file"><a href="files/core.ajax.language-switch.php.html"><i class="icon-file"></i> Language switch</a></li>
+                            <li class="file"><a href="files/core.ajax.save-to-cmf.php.html"><i class="icon-file"></i> Save to CMF</a></li>
+                            <li class="file"><a href="files/core.ajax.to-log.php.html"><i class="icon-file"></i> Write to log</a></li>
+                            <li class="file"><a href="files/core.ajax.url-check.php.html"><i class="icon-file"></i> Get URL response</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024800"></a> <p style="padding-top: 3px; color: #6495ED;">Includes</p> </div>
+                      <div id="namespace-913024800" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/core.includes.administration.inc.php.html"><i class="icon-file"></i> Administration settings</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024801"></a> <p style="padding-top: 3px; color: #6495ED;">Language files</p> </div>
+                      <div id="namespace-913024801" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/lang.lang.en.json.html"><i class="icon-file"></i> English</a></li>
+                            <li class="file"><a href="files/lang.lang.de.json.html"><i class="icon-file"></i> German</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+								<li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024802"></a> <p style="padding-top: 3px; color: #6495ED;">jQuery</p> </div>
+                      <div id="namespace-913024802" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/jquery.annotator.js.html"><i class="icon-file"></i> Annotator</a></li>
+                            <li class="file"><a href="files/jquery.annotator.load.js.html"><i class="icon-file"></i> Load annotations</a></li>
+                            <li class="file"><a href="files/jquery.administrator.js.html"><i class="icon-file"></i> Administrator</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+          <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024803"></a> <p style="padding-top: 3px; color: #6495ED;">Plugins</p> </div>
+          <div id="namespace-913024803" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              <ul>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024804"></a> <p style="padding-top: 3px; color: #6495ED;">DBPedia</p> </div>
+                      <div id="namespace-913024804" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/plugins.dbpedia.index.php.html"><i class="icon-file"></i> DBPedia search</a></li>
+                            <li class="file"><a href="files/plugins.dbpedia.dbpedia.data-lookup.php.html"><i class="icon-file"></i> DBPedia lookup</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024805"></a> <p style="padding-top: 3px; color: #6495ED;">Geonames</p> </div>
+                      <div id="namespace-913024805" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/plugins.geonames.index.php.html"><i class="icon-file"></i> Geonames search</a></li>
+                            <li class="file"><a href="files/plugins.geonames.geonames.data-lookup.php.html"><i class="icon-file"></i> Geonames lookup</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024806"></a> <p style="padding-top: 3px; color: #6495ED;">Google Maps search</p> </div>
+                      <div id="namespace-913024806" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/plugins.maps_search.index.php.html"><i class="icon-file"></i> Google maps search</a></li>
+                            <li class="file"><a href="files/plugins.maps_search.show_map.php.html"><i class="icon-file"></i> Google map preview</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                	<div class="accordion" style="margin-bottom: 0">
+                    <div class="accordion-group">
+                      <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-913024807"></a> <p style="padding-top: 3px; color: #6495ED;">Annotation suggestions</p> </div>
+                      <div id="namespace-913024807" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <ul>
+                            <li class="file"><a href="files/plugins.pre_annotations.index.php.html"><i class="icon-file"></i> Returns all suggestions</a></li>
+                            <li class="file"><a href="files/plugins.pre_annotations.pre_annotations.data-lookup.php.html"><i class="icon-file"></i> Searches for a specified suggestion</a></li>
+                            <li class="file"><a href="files/plugins.pre_annotations.pre_annotations.get-all.php.html"><i class="icon-file"></i> Searches for all available suggestions in the CMF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="row-fluid">
+    <div class="span10 offset2">
+      <div class="row-fluid">
+        <div class="span8 content namespace">
+          <nav> </nav>
+          <h1>ConnectME Annotation Tool</h1>
+          <p>The ConnectME annotation tool is based on PHP classes, PHP script files, JSON language files and jQuery/JavaScript files. This documentation describes how they are used and how they interact with each other.</p>
+          <p>Please remember that you need a list of external libraries and plugins and a working instance of the ConnectME Framework to use this sources. <a href="installation.html">Follow this instructions to set up your infrastrucure correctly.</a></p>
+          <h2 id="annotation-tool-classes">Classes</h2>
+          <p>The main functions of the annotations tools are implemented in the follwing classes. Browse every class to discover its methods.</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="classes/Settings.html">Settings</a></td>
+              <td><em>Annotation tool settings</em></td>
+            </tr>
+            <tr>
+              <td><a href="classes/Core.html">Core</a></td>
+              <td><em>Core class</em></td>
+            </tr>
+            <tr>
+              <td><a href="classes/Administrator.html">Administrator</a></td>
+              <td><em>Administrator class</em></td>
+            </tr>
+            <tr>
+              <td><a href="classes/CMF.html">CMF</a></td>
+              <td><em>CMF class</em></td>
+            </tr>
+          </table>
+          <h2 id="annotation-tool-files">Files</h2>
+          <h3>Core</h3>
+					<p>The core files provide the main functions of the annotation tool. Those are logging in using an OpenID URL, loading a video from the CMF, annotating a video, logging out and getting help by screencasts.</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/annotator-main.php.html">Annotatior main screen</a></td>
+              <td><em>Main screen of the annotation tool</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/login.php.html">Login</a></td>
+              <td><em>Login via OpenID</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/logout.php.html">Logout</a></td>
+              <td><em>Logout</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/help.php.html">Help</a></td>
+              <td><em>Annotator help</em></td>
+            </tr>
+          </table>
+          <h3>Administration</h3>
+          <p>The administration file allows selecting CMF instances, granting OpenID users administration privileges and viewing log files. The annotation tool logs performed operations (logging in, logging out, loading videos) and every interaction with the selected CMF instance (adding annotations, updating annotations and deleting annotations).</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/administrator.administrator-main.php.html">Administration interface</a></td>
+              <td><em>Administrator interface</em></td>
+            </tr>
+          </table>
+          <h3>Ajax</h3>
+					<p>This files are used for accessing class methods during runtime from JavaScript.</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/core.ajax.annotation-file-functions.php.html">File functions</a></td>
+              <td><em>Annotation file read/write connector</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.download-annotations.php.html">Download annotations</a></td>
+              <td><em>Download annotations serialized as N3, Turtle or RDF/XML</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.get-settings.php.html">Get settings</a></td>
+              <td><em>Get settings and return JSON</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.language-switch.php.html">Language switch</a></td>
+              <td><em>Switch active language</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.save-to-cmf.php.html">Save to CMF</a></td>
+              <td><em>Create update and delete annotations in the CMF</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.to-log.php.html">Write to log</a></td>
+              <td><em>Write information to log file</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/core.ajax.url-check.php.html">Get URL response</a></td>
+              <td><em>Get response header from URL</em></td>
+            </tr>
+          </table>
+          <h3>Language</h3>
+          <p>All required string of the annotation tool (without the help file) are located in language file. This allows easily adding new languages. Every plugin has its own language file.</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/lang.lang.en.json.html">English</a></td>
+              <td><em>English language file</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/lang.lang.de.json.html">German</a></td>
+              <td><em>German language file</em></td>
+            </tr>
+          </table>
+          <h3 id="annotation-tool-jquery">jQuery</h3>
+          <p>The JavaScript/jQuery methods which are required for the annotation tool have been implemented as jQuery plugins. One for loading annotations and creating the annotation file, one for handling all annotation functions during runtime and one for the administration section.</p>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/jquery.annotator.js.html">Annotator</a></td>
+              <td><em>jQuery plugin with main annotation tool funtions</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/jquery.annotator.load.js.html">Load annotations</a></td>
+              <td><em>jQuery plugin for loading annotations from CMF and createing annotation files</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/jquery.administrator.js.html">Administrator</a></td>
+              <td><em>Administration funcions</em></td>
+            </tr>
+          </table>
+          <h2 id="annotation-tool-plugins">Plugins</h2>
+          <p>The annotation tool allows adding search plugins which are used for adding linked data search sources (like DBPedia). It is also possible to add non linked-data search sources (which has been done when implementing the Goole Maps search plugin).</p>
+          <p>Every plugin needs to get added to the settings file and needs to follow a defined structure. Follow this instructions to create your own search plugin:</p>
+          <ul>
+          	<li><p>Create a directory with the name of your plugin in the plugins directory (e.g. /plugins/my-search-plugin/)</p></li>
+            <li><p>The directory name has to be the name of your plugin and needs to get added to the settings file. Extend the property $resourceplugins with the settings of your plugin.</p>
+            	<pre>
+public $resourceplugins =
+  array(
+    array(
+      'name' => 'my-search-plugin',
+      'url' => 'my-plugin-base.url',
+      'loader' => 'plugins/my-search-plugin/my-search-plugin.data-lookup.php',
+      'parameters' => array(
+        'http://my-plugin-base.url/ontology#label',
+        'http://my-plugin-base.url/ontology#abstract'
+      )
+    )
+  );
+            	</pre>
+              <p>Your plugin must be able to handle a search query and also be able to search for results for a specified result identifier (e.g. http://dbpedia.org/resource/Jim_Parsons)</p>
+            </li>
+            <li>
+            	<p>Place <strong>index.php</strong> in your plugin directory and implement the search function. It must be able to handle a request like: POST /plugins/my-search-plugin/ "query=my query"</p>
+            	<p>Your search file has to produce a JSON string of the follwing structure</p>
+              <pre>
+{
+  "results":[
+    {
+      "label": "My first result",
+      "uri": "http://my-plugin-base.url/resource/my-first-result",
+      "description": "This is the description of my first search result."
+    },
+    ...
+  ]
+}</pre>
+            </li>
+            <li>
+            	<p>Place the file <strong>my-search-plugin.data-lookup.php</strong> in your plugin directory. This file has to be able to handle requests like: POST /plugins/my-search-plugin/my-search-plugin.data-lookup.php "uri=http://my-plugin-base.url/resource/my-first-result" and produce a JSON response which follows this structure:</p>
+              <pre>
+{
+  "response": {
+    "http://my-plugin-base.url/ontology#label": "My first result",
+    "http://my-plugin-base.url/ontology#abstract": "This is the description of my first search result."
+  }
+}</pre>
+						  <p>It is required that the property names of the response are exactly the same, which have been specified in the settings in $resourceplugins! Otherwise loading labels and descriptions won't be possible!</p>
+            </li>
+            <li>
+            	<p>Finally you have to create a (several) language file(s) for your plugin. The language file has to get placed in the lang directory (plugins/my-search-plugin/lang/) and its name consists of lang.[<a href="http://en.wikipedia.org/wiki/ISO_639-1" target="_blank">ISO 639-1</a> language code].json (e.g. lang.en.json).</p>
+              <pre>
+{
+  "strings": {
+	  "NAME": "Tell the user what your plugin is searching for"
+  }
+}</pre>
+            </li>
+            <li><p>If you followed the instructions properly, your search plugin should aready be available in the annotation tool.</p></li>
+          </ul>        
+          <h3>DBPedia</h3>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/plugins.dbpedia.index.php.html">DBPedia search</a></td>
+              <td><em>Search at DBPedia for a specified query</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/plugins.dbpedia.dbpedia.data-lookup.php.html">DBPedia lookup</a></td>
+              <td><em>Get details for a specified DBPedia concept URI</td>
+            </tr>
+          </table>
+          <h3>Geonames</h3>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/plugins.geonames.index.php.html">Geonames search</a></td>
+              <td><em>Search at Geonames for a given query</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/plugins.geonames.geonames.data-lookup.php.html">Geonames lookup</a></td>
+              <td><em>Get details of a specified Geonames concept URI</em></td>
+            </tr>
+          </table>
+          <h3>Google Maps search</h3>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/plugins.maps_search.index.php.html">Google maps search</a></td>
+              <td><em>Search on Google Maps via Maps Search API</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/plugins.maps_search.show_map.php.html">Google map preview</a></td>
+              <td><em>Create a preview map for given longitude and latitude</em></td>
+            </tr>
+          </table>
+          <h3>Suggestions</h3>
+          <table class="table table-hover">
+            <tr>
+              <td><a href="files/plugins.pre_annotations.index.php.html">Returns all suggestions</a></td>
+              <td><em>Parses an existing suggestions file and returns its content</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/plugins.pre_annotations.pre_annotations.data-lookup.php.html">Searches for a specified suggestion</a></td>
+              <td><em>Search for a specified suggestion in the suggestions file</em></td>
+            </tr>
+            <tr>
+              <td><a href="files/plugins.pre_annotations.pre_annotations.get-all.php.html">Searches for all available suggestions in the CMF</a></td>
+              <td><em>Searches for suggestions in the CMF and generates a suggestions file of it</em></td>
+            </tr>
+          </table>
+        </div>
+        <aside class="span4 detailsbar">
+          <h2>Tags</h2>
+          <table class="table table-condensed">
+            <tr>
+              <th> author </th>
+              <td><p>Matthias Bauer <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#109;&#x61;&#x74;&#116;&#104;i&#x61;&#115;&#46;b&#x61;&#x75;&#101;&#114;&#x40;&#x73;&#116;&#105;2&#x2e;&#x6f;&#114;&#103;">&#109;&#x61;&#x74;&#116;&#104;i&#x61;&#115;&#46;b&#x61;&#x75;&#101;&#114;&#x40;&#x73;&#116;&#105;2&#x2e;&#x6f;&#114;&#103;</a></p></td>
+            </tr>
+            <tr>
+              <th> version </th>
+              <td><p>v2.4</p></td>
+            </tr>
+            <tr>
+              <th> copyright </th>
+              <td><p>2013 STI International, Seekda GmbH and Dr. Lyndon Nixon</p></td>
+            </tr>
+            <tr>
+              <th> contact </th>
+              <td><p><a href="mailto:info@connectme.at">info@connectme.at</a></p></td>
+            </tr>
+            <tr>
+              <th> license </th>
+              <td><p><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">http://creativecommons.org/licenses/by-nc-nd/3.0/</a> Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</p></td>
+            </tr>
+          </table>
+        </aside>
+      </div>
+      <div class="row-fluid">
+        <section class="span8 content namespace">
+          <h2>Constants</h2>
+        </section>
+        <aside class="span4 detailsbar"></aside>
+      </div>
+      <div class="row-fluid">
+        <div class="span8 content class"> <a id="constant___ROOT__" name="constant___ROOT__" class="anchor"></a>
+          <article id="constant___ROOT__" class="constant">
+            <h3 class="">__ROOT__</h3>
+            <pre class="signature">__ROOT__</pre>
+            <p><em></em></p>
+          </article>
+        </div>
+        <aside class="span4 detailsbar">
+          <h1><i class="icon-arrow-down"></i></h1>
+          <dl>
+            <dt>File</dt>
+            <dd><a href="">
+              <div class="path-wrapper"></div>
+              </a></dd>
+          </dl>
+          <h2>Tags</h2>
+          <table class="table table-condensed">
+            <tr>
+              <th> subpackage </th>
+              <td></td>
+            </tr>
+          </table>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <footer class="row-fluid">
+    <section class="span10 offset2">
+      <section class="row-fluid">
+        <section class="span10 offset1">
+          <section class="row-fluid footer-sections">
+            <section class="span4">
+              <h1><i class="icon-code"></i></h1>
+              <div>
+                <ul>
+                </ul>
+              </div>
+            </section>
+            <section class="span4">
+              <h1><i class="icon-bar-chart"></i></h1>
+              <div>
+                <ul>
+                  <li><a href="">Class Hierarchy Diagram</a></li>
+                </ul>
+              </div>
+            </section>
+            <section class="span4">
+              <h1><i class="icon-pushpin"></i></h1>
+              <div>
+                <ul>
+                  <li><a href="">Errors</a></li>
+                  <li><a href="">Markers</a></li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </section>
+      </section>
+      <section class="row-fluid">
+        <section class="span10 offset1">
+          <hr />
+          Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+          on August 29th, 2013 at 07:32. </section>
+      </section>
+    </section>
+  </footer>
+</div>
+</body>
+</html>

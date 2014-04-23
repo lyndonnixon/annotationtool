@@ -1,0 +1,28 @@
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/video_bbt> {
+<http://devserver.sti2.org/connectme/tmp_video/video_bbt> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/d12c518b16d61ba5aa371ca54a0fcd07> .
+<http://connectme.at/fragment/d12c518b16d61ba5aa371ca54a0fcd07> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/d12c518b16d61ba5aa371ca54a0fcd07> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/video_bbt.mp4#t=6,16"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/d12c518b16d61ba5aa371ca54a0fcd07> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Johnny_Galecki> .
+<http://connectme.at/annotation/d12c518b16d61ba5aa371ca54a0fcd07> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/d12c518b16d61ba5aa371ca54a0fcd07> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/d12c518b16d61ba5aa371ca54a0fcd07> .
+<http://connectme.at/annotation/d12c518b16d61ba5aa371ca54a0fcd07> <http://purl.org/dc/terms/creator> <https://www.google.com/accounts/o8/id?id=AItOawlgEmhrIotKE_jDGMIvyn6p_4jtVlVvU-I> .
+<http://connectme.at/annotation/d12c518b16d61ba5aa371ca54a0fcd07> <http://purl.org/dc/terms/created> "2013-05-28T12:22:48+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/d12c518b16d61ba5aa371ca54a0fcd07> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Johnny_Galecki> .
+<https://www.google.com/accounts/o8/id?id=AItOawlgEmhrIotKE_jDGMIvyn6p_4jtVlVvU-I> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/video_bbt>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/f55cdd9cd93ff3a516ff8483288835b2>)
+}

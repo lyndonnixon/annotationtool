@@ -1,0 +1,256 @@
+<?php
+/** Required classes and libraries */
+/** Smarty templating engine */
+require_once(__ROOT__. '/libraries/smarty/Smarty.class.php');
+/** PEAR HTTP Request */
+require_once(__ROOT__. '/libraries/HTTP_Request/Request.php');
+/** CMF class handles all required cmf inteactions */
+require_once(__ROOT__. '/core/class/cmf.class.php');
+
+/**
+ * Core
+ *
+ * This class provides the core functions of the ConnectME hypervideo annotation tool. (Main Class!)
+ *
+ * Those are:
+ *
+ ** Parse and load the settings file
+ ** Parse and load the language file
+ ** Parse the opened video and generate a video object out of it, which contains the video ID and locators
+ ** Parse the administration settings and generate an object of the selected CMF details (URL, access data, protected URL)
+ ** Parse the saving currenlty logged in user OpenID
+ *
+ * @author Matthias Bauer <matthias.bauer@sti2.org>
+ * @version v2.3
+ * @package Core
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+class Core {
+  
+  /**
+   * Settings of the Hyper Annotation Video Suite
+   *
+   * @var object Contains all annotation tool settings
+   */
+  public $settings = NULL;
+  
+  /**
+   * Contains all language strings of the selected language to enable multi language support
+   *
+   * @var object Contains language strings
+   */ 
+  public $language = NULL;
+  
+  /**
+   * Contains the ID and all locators of the currently selected video (if a video has been loaded)
+   *
+   * @var array video ID and locators
+   */ 
+   
+  public $video = NULL;
+  
+  /**
+   * Contains information of the currently selected CMF instance (URL, username, password, protected URL)
+   *
+   * @var array CMF information
+   */
+  public $cmf = NULL;
+  
+  /**
+   * Contains the OpenID of the currently logged in user
+   *
+   * @var string OpenID user URI
+   */
+  public $userid = NULL;
+
+  /**
+   * Constructor
+   *
+   * Includes all settings from the settings file, sets the tool base paths and includes the language from the selected language file.
+   *
+   * Fills @var settings, @var cmf, @var video and @var language
+   *
+   * Settings file is located at /core/includes/settings.inc.php
+   *
+   * Language files are located in /core/lang/*
+   *
+   * @return bool true
+	 * @throws PHP Exception
+   */
+  public function __construct() {
+		try {
+			require_once(__ROOT__. '/core/includes/settings.inc.php');
+			$settings = new Settings();
+			$server_root = $_SERVER['DOCUMENT_ROOT'];
+			$dir = dirname(dirname(dirname(__FILE__)));
+			$base_relative = substr($dir, strlen($server_root), strlen($dir));
+			if (substr($base_relative, 0, 1) != '/') {
+				$base_relative = '/' .$base_relative;
+			}
+			if (substr($base_relative, (strlen($base_relative) - 1), 1) != '/') {
+				$base_relative = $base_relative. '/';
+			}
+			$settings->base_relative = $base_relative;
+			$settings->base_path = $server_root.$settings->base_relative;
+			$settings->base_url = $_SERVER['HTTP_HOST'].$settings->base_relative;
+			$settings->annotation_path = $settings->base_path.$settings->annotation_path;
+			$settings->log_file = $settings->base_path.$settings->log_file;
+			$settings->log_list = $settings->base_path.$settings->log_list;
+			$settings->download_path = $settings->base_path.$settings->download_path;
+			
+			// store updated settings
+			$this->settings = $settings;
+			
+			// add selected language
+			// look for language cookie
+			if (isset($_COOKIE['lang']) && ($_COOKIE['lang'] != '')) {
+				// language has been selected
+				// try to load language file
+				if (file_exists($this->settings->base_path.'core/lang/lang.' .$_COOKIE['lang']. '.json')) {
+					$file_content = '';
+					$file = fopen($this->settings->base_path.'core/lang/lang.' .$_COOKIE['lang']. '.json', 'r');
+					while (!feof($file)) {
+						$file_content .= fgets($file, 4096);
+					}
+					fclose($file);
+					$language = json_decode(stripslashes($file_content));
+					$selected_lang = $_COOKIE['lang'];
+				}
+				// if file is not available load default language file
+				else {
+					if (file_exists($this->settings->base_path.'core/lang/lang.' .$settings->default_language. '.json')) {
+						$file_content = '';
+						$file = fopen($this->settings->base_path.'core/lang/lang.' .$settings->default_language. '.json', 'r');
+						while (!feof($file)) {
+							$file_content .= fgets($file, 4096);
+						}
+						fclose($file);
+						$language = json_decode(stripslashes($file_content));
+						$selected_lang = $settings->default_language;
+					}
+				}
+			}
+			else {
+				// no language selected => load default language
+				if (file_exists($this->settings->base_path.'core/lang/lang.' .$settings->default_language. '.json')) {
+					$file_content = '';
+					$file = fopen($this->settings->base_path.'core/lang/lang.' .$settings->default_language. '.json', 'r');	
+					while (!feof($file)) {
+						$file_content .= fgets($file, 4096);
+					}	
+					fclose($file);
+					$language = json_decode(stripslashes($file_content));
+					$selected_lang = $settings->default_language;	
+				}
+			}
+			$language->main_menu->LANGUAGE->flag = $selected_lang;
+			$this->language = $language;
+			// add video information (if video has been loaded)
+			$this->video = $this->getVideoSources();
+			// add CMF information
+			$this->cmf = $this->getCMF();
+			// add user information
+			if (isset($_SESSION['cmf']['userid'])) {
+				$this->userid = $_SESSION['cmf']['userid'];
+			}
+		}
+		catch (Exception $e) {
+      $response = $e;
+    }
+    return true;
+  }
+	
+	/**
+   * Get video sources
+   *
+   * Tries to load video json string from cookie if set. The found result gets parsed and a video array containing the video ID and its locators is created.   
+   *
+   * @var $_COOKIE['video_source'] video source json string
+   * @throws PHP Exception
+   * @return array video data
+   */
+  public function getVideoSources() {
+    try {
+      if (isset($_COOKIE['video_source']) && ($_COOKIE['video_source'] != '')) {
+        $video_json = json_decode(stripslashes($_COOKIE['video_source']));
+        if (is_object($video_json)) {
+          $video_data = array();
+          $video_data['id'] = $video_json->id;
+          foreach ($video_json->locator as $key => $val) {
+            $video_data['source'][] = array('url' => $val->source, 'type' => $val->type);
+          }
+          $response = $video_data;
+        }
+        else {
+          throw new Exception('Invalid video identifier! Please reload video from CMF!');
+        }
+      }
+      else {
+        throw new Exception('No video loaded!');
+      }
+    }
+    catch (Exception $e) {
+      $response = $e;
+    }
+    return $response;
+  }
+  
+  /**
+   * Get CMF detials
+   *
+   * Tries to parse administration settings to get the selected CMF instance. The default CMF details of the settings file will get used, if no administration settings file is available. Furthemore, it tries to generate a protected URL which includes username and password for accessing protected CMF functions like sparql update.
+   *
+   * CMF definition file is located at /core/includes/administration.inc.php
+   *
+   * @throws PHP Exception
+   * @return array CMF details
+   */
+  public function getCMF() {
+    try {
+      // include configurable settings file (admins, cmf sources, ...)
+      if (file_exists(__ROOT__. '/core/includes/administration.inc.php')) {
+        include(__ROOT__. '/core/includes/administration.inc.php');
+      }
+      if (isset($admin["lmdb_sources"]) && (count($admin["lmdb_sources"]) > 0)) {
+        foreach ($admin["lmdb_sources"] as $lmdb) {
+          if ($lmdb["selected"] == 1) {
+            if (substr($lmdb['url'], 4, 1) == ':') {
+              // http
+              if (isset($lmdb['username']) && isset($lmdb['password']) && ($lmdb['username'] != '') && ($lmdb['password'] != '')) {
+                $tmp_url = 'http://'.$lmdb['username'].':'.$lmdb['password'].'@'.substr($lmdb['url'], 7, strlen($lmdb['url']));
+              }
+              else {
+                $tmp_url = $lmdb['url'];
+              }
+            }
+            else if (substr($lmdb['url'], 4, 1) == 's') {
+              // https
+              if (isset($lmdb['username']) && isset($lmdb['password']) && ($lmdb['username'] != '') && ($lmdb['password'] != '')) {
+                $tmp_url = 'https://'.$lmdb['username'].':'.$lmdb['password'].'@'.substr($lmdb['url'], 8, strlen($lmdb['url']));
+              }
+              else {
+                $tmp_url = $lmdb['url'];
+              }
+            }
+            else {
+              $tmp_url = $lmdb['url'];
+            }
+            $lmdb['protected_url'] = $tmp_url;
+            $lmdb_sources = $lmdb;
+          }
+        }
+      }
+      else {
+        $lmdb_sources = $this->settings->lmdb_default;
+      }
+      $response = $lmdb_sources;
+    }
+    catch (Exception $e) {
+      $response = $e;
+    }
+    return $response;
+  }
+}
+?>

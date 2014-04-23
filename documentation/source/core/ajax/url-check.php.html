@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * URL Check
+ *
+ * Tries to get header from specified URL to see if this URL is responding. Used by JS/jQuery via AJAX.
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Ajax
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+if (isset($_GET['url']) &amp;&amp; ($_GET['url'] != '')) {
+	
+	error_reporting(0);
+
+	$input_url = urldecode($_GET['url']);
+	$input_url = trim($input_url);
+	$input_url = ltrim($input_url);
+	
+	// Check if the URL responding
+	$response = get_headers($input_url, 1);
+	// check if the URL responding
+	if (is_array($response)) {
+		// no error =&gt; url is working
+		if (eregi('200', $response['0'])) {
+			// url is responding
+			print '200';
+		}
+		else {
+			// return error
+			print '404';
+		}
+	}
+	else {
+		// return error
+		print '404';
+	}
+}
+else {
+	// return error
+	print '404';
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

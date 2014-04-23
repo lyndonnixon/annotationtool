@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Geonames Search
+ *
+ * Searches at Geonames for a given query. Creates JSON string and prints it. Preview of found place by using Google Maps Image.
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/Geonames
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$core = new Core();
+
+// plugin settings
+include('settings.inc.php');
+ 
+ 
+if (isset($_POST['query']) &amp;&amp; ($_POST['query'] != '')) {
+  // search for results at Geonames
+	$preferred_language = 'en';
+	if (isset($_COOKIE['lang'])) {
+		if (in_array($_COOKIE['lang'], $core-&gt;settings-&gt;available_languages)) {
+			$preferred_language = $_COOKIE['lang'];
+		}
+	}
+	$geonames['parameters']['lang'] = $preferred_language;
+	
+	$request_url = $geonames['search_url'];
+	$cnt = 0;
+	foreach ($geonames['parameters'] as $key =&gt; $value) {
+		if ($cnt == 0) {
+			$request_url .= '?';
+		}
+		else {
+			$request_url .= '&amp;';
+		}
+		$request_url .= $key. '=' .$value;
+		$cnt++;
+	}
+	
+	$request_url .= urlencode($_POST['query']);
+	
+  $req = new HTTP_Request($request_url);
+  $req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+  
+  $response = $req-&gt;sendRequest();
+
+  if (PEAR::isError($response)) {
+    print $response-&gt;getMessage();
+  } else {
+
+		if ($req-&gt;getResponseCode() != 200) {
+			// no error =&gt; return response header for further investigation
+			$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. ' ' .$_POST['query']. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. ' &lt;strong&gt;' .$_POST['query']. '&lt;/strong&gt;&quot;}]}';
+			print $result_select;
+		}
+		else {
+			$query_result = json_decode($req-&gt;getResponseBody());
+			print '{&quot;results&quot;:[';
+			$num_res = count($query_result-&gt;geonames);
+			$counter = 0;
+			foreach ($query_result-&gt;geonames as $result) {
+				// generate google map for result
+				$result-&gt;map = &quot;&lt;img src='&quot;.$gmapsimg[&quot;url&quot;]. &quot;?center=&quot; .$result-&gt;lat. &quot;,&quot;.$result-&gt;lng. &quot;&amp;zoom=&quot; .$gmapsimg[&quot;zoom&quot;]. &quot;&amp;size=&quot; .$gmapsimg[&quot;width&quot;]. &quot;x&quot; .$gmapsimg[&quot;height&quot;]. &quot;&amp;maptype=roadmap&amp;markers=&quot;.urlencode(&quot;color:red|label:&quot; .$result-&gt;name. &quot;|&quot; .$result-&gt;lat. &quot;,&quot;.$result-&gt;lng). &quot;&amp;sensor=false' alt='&quot; .$result-&gt;name. &quot;' /&gt;&quot;;
+				print '{&quot;label&quot;: &quot;' .$result-&gt;name. '&quot;, &quot;uri&quot;:&quot;'.$geonames['resource_url'].$result-&gt;geonameId. '/&quot;, &quot;description&quot;: &quot;' .$result-&gt;map. '&quot;}';
+				if (($counter + 1) &lt; $num_res) {
+					print ', ';
+				}
+				$counter++;
+			}
+			print ']}';
+		}
+	}
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

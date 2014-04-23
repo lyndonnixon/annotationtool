@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Get Settings
+ *
+ * Gets settings and created JSON string out of it. It's used by JS/jQuery via AJAX to get settings specified in a PHP file on the server.
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Ajax
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// start session
+session_start();
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// init classes
+$core = new Core();
+
+header('Content-Type: application/json; charset=utf-8');
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	$message = '{&quot;RESPONSE&quot;: [';
+	$message .= '{&quot;CODE&quot;: &quot;403&quot;, &quot;MESSAGE&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;ANNOTATION_SAVE_ERROR_5. '&quot;}';
+	$message .= ']}';
+	print $message;
+}
+else {
+	$settings = array('settings' =&gt; $core-&gt;settings, 'video' =&gt; $core-&gt;video, 'cmf' =&gt; $core-&gt;cmf, 'userid' =&gt; $core-&gt;userid);
+	print json_encode($settings);
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

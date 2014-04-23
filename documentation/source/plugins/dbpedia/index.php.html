@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * DBPedia Search
+ *
+ * Searches in DBPedia for a given string and returns found content as JSON object.
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/DBPedia
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+ 
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$core = new Core();
+ 
+if (isset($_POST['query']) &amp;&amp; ($_POST['query'] != '')) {
+  // search for results at DBpedia
+	$preferred_language = 'en';
+	if (isset($_COOKIE['lang'])) {
+		if (in_array($_COOKIE['lang'], $core-&gt;settings-&gt;available_languages)) {
+			$preferred_language = $_COOKIE['lang'];
+		}
+	}
+	
+  $req = new HTTP_Request($core-&gt;settings-&gt;resourceplugins[0]['search_source'].urlencode($_POST['query']).'&amp;ldpath='. urlencode('name=rdfs:label[@' .$preferred_language. ']::xsd:string;comment=rdfs:comment[@' .$preferred_language. ']::xsd:string;'));
+  $req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	$req-&gt;addHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+  
+  $response = $req-&gt;sendRequest();
+
+  if (PEAR::isError($response)) {
+    print $response-&gt;getMessage();
+  } else {
+
+    // parse result xml and extract neccessary values
+	
+	// ----- Development helper -------
+	// header('Content-type: text/xml');
+    // print $req-&gt;getResponseBody();
+	// ----- Development helper -------
+	
+	// var_dump($req-&gt;getResponseBody());
+	
+	// Label, URI, Description
+	
+	if ($req-&gt;getResponseCode() != 200) {
+		// no error =&gt; return response header for further investigation
+		$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}]}';
+	  print $result_select;
+	}
+	else {
+		
+		$empty = false;
+		
+		$query_result = json_decode($req-&gt;getResponseBody());
+		
+		// print $req-&gt;getResponseBody();
+		
+		$result_json	= '{&quot;results&quot;:[';
+		$result_select	= '&lt;ul id=&quot;search-results&quot; name=&quot;search-results&quot; size=&quot;11&quot;&gt;';
+		
+		if (is_object($query_result)) {
+			$result_container = array();
+			if (count($query_result-&gt;results) &gt; 0) {
+				// parse results by preferred language
+				foreach ($query_result-&gt;results as $result) {
+					$tmp_arr = array();
+					if (isset($result-&gt;id)) {
+						$tmp_arr['uri'] = $result-&gt;id;
+					}
+					if (isset($result-&gt;name)) {
+						$tmp_arr['label'] = $result-&gt;name[0]-&gt;value;
+					}
+					if (isset($result-&gt;comment)) {
+						$tmp_arr['description'] = $result-&gt;comment[0]-&gt;value;
+					}
+					else {
+						$tmp_arr['description'] = '';
+					}
+					if (isset($tmp_arr['uri']) &amp;&amp; isset($tmp_arr['label'])) {
+						$result_container[] = $tmp_arr;
+					}
+				}
+			}
+			else {
+				$result_select	.= '&lt;li&gt;Sorry, nothing found&lt;/li&gt;';
+				$result_json	.= '{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}';
+				$empty = true;
+			}	
+			
+			foreach ($result_container as $res) {
+				$result_select	.= '&lt;li class=&quot;result&quot;&gt;&lt;ul class=&quot;content&quot;&gt;&lt;li class=&quot;value&quot;&gt;'.$res['uri'].'&lt;/li&gt;&lt;li class=&quot;label&quot;&gt;'.$res['label'].'&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;';
+				$result_json 		.= '{&quot;label&quot;:&quot;'.str_replace('&quot;', &quot;'&quot;, $res['label']).'&quot;,&quot;uri&quot;:&quot;'.$res['uri'].'&quot;,&quot;description&quot;:&quot;'.str_replace('&quot;', &quot;'&quot;, $res['description']).'&quot;},';
+			}
+			
+		}
+		
+		else {
+			$result_select	.= '&lt;li&gt;Sorry, nothing found&lt;/li&gt;';
+			$result_json	.= '{&quot;label&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$core-&gt;language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}';
+			$empty = true;
+		}
+		
+		$result_select .= '&lt;/ul&gt;';
+		if ($empty != true) {
+			$result_json	= substr($result_json, 0, strlen($result_json) - 1);
+		}
+		$result_json	.= ']}';
+		
+		// print $result_select;
+		print $result_json;
+	
+	}
+	
+  }
+  
+}
+else {
+	$result_select	= '{&quot;results&quot;:[{&quot;label&quot;: &quot;' .$language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;, &quot;uri&quot;:&quot;&quot;, &quot;description&quot;: &quot;' .$language-&gt;strings-&gt;RESULTS_EMPTY. '&quot;}]}';
+	print $result_select;
+}
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

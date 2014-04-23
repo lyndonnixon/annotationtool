@@ -1,0 +1,220 @@
+<?php
+// define root
+define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+
+// required classes
+require_once(__ROOT__. '/core/class/annotator.class.php');
+
+// init classes
+$annotator	= new Annotator();
+
+// include settings
+include(__ROOT__. '/core/includes/settings.inc.php');
+
+// include admin settings
+include(__ROOT__. '/core/includes/administration.inc.php');
+
+// include language file
+include(__ROOT__. '/core/includes/lang.inc.php');
+// var_dump($language);
+
+session_start();
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	$message = '{"RESPONSES": [';
+	$message .= '{"CODE": "403", "MESSAGE": "' .$annotator->language->strings->ANNOTATION_SAVE_ERROR_5. '"}';
+	$message .= ']}';
+	print $message;
+	die();
+}
+if (!isset($_GET['format']) || ($_GET['format'] == '')) {
+	// redirect to login page
+	$message = '{"RESPONSES": [';
+	$message .= '{"CODE": "403", "MESSAGE": "' .$annotator->language->strings->ANNOTATION_SAVE_ERROR_5. '"}';
+	$message .= ']}';
+	print $message;
+	die();
+}
+
+if (isset($_GET['videouri']) && ($_GET['videouri'] != '')) {
+	$video_data['id'] = $_GET['videouri'];
+}
+else {
+	
+	// get selected video
+	if (isset($_COOKIE['video_source']) && ($_COOKIE['video_source'] != '')) {
+		$video_json = json_decode(stripslashes($_COOKIE['video_source']));
+		if (is_object($video_json)) {
+		
+			$video_data = array();
+			$video_data['id'] = $video_json->id;
+			
+			foreach ($video_json->locator as $key => $val) {
+				$video_data['source'][] = array('url' => $val->source, 'type' => $val->type);
+			}
+		
+		}
+		else {
+			// error while loading video => show message to user
+		}
+	}
+}
+	
+	// get selected cmf
+	if (isset($admin["lmdb_sources"]) && (count($admin["lmdb_sources"]) > 0)) {
+		foreach ($admin["lmdb_sources"] as $lmdb) {
+			if ($lmdb["selected"] == 1) {
+				if (substr($lmdb['url'], 4, 1) == ':') {
+					// http
+					if (isset($lmdb['username']) && isset($lmdb['password']) && ($lmdb['username'] != '') && ($lmdb['password'] != '')) {
+						$tmp_url = 'http://'.$lmdb['username'].':'.$lmdb['password'].'@'.substr($lmdb['url'], 7, strlen($lmdb['url']));
+					}
+					else {
+						$tmp_url = $lmdb['url'];
+					}
+				}
+				else if (substr($lmdb['url'], 4, 1) == 's') {
+					// https
+					if (isset($lmdb['username']) && isset($lmdb['password']) && ($lmdb['username'] != '') && ($lmdb['password'] != '')) {
+						$tmp_url = 'https://'.$lmdb['username'].':'.$lmdb['password'].'@'.substr($lmdb['url'], 8, strlen($lmdb['url']));
+					}
+					else {
+						$tmp_url = $lmdb['url'];
+					}
+				}
+				else {
+					$tmp_url = $lmdb['url'];
+				}
+				$lmdb['url'] = $tmp_url;
+				$lmdb_sources = $lmdb;
+			}
+		}
+	}
+	else {
+		$lmdb_sources = $lmdb_default;
+	}
+	
+	// resource plugins
+	$resourceplugins = array(
+											'dbpedia' =>
+											array(
+												'name' => 'dbpedia',
+												'url' => 'dbpedia.org',
+												'loader' => 'plugins/dbpedia/dbpedia.data-lookup.php',
+												'parameters' => array(
+													'http://www.w3.org/2000/01/rdf-schema#label',
+													'http://dbpedia.org/ontology/abstract'
+												)
+											),
+											'geonames' =>
+											array( 
+												'name' => 'geonames',
+												'url' => 'sws.geonames.org',
+												'loader' => 'plugins/geonames/geonames.data-lookup.php',
+												'parameters' => array(
+													'name',
+													'map'
+												)
+											)
+										 );
+	
+	$query = 'PREFIX oac: <http://www.openannotation.org/ns/>'."\n".'PREFIX ma: <http://www.w3.org/ns/ma-ont#>'."\n".'PREFIX dct: <http://purl.org/dc/terms/>'."\n".'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>'."\n".'PREFIX cma: <http://connectme.at/ontology#>'."\n".'SELECT DISTINCT ?annotation ?fragment ?resource ?relation ?creator ?created ?preferredlabel ?annotationtype'."\n".'WHERE { '."\n".'  <' .$video_data['id']. '>  ma:hasFragment ?f. '."\n".'  ?f ma:locator ?fragment. '."\n".'  ?annotation oac:hasTarget ?f. '."\n".'  ?annotation oac:hasBody ?resource. '."\n".'  ?annotation dct:creator ?creator. '."\n".'  OPTIONAL { ?annotation dct:created ?created. }'."\n".'  OPTIONAL { ?f ?relation ?resource. } '."\n".'  OPTIONAL { ?annotation cma:preferredLabel ?preferredlabel. } '."\n".'  OPTIONAL { ?annotation rdf:type ?annotationtype. } '."\n".'}';
+	
+	$service_url = 'sparql/select';
+	
+	$format = $_GET['format'];
+	
+	// create new http request
+	$request	= new HTTP_Request();
+	$request->setURL($lmdb['url'].$service_url."?query=".urlencode($query)."&output=".$format);
+	$request->setMethod(HTTP_REQUEST_METHOD_GET);
+	// $request->setBody($sparql_query);
+			
+	// write sparql query to log file
+	$now = time();
+	// $tmp_log_file = $this->base_path.'log/'.$now.'_query.log';
+	// $this->toLog($sparql_query, $tmp_log_file);
+			
+	// add query to log list
+	// $this->toLog(trim(ltrim($_SESSION['cmf']['userid'])). ',' .$now, $this->log_list);
+	
+	$response	= $request->sendRequest();
+			
+	// print $lmdb_url.$service_url;
+			
+	if (PEAR::isError($response)) {
+		// return PEAR error
+		Throw new Exception($response->getMessage());
+	}
+	else {
+		$response = $request;
+		$response_obj = json_decode(stripslashes($response->getResponseBody()));
+		if (!is_object($response_obj)) {
+			// error converting response to json
+		}
+		else {
+			// add values from search plugins and generate time and spatial values from locator url
+			var_dump($response_obj->results->bindings[0]->annotationtype);
+			$annotation_number = 0;
+			foreach ($response_obj->results->bindings as $annotation) {
+				// find correct plugin
+				foreach ($resourceplugins as $key => $plugin) {
+					$pattern = "/" .$plugin['url']. "/";
+					if (preg_match($pattern, $annotation->resource->value)) {
+						$plugin_id = $key;
+					}
+				}
+				if (isset($plugin_id)) {
+					var_dump($plugin_id);
+					$respo = getContent($plugin_id, $annotation->resource->value, $resourceplugins, $selected_lang, $base_url);
+					var_dump($respo);
+					$response_obj->results->bindings[$annotation_number]->label->value = $respo->response->$resourceplugins[$plugin_id]['parameters'][0];
+					$response_obj->results->bindings[$annotation_number]->description->value = $respo->response->$resourceplugins[$plugin_id]['parameters'][1];
+					$annotation_number++;
+				}
+				unset($plugin_id);
+			}
+			
+		}
+		var_dump($response_obj);
+		// add response to log file
+		// $this->toLog('Code: ' .$response->getResponseCode(). '; Message: ' .$response->getResponseBody(), $tmp_log_file);
+	}
+	
+	function getContent($plugin, $ressource, $resourceplugins, $selected_lang, $base_url) {
+		// create new http request
+		$request	= new HTTP_Request();
+		$request->setURL('http://'.$base_url.$resourceplugins[$plugin]['loader']);
+		// header "Accept": "application/json; charset=UTF-8"
+		$request->setMethod(HTTP_REQUEST_METHOD_POST);
+		// data:{uri: settings.annotations[annotation_number].resource, lang: lang_code, parameters: parameter_string},
+		$inputs = array('uri' => $ressource, 'lang' => $selected_lang, 'parameters' => implode(",", $resourceplugins[$plugin]['parameters']));
+		if ($inputs != null) {
+			foreach ($inputs as $key => $value) {
+				// print "key: " .$key. '; value: ' .$value;
+				$request->addPostData($key, $value);
+			}
+		}
+		$response	= $request->sendRequest();
+		// var_dump($inputs, $resourceplugins[$plugin]['loader'], $request);
+				
+		if (PEAR::isError($response)) {
+			// return PEAR error
+			Throw new Exception($response->getMessage());
+		}
+		else {
+			$response = $request;
+			var_dump($response->getResponseBody());
+			$tmp_response_obj = json_decode(stripslashes($response->getResponseBody()));
+			if (is_object($tmp_response_obj)) {
+				return $tmp_response_obj;
+			}
+			else {
+				// error getting data
+			}
+		}
+	}
+
+?>

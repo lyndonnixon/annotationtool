@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * DBPedia data lookup
+ *
+ * Searches for content of a specified DBPedia URI and returns the content. Parameters specify the response which shall get returned (e.g. http://www.w3.org/2000/01/rdf-schema#label)
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core/Plugins/DBPedia 
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(dirname(__FILE__))));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$dbpedia_core = new Core();
+ 
+header('Content-type: application/json');
+if (!isset($_POST['uri'])) {
+	print '{&quot;response&quot;: &quot;No resource URI specified!&quot;}';
+}
+else if (!isset($_POST['parameters'])) {
+	print '{&quot;response&quot;: &quot;No response parameters specified!&quot;}';
+}
+else {
+	
+	$resource_uri = $_POST['uri'];
+	if (isset($_POST['lang'])) {
+		$language = $_POST['lang'];
+	}
+	else {
+		$language = $dbpedia_core-&gt;settings-&gt;default_lang;
+	}
+	// print $dbpedia_core-&gt;settings-&gt;default_lang;
+	$parameters = explode(',', urldecode($_POST['parameters']));
+	
+	// split resource uri and generate data uri
+	/*** DEACTIVATED: Query dbpedia live site
+	$data_uri = explode('/', $resource_uri);
+	if ($data_uri[(count($data_uri) - 1)] == '') {
+		print '{&quot;response&quot;: &quot;No data found for URI [' .$data_uri. ']&quot;}';
+	}
+	else {
+	***/
+	if ($resource_uri == '') {
+		print '{&quot;response&quot;: &quot;No data found for URI [' .$resource_uri. ']&quot;}';
+	}
+	else {
+		
+		// using salzburg reseach dbpedia dump
+		$data_uri = $dbpedia_core-&gt;settings-&gt;resourceplugins[0]['browse_source'].urlencode($resource_uri);
+	  
+		$req = new HTTP_Request($data_uri);
+		$req-&gt;setMethod(HTTP_REQUEST_METHOD_GET);
+	  
+		$response = $req-&gt;sendRequest();
+	
+		if (PEAR::isError($response)) {
+			print $response-&gt;getMessage();
+		}
+		else {
+			if ($req-&gt;getResponseCode() != 200) {
+				// no error =&gt; return response header for further investigation
+				print '{&quot;response&quot;: &quot;ERROR: URL did not respond! [' .$data_uri. ']&quot;}';
+			}
+			else {
+				// parse response for specified values
+				$json_obj = json_decode($req-&gt;getResponseBody());
+				// var_dump($json_obj);
+				$data_found = false;
+				$response_json = '';
+				$response_json .= '{';
+				/***** DEACTIVATED: DBPedia live site search
+				foreach ($parameters as $parameter) {
+					$tmp = trim(rtrim($parameter));
+					$param_found = false;
+					if (isset($json_obj-&gt;$resource_uri-&gt;$tmp) &amp;&amp; is_array($json_obj-&gt;$resource_uri-&gt;$tmp)) {
+						foreach ($json_obj-&gt;$resource_uri-&gt;$tmp as $key =&gt; $res) {
+							if (isset($res-&gt;lang)) {
+								if ($res-&gt;lang == $language) {
+									// language specified and correct one selected
+									$response_json .= '&quot;'. $tmp .'&quot;: &quot;' .str_replace('&quot;', &quot;'&quot;, $res-&gt;value). '&quot;, ';
+									$data_found = true;
+									$param_found = true;
+								}
+							}
+							else if (!isset($res-&gt;lang)) {
+								// get value, no language selection available
+								$response_json .= '&quot;'. $tmp .'&quot;: &quot;' .str_replace('&quot;', &quot;'&quot;, $res-&gt;value). '&quot;, ';
+								$data_found = true;
+								$param_found = true;
+								
+							}
+						}
+					}
+					if ($param_found != true) {
+						$response_json .= '&quot;'. $tmp .'&quot;: &quot;&quot;, ';
+						$data_found = true;
+					}
+					unset($tmp);
+				}
+				**/
+				foreach ($parameters as $parameter) {
+					$tmp = trim(rtrim($parameter));
+					$param_found = false;
+					if (isset($json_obj-&gt;representation-&gt;$tmp) &amp;&amp; is_array($json_obj-&gt;representation-&gt;$tmp)) {
+						foreach ($json_obj-&gt;representation-&gt;$tmp as $key =&gt; $res) {
+							$tmp_lang = 'xml:lang';
+							// print &quot;LANG: &quot; .$res-&gt;$tmp_lang;
+							if (isset($res-&gt;$tmp_lang)) {
+								if ($res-&gt;$tmp_lang == $language) {
+									// language specified and correct one selected
+									$response_json .= '&quot;'. $tmp .'&quot;: &quot;' .str_replace('&quot;', &quot;'&quot;, $res-&gt;value). '&quot;, ';
+									$data_found = true;
+									$param_found = true;
+								}
+							}
+							else if (!isset($res-&gt;$tmp_lang)) {
+								// get value, no language selection available
+								$response_json .= '&quot;'. $tmp .'&quot;: &quot;' .str_replace('&quot;', &quot;'&quot;, $res-&gt;value). '&quot;, ';
+								$data_found = true;
+								$param_found = true;
+								
+							}
+						}
+					}
+					if ($param_found != true) {
+						$response_json .= '&quot;'. $tmp .'&quot;: &quot;&quot;, ';
+						$data_found = true;
+					}
+					unset($tmp);
+				}
+				if ($data_found == true) {
+					$response_json = substr($response_json, 0, (strlen($response_json) - 2));
+				}
+				$response_json .= '}';
+				print '{&quot;response&quot;: ' .$response_json. '}';
+			}
+		}
+	}
+}
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.0.1&#10;">
+  <file path="assets/js/__jquery-ui/development-bundle/demos/tabs/ajax/content4-broken.php" generated-path="assets.js.__jquery-ui.development-bundle.demos.tabs.ajax.content4-broken.html" hash="feb9562749e8ae1d0408c257ca44b6e5" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJyzsS/IKFDgykhNTEkt0lDyCAkJ0DfUM1AwMTBR8MsvUXDLL81LUdK05rK3AwAPQgvR</source>
+  </file>
+  <file path="assets/js/__jquery-ui/development-bundle/demos/autocomplete/search.php" generated-path="assets.js.__jquery-ui.development-bundle.demos.autocomplete.search.html" hash="7325ff4f6c46018be518921d5bb6c5ce" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="plugins/pre_annotations/settings.inc.php" generated-path="plugins.pre_annotations.settings.inc.html" hash="1d19ea14adab1a939f48cb6fafa05e08" package="Default">
+    <docblock line="0">
+      <description>Geonames search plugin settings
+Annotator Plugin</description>
+      <long-description></long-description>
+    </docblock>
+    <source>eJyVkl1PwjAUhq+3X9ELkwrRDfkw8QMIMRE1BFCiRG9IM0tX3drZdk749XY7GTC8MCxN1vY558153+26n4SJ69frzpBKQWKqkaZEBSFKopRxYU/GcMG0i+rOQAhpiJEKTQto7+zyXdf3ESvb3aNy63QRUYqsjjFILlIVYdTtIRwak1z6Pkm4VxZ7UjEf6h5mkzE+cZ3ywYpqmaqA/hHQma4KVNoSoiwwVOmiCWbZclsRk58nmQHGrcZut6XarCIKbDQZD/doRAQDSMUeSjVV+UyAteFN66Cwtlf4BRW4tr2tXUGcUrKIopgk2gaav5x/48yrPGi0yWovkHFxl+fsf+iDssGfdAXig/s1ma1u5MU8Za1Rdn46VS/pxWu7Hd2NyPz5W9y+dRbLx4ozO6HQUoHAkkSa4h2Hm631Ct54zNDG3UG2tP0feWCPFXcZfzchiLQblc+KQ8pZaIA1O1W2ljIGctbEu1O6/d4v5lfMHg==</source>
+  </file>
+  <file path="core/includes/settings.inc.php" generated-path="core.includes.settings.inc.html" hash="80d3b77a17068adba9c558c8ed4d7d08" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="14" package="Core">
+      <extends/>
+      <name>Settings</name>
+      <full_name>\Settings</full_name>
+      <docblock line="14">
+        <description>Settings</description>
+        <long-description>All settings of the annotation tool are specified here. This file also provides all settings for JS/jQuery implementation.</long-description>
+        <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="14"/>
+        <tag name="version" description="v2.3" line="14"/>
+        <tag name="package" description="Core" line="14"/>
+        <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="14"/>
+        <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="14" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+      </docblock>
+      <property static="false" visibility="public" line="21" namespace="" package="Core">
+        <name>$current_version</name>
+        <default>'v2.3'</default>
+        <docblock line="21">
+          <description>Current version</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Version of the annotation tool&lt;/p&gt;" line="21" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="28" namespace="" package="Core">
+        <name>$resourceplugins</name>
+        <default>array(array('name' =&gt; 'dbpedia', 'url' =&gt; 'dbpedia.org', 'loader' =&gt; 'plugins/dbpedia/dbpedia.data-lookup.php', 'parameters' =&gt; array('http://www.w3.org/2000/01/rdf-schema#label', 'http://dbpedia.org/ontology/abstract'), 'search_source' =&gt; 'http://dev.iks-project.eu:8081/entityhub/site/dbpedia/find?limit=20&amp;offset=0&amp;name=', 'browse_source' =&gt; 'http://dev.iks-project.eu:8081/entityhub/site/dbpedia/entity?id='), array('name' =&gt; 'geonames', 'url' =&gt; 'sws.geonames.org', 'loader' =&gt; 'plugins/geonames/geonames.data-lookup.php', 'parameters' =&gt; array('name', 'map')))</default>
+        <docblock line="28">
+          <description>Resource plugins</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Settings of every available search resource plugin.&lt;/p&gt;" line="28" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="57" namespace="" package="Core">
+        <name>$annotation_path</name>
+        <default>'annotations/'</default>
+        <docblock line="57">
+          <description>Annotations path</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Specifies where annotations get stored on the server (relative from base path)&lt;/p&gt;&#10;" line="57" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="64" namespace="" package="Core">
+        <name>$log_file</name>
+        <default>'log/general.log'</default>
+        <docblock line="64">
+          <description>Log file</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Path and filename of the general log file on the server (relative from base path)&lt;/p&gt;&#10;" line="64" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="71" namespace="" package="Core">
+        <name>$log_list</name>
+        <default>'log/queries.log'</default>
+        <docblock line="71">
+          <description>Log list</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Path and filename of the queries log file on the server (relative from base path)&lt;/p&gt;&#10;" line="71" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="78" namespace="" package="Core">
+        <name>$download_path</name>
+        <default>'downloads/'</default>
+        <docblock line="78">
+          <description>Download path</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Specifies where downloads get stored on the server (relative from base path)&lt;/p&gt;&#10;" line="78" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="85" namespace="" package="Core">
+        <name>$fragment_uri</name>
+        <default>'http://connectme.at/fragment/'</default>
+        <docblock line="85">
+          <description>Fragment URI</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Base URI for annotation fragments (based on ConnectME ontology)&lt;/p&gt;&#10;" line="85" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="92" namespace="" package="Core">
+        <name>$annotation_uri</name>
+        <default>'http://connectme.at/annotation/'</default>
+        <docblock line="92">
+          <description>Annotation URI</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Base URI for annotations (based on ConnectME ontology)&lt;/p&gt;&#10;" line="92" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="99" namespace="" package="Core">
+        <name>$ann_prefix</name>
+        <default>array('ma' =&gt; '&lt;http://www.w3.org/ns/ma-ont#&gt;', 'cma' =&gt; '&lt;http://connectme.at/ontology#&gt;', 'rdfs' =&gt; '&lt;http://www.w3.org/2000/01/rdf-schema#&gt;', 'xsd' =&gt; '&lt;http://www.w3.org/2001/XMLSchema#&gt;', 'dct' =&gt; '&lt;http://purl.org/dc/terms/&gt;', 'geo' =&gt; '&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;', 'oac' =&gt; '&lt;http://www.openannotation.org/ns/&gt;', 'foaf' =&gt; '&lt;http://xmlns.com/foaf/0.1/&gt;', 'rdf' =&gt; '&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;')</default>
+        <docblock line="99">
+          <description>Annotation prefixes</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;List of all prefixes which are needed for generating Semantic Web Triples based on the ConnectME onotology and represented by N3, turtle or RDF/XML serializations.&lt;/p&gt;&#10;" line="99" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="114" namespace="" package="Core">
+        <name>$active_plugins</name>
+        <default>array('dbpedia', 'geonames')</default>
+        <docblock line="114">
+          <description>Active plugins</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;All activated plugins (path relative to plugin directory) have to get added here. Pre-annotations should NOT get included!&lt;/p&gt;&#10;" line="114" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="121" namespace="" package="Core">
+        <name>$lmdb_default</name>
+        <default>array('name' =&gt; 'STI ConnectME Framework', 'username' =&gt; 'admin', 'password' =&gt; 'pass123', 'url' =&gt; 'http://188.40.162.36:8080/CMF/', 'selected' =&gt; 1)</default>
+        <docblock line="121">
+          <description>LMDB default</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Default settings for CMF/LMDB. Gets used if no options are available in the administration.inc.php file or if that file is invalid!&lt;/p&gt;&#10;" line="121" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="128" namespace="" package="Core">
+        <name>$lmdb_operations</name>
+        <default>array('sparql' =&gt; array('insert' =&gt; 'sparql/update', 'delete' =&gt; 'sparql/update', 'search' =&gt; 'sparql/search'))</default>
+        <docblock line="128">
+          <description>LMDB operations</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Available operations of the CMF/LMDB which get gets accessed via web services (currenly only SPARQL in use!).&lt;/p&gt;&#10;" line="128" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="143" namespace="" package="Core">
+        <name>$geonames</name>
+        <default>array('search_url' =&gt; 'http://api.geonames.org/searchJSON', 'resource_url' =&gt; 'http://sws.geonames.org/', 'label' =&gt; 'Geonames', 'parameters' =&gt; array('maxRows' =&gt; '10', 'style' =&gt; 'LONG', 'lang' =&gt; 'en', 'username' =&gt; 'sti2research', 'q' =&gt; ''))</default>
+        <docblock line="143">
+          <description>Geonames</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;All required settings for performing geonames search and parse its response.&lt;/p&gt;" line="143" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="158" namespace="" package="Core">
+        <name>$gmaps</name>
+        <default>array('search_url' =&gt; 'http://maps.googleapis.com/maps/api/js', 'parameters' =&gt; array('key' =&gt; 'AIzaSyCo9Wug3Lw6-PrVu9Y44lHLaWUvnFZ5_fQ', 'sensor' =&gt; 'false'))</default>
+        <docblock line="158">
+          <description>Google maps</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;All required settings for performing a google maps search.&lt;/p&gt;" line="158" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="167" namespace="" package="Core">
+        <name>$check_values</name>
+        <default>array('starttime', 'endtime', 'uri', 'x1', 'x2', 'width', 'height', 'type', 'annotationtype')</default>
+        <docblock line="167">
+          <description>Check values</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;List of all values which have to get checked before creating a annotation JSON of the current annotation.&lt;/p&gt;" line="167" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="174" namespace="" package="Core">
+        <name>$available_languages</name>
+        <default>array('en', 'de')</default>
+        <docblock line="174">
+          <description>Available languages</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Available languages of the annotation tool&lt;/p&gt;" line="174" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="181" namespace="" package="Core">
+        <name>$default_language</name>
+        <default>'en'</default>
+        <docblock line="181">
+          <description>Default language</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Default language of the annotation tool.&lt;/p&gt;" line="181" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="188" namespace="" package="Core">
+        <name>$available_annotation_types</name>
+        <default>array('http://www.openannotation.org/ns/Annotation', 'http://www.w3.org/ns/openannotation/extensions/Bookmark')</default>
+        <docblock line="188">
+          <description>Available annotation types</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Types for annotations (annotation for linked data content, bookmark for html content)&lt;/p&gt;&#10;" line="188" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="195" namespace="" package="Core">
+        <name>$available_serializers</name>
+        <default>array('n3' =&gt; 'NTriples', 'turtle' =&gt; 'Turtle', 'rdfxml' =&gt; 'RDFXML')</default>
+        <docblock line="195">
+          <description>Available serializers</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Available serializers for linked data&lt;/p&gt;" line="195" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="202" namespace="" package="Core">
+        <name>$serializers_header</name>
+        <default>array('n3' =&gt; 'text/plain', 'turtle' =&gt; 'text/turtle', 'rdfxml' =&gt; 'application/rdf+xml')</default>
+        <docblock line="202">
+          <description>Serializers header</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Headers for each serializer&lt;/p&gt;" line="202" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="plugins/pre_annotations/index.php" generated-path="plugins.pre_annotations.index.html" hash="7647d76cbad628a6d62bfd9a4914b4be" package="Core/Plugins/Pre_Annotations">
+    <docblock line="0">
+      <description>Pre annotation search</description>
+      <long-description>Searches for pre-annotations in generated pre-annotations file and returns content.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Pre_Annotations" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Plugins/Pre_Annotations">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJydV21T2zgQ/hz/im2OqZM2sVP4xktajuYKc1A4SOfmhnY8iq0kujqSK8nQDJP/fruynIRQjtIMg+PV6tm3Z1fK/ttiWgTxq1cBvIILzYFJqSyzQkkwnOl0igu0duVeuIGx0lBo3l0pGhASJlxyzSzPHiyORU6wGWhuS42CVEnLpY088jtW2imCnjFrp4IZ+J2VXMP+zL9HI3p/Z6zYjpSe9N2eG64N+XizHe04QcHSr2zC4UhpHl/k5URIE2NAyeHKFaeYqmKuxWRqYbv3Zgeuhidwgv5o6XRY3sFQ+deMwYfZ6Nj5/V5HcDqXGZr7KL4r6WBykXJpOEytLXbjONUc99/wVM1maIkcjb2KiUfzrky7Mot3ol4MR14VXXW6cGitFqOSzHc/KklirlPBcnx7z7W4MYAb4ZMslKYEn1a4VfriIIhjyPhYSA5aKRuIMbReVIKsFSbJ5fn5MEnCdhvugkYlXxN3IBMY+4y3Np9J8sfJ6SBJ2vjZCxZBzZIP3MKMYcnTnBkDarzOGatUToWFwzwH/t3lNYdcjDTTAtnDkGKaj7nmMsVQEAVrbCqoyIWj+bdSYN0UKrRqNyMI45Qq6xTd16jag/QN0T1KgrFMW2StIWYE/pk4acurCClsZYybYItg4AAkv3W0ISVw6RO4bltbycX51fA6/Ib0m4df2vDyJWwK4cUBhD63Dj/Ny4wTxcdiUmo2Qu4jlhVy4juhxbIZcrMD6WwMRpU65fgSRVE7aJBtUkr4d2GseRi+xzexA0Ed7dIeobzKhHOk4dUeyeGTIHtBYxE0gsZW4UqleZbkTE5K6i8Ml8twr/K1ztPR+fmfJ4PrkLQwUd4JUpAJ05rNH+h0wGW/26+T0+2zGyZyStjSmPFIjziyiYlOkd+V6zci4yrJmGWkWdlysj23PGKGJzOVUTy+hUOIvJ5bLHVeqVJBqCEIZ4V6HYrMmdwqcE4hzQkpvv5sPv/95XVMCVrfiP5PEs2LnGFB6h0dZA7moVZrR2GEemFlldqAG0tukOHa3ygs/GxD1WRtzG68Ox/jMFqiEyoAwXrGHw+HF8llZaW1bo66wCm64pxxHM5Zq9Ie/PVpcDVMzgbD4/P3yYfBkKhSqbIsO+Ys47rVPExTXthmB5qsKHAIOofif42STYddwZtC0fw8WJqSWe0NNSsA8edicHi5uyvMQGulW8tdjheAn0ILaVdo3f6EPDYGCeK6GRbAc7RyF3hCVsZQ69JvOVIZqlIbb/d6nm7YyFIBJ5tw0PfnFixdnro43UE4LrWd4nchb9BxMXGhOsaidpnbxPCcp7aB3LhrViLT3L2+ayLRed7cheaKdTWzMRd4HriWuBxcfTodXiWDs4vhP9i/QNr3BxBKKdOlFs3dJn3Dxk61KMiR5+Pv45KSk/4P7ezHfrW5+LIgmjYaq/yvgvVt2PCJp2Q4jKTSwooTFZIMz0pM/YOC/K6yeYtOnKrvEX+18V4SKw8wuJKOb1ztOQGWhbN0iqW+ZxXvFd5NX+TGlqvB2gC4vb2Nbnfc0Y1c6MW9N7HOxl2D154Z+81pVzZrJhFat78in0esjgRvpbE1ZXM8g9KvFdV/vKeCXbj/Lm+PWHDj5Fn4vveX6Ev/sZY4GeiBf/SwKle32L9LwHYH1sQ4GeqSbZyL+IE+9JYeYftgPavTzt/18F4AZqpuNy+HPoRfr8QGRSLHkVVzeaXn1Osh4hNV84l9bt1+ys6qerWVh/Gu2p+6tsZAiR8NmwOhTtyafC312ajgmWAu91g7LP5kHrMRXRJS+1Q+1yF/Jatr+38+tzNW/Iox3PZkZhePswwP7/W2qsfQ69dO6oSuy0pKXeve/s6y+e6J29CFbey5N204IAPLeDan4I8xe/8L21659TCWjWm+vr68Uy2CVQ02rsAHy+Rj5/NZYefglujsdE3P8LeAn9tBfTdthRsXmAhnRhc16yso/uB42/8PGPCMYw==</source>
+  </file>
+  <file path="plugins/maps_search/index.php" generated-path="plugins.maps_search.index.html" hash="631859bd904ee045df1c592c8052378b" package="Core/Plugins/Geonames">
+    <docblock line="0">
+      <description>Google Maps search</description>
+      <long-description>Allows serching via Google Maps API for locations</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Geonames" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Plugins/Geonames">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJytV11T2zoQfU5+xdaTwaZtbC59oySUltzCXChcSB/uMIxGsRVHrSO5khya6eS/39WHQ4DS8tDMMHFWZ8+udo9WZv+gntXd7OXLLryEj1KWFYMzWmvQjKp8hla7cFhV8tba0MRFCQtO74EPL05gKhVUMqeGS6GD3zvamBnaz6gxM041vKcNU7A/D7/Tif39Thu+m0pVDp3PgimNHLDYTd84Q03zr7Rk8EEqll1UTcmFzj4yKeicaYfIZb1UvJwZ2N356w1cjU/gRBimhMuGVq/hirGvBSY9nxwDFQUcqRROl6LAOJ/4dykcTcVzJjSDmTH1XpbliqH/guVyPsc92QyzANHZZNkXeV8U2Zt0J4MPAYo5OiwcGqP4pLHh+5+ksGYsHqcV/jpiii80oCN8FrVUhhVw6nl93bJuN8ugYFMuGCgpTZdPIXnhDUUSE3J5fj4mJN7ehh/djrdvmF9DwZWtTvLwm5C/T05HhGzj52131V13nhmYUy4gr6jWIKdYJCGNKx8YKas0yADYd1fXCio+UVRxpoEqzJJNmWIix60gCzZXe6rUbUexbw1XjEgEJG2aKcRZblvqgO4x9T4oyRjTs0XQhiqDwtNWEt3wTZw1CRAuuPHBUA09SwMDEOzW6aUF1U42SGQMClh3ucirpsCitZYULW1gcPXmSGiSHrk4vxpfx99QqMv4Zhu2tuChEV4MIPbNALBJu7PjToRiuqkM1sjA0fuaFZwipNvp2YowbUijKszWZd0ftrn0h9yql+ZWUqSc4xG7jj2pdYhv3iJDLgx67uAjxmEU4yXPoampQiGgWWPeeCJ7X9kSBkPoLWjVMKenjt2958cA3nQ/4xT3exBj6M4K/1iFZ+bnoK016OGSjYsKGMSQ+tAWaIO+eoVP6NF95IJfqDCJXXvYFPTAslp8aP3xeHxBLr17sslju+uArkxnDMdTkXj06N/Po6sxORuNj8+PyMfR2NJ6KC2KY0YLppLoMM9ZbaLXENG6xmngjkj2RUsROW5Pr2tpB8lgHUoUbTZWkAC2xBejw8u9Pa5HSkmVrL2CjgBqhf27Y+sPS5ux1jgLExdrBaH0bc9cMERdBpcPtljbVp67O20jUZ9CArMxbd8VM40SsE555vbptDttlJnhMxcLTJyXbquhzVbVRLOK5aaDff4RBaFHe9c/oopOWBXtQWSbGzSJ49BJ8nJ09fl0fEVGZxfj/1AAYDH324lWW99G8Wgvsk8F07nitQ3/XNZ9XJKiHP6UfT8Lq9HqZuUU2rmr9d3GfqJvx0E8Crtr204K5jX5sPjvZbFM7Jjt+O5wTeTkC/Im92i2Q198BzdX7P6oabQ9hvH5P3EL7PSoUsTGxhTwkS4TH6WzMQruE63HkG73uCbr9My8tsD+0PXNi9a7IZ29qllB8ASgUb995LPRG/SM9vnUzhfQKh/E4R6N0keDaUI1s8cxjepwn9vpRPyMy/RM3hI02Hl8UIlyEGEX25xKJnF+qSWmG9428EmUKURbFTW/h1KTWgnd8sLMBrGFu8nI5+V15IzRjQPMmH2heIjw1gDBncuqwh0NYiFjcDufSIXnZxDvxMP9zBdjGD0uG4oby9VWKP5FheJnVSh+ToViV6HfQqlp872TU+sQdEDwnQhFzkTQ1PrnnazCLdIu9IdmWTN9vXPj5KxkY1i8gd6ojVvzt+LaucLjSuwrTJuaO5nu447nL4PhaWfMENHMJ0w9EfQe5k8Gt4WtuFk+Ebdd/pMha4mDoyJ2LD0RdQPxJwPnshGopieChtVnB1w9HlD4v8fGeHpC6I9PG0r6t353ql+P1+sb6xVY2tVGuNfCYG0Hb8i1hxPeud6NXGRo+QLW3zXu7mjfZ1q3QOfYVv76WdnX9IPh/w4qQU0=</source>
+  </file>
+  <file path="administrator/log.php" generated-path="administrator.log.html" hash="053acd3e55deb2d1b53efdcc3b9f9424" package="Core/Administrator">
+    <docblock line="0">
+      <description>Log</description>
+      <long-description>Parses the log file by using the admin class funtion and displays it. Allows to show all queries in detail.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Administrator" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Administrator">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(__FILE__))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJylVm1v2zYQ/mz9ihtgQEpaS4nzLWncZknXBvCSbc4+DEEg0NJZJkqRLkk5NYb+9x1fFNvzWhTYJ1PHu+funnuh37xdLVdJUhwfJ3AMU9XQjzv9xrRBA3aJIFQDCy4Q5hvoDJeNl7K65RIqwYyBRSctVxKYrKHmZiXYxgC3OVwJoZ4JRYFZqmdgQsDnDjUnZDKu0TIu8ujxHevsUmn4lVm75MzAz4xU4U0bv/O5+35nLB/nSjcTb7NGbZzn9Tg/84IVqz6xBuFaaSyuXIzcWM2s0v66UquN5s3Swvjk9AxmD7dwKy1qyVwCTLyGGeKnmsGHdv7R53Ojc5huZE1O7vgXJT2M4BVKg7C0dnVeFJVGsl9jpdpWSePCK6KKKeabkaxGsi7O8pMCrqMqBeh14cpazeedcz+6U9KJUVecCfq6IarWBsgQ/pQrpS3WMA24gbQiKQqiccElglbKJnwB2U9BUGdpWf5xf/9QlunREfydDIJ8R/yaqkWpt5j1v2X5y+30fVkeHR1dJF9f+uIDWmjZS73VgqiRynrSqLrKF9FVG/CLZ1OA4HPNfKWZpuBwgRplRQkQCtXTBKjcJ6Hxc8c1looUsj66HNKiclX0iv6YBxvq2JTC+xErttsB++aOOmOZtkBVck2UxN/SS7OoQuY2xIomGZqWrjaDS5D4DDP/4RSHziUEqes8L9vzHU32OnLrohJdHUcqXDpe3cwl8e4wv3ixlyJZ5STfzbDHFkw2nRsMjxrzGE0oLd7ILO2vqSV8LqNJLwk4LwYLpSssqdFXbiNcgtUdXmzxapx3TeN2xCUsmDC7dxWrlt++wVLwBVreOtTT8cnOtUH7gC1tFYs3XG+pSPfLW9ioZFzyu9bXIdwfMy4rz90BRW6+iJ4eIPK7cpz2tsmwP5VumiiRlJZnblci9YhsjaXpqor6bMuCQ2FuTwILN7QtyaoJo9IZ2nCgpNiE2ebUhzYblrP3s9nt/d1jWrWL9OkxdXq8Tp/CpBOkRppprGyEIygXajJYIqtRZ+lUVb5hzvsllkIeS08eLBXKjCZzZrDstIjLoIAWZUdAmrKjOaeBCH4pm2+HdHHIZbyiZgun/yS8d05qaR/jd0P0DHFZMq3ZJovQ5MMX+jHdq7fZocq/TT2iX/qhHsSgTQZDYo9601iX5B7GaNKgpSfTzfFg6B62zXcUf3f3UxIFddm1pEdtPqCRQhoAyHYh6P0Lnz7IXfRHZ/r0OH4i85paLUv/GrWjGj6e83PjKD1QPX1yHr3LV6/o9JXc/5vsrdE+hI/1YFtERkhVivFcZy8cuWdjQL2C1NqRXXonAp/U0JeTvb6Mjwi9zf+nLRPf7ZLMdwbxZSGFvyPZ/mS6Znk7+Qe22P67</source>
+  </file>
+  <file path="core/ajax/url-check.php" generated-path="core.ajax.url-check.html" hash="c42301413ed1d077e449af581dc458fc" package="Core/Ajax">
+    <docblock line="0">
+      <description>URL Check</description>
+      <long-description>Tries to get header from specified URL to see if this URL is responding. Used by JS/jQuery via AJAX.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <source>eJx9Ul1v2kAQfPb9iq0UxYDAdiBPTSChpEoT0UgtIFWKKnTYC74Ad9beQYMq/nvXNiFQqkr+0K5nZvfGc32TpZkIazUBNRh970MvxXjORV4PSaEFZ2CGDlKUCRJMySzBZhirqcKkoDDAIoKagkuVLVr8IrSZ0YnSswBGlqGTDTwOwpdvK6QNrJWE7mP3R7AbdStXLjUEX6VjEWnhk2QcXC93dTDJ61vrVDMwNOsUnDWSVUbDuhm0ikYm47mcIfQMYdh9ka9FNzbZhtQsddCMLlowGD7Ag3ZIWjpmy0UdBojzRML9cvIFpE7gjgLob3TC2k/q1ehCZqFi1BYhdS77GIYxIfPXGJvl0mibbxXuIDacbBo6bugkbAVRCL0dlPcqsNB1jtRklY9vPBmdt5FiJRdc3SGptQUmwkhnhhxb1y91S69CIdjqirIWXeVsfP95+OyvaOH/rML5ORx14EMbfL9ahd/CEx4SGRoT5qL8WypR9UoI70zpbOXGjIc28DPhEyV4LHz1F4y3X1beOyffF/8ACC8My3SVScEiKO8pYYmyYIvbeeLGZeLsgU4dLnIpFor/J1TaM5ZEclPZq5Y25GRtoPAC2p38xHlafxmaF9yCjIQzVfGbUeTXYS/w7EfsRamSy+yoh5M9LyOlHRRU3tTb8o0LPtIbidCtSJfzD/CX0eUbnq8945RwjN+KrXgDn2CPoFshbjp/AJIEN1s=</source>
+  </file>
+  <file path="plugins/dbpedia/index.php" generated-path="plugins.dbpedia.index.html" hash="54c09cdc1470b97dbf09d1c79befdee8" package="Core/Plugins/DBPedia">
+    <docblock line="0">
+      <description>DBPedia Search</description>
+      <long-description>Searches in DBPedia for a given string and returns found content as JSON object.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/DBPedia" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Plugins/DBPedia">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="assets/js/jquery-ui/development-bundle/demos/autocomplete/search.php" generated-path="assets.js.jquery-ui.development-bundle.demos.autocomplete.search.html" hash="7325ff4f6c46018be518921d5bb6c5ce" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJyVfO1u5TiS5e/Op9AkCqhMoL2NmcH86qka2M60XV12ptd2d+72YlDNK/FKLEuiipJsKxcDzGvMI8w7zL9+k32SPRFBUpSurqsH6C7fvJeSyGDEiRMf1D//S1d1b970tdbdu+wfs/e/f/O732WtzQbtmqxTfa+L7CT7eeyHTL8Y/Ee5esqezVDRKKf7zra9fmP22TvddMP07pufLj8+/J9v6fpv//X9e7nq92+++SX7LusHN9jaPmvnh72lYW//VZ7qdGOfdNbXqq90n+GWQ6XxLO101qjS5KrGo1VR6IKfV+rhJ/7+p19GO+j+p7LL3+GJ4VGm87d6980veMKbb8ygmx6/KefU9O7N20un1ZCdmQGzaN9+9/3bMzuo0Y09rtZ1rZzp3/72zdtrDKh1htE7TaMeVF5NO9UNGOjGvcltXcvIs1rljyetzh8htTj+1hYm112ftaZ0yWh/3+T5P7zYnZvyCjduTDviAfNdc2efW9z2kymrIbvSzvIln6Z8wD2desna+JGuuh1dh7vHgaeu0Crr8O2IZdOILxUEkt0P1j3SgHNc2xqV5fKXRtx31rY7U9e8jFoNqsY9aj3iKVgUj7nTBeamIbEiu7V5pVzB89LDoFg8LQ87t01j2+yjKbSj3+9to7BsPK9hgfSmCbfLfsS8aMyNqZ9YFPSHfrzSbXaF3TNyj3PjcvyeT6rVMuDGtoMqx7/0G8O6qVSuTESKHbJjL1uqB6dI6aE1LD1s3pTdKod/F6XsonaFeck6/uOFM9Ciz5169PvsvqoWMpa/smrX5uH3c6dfMojqJZEHLm75x0tSu9LJ9E6fbK4H+vpO56N7Ms5Cn1WmnmxPcuXHD7bV2fnoav3Muju6CjrTZ1ZD3VrdyK38c+5MW9IG1bAwEQo2ShXO4ILKKOjNWPNtf9TtYPpqeyS2/0W1+NzKze/G/Z5XXpka+8mK241lq9Il3remkyXCfqENpc3K8GlW70GZmozGFsAWGn1tGttD2fhPuhJd9JVqWWUfMJNSZQPM1s/oHtN7NnmVPXiTuifbUlmP759ghW1vUrGsRlXGjW3Bszp1ZEzrAR2JwvRKDMgb8GIMxAgx7cweZpeoWhhzXtWmIPNiNICAaYRybfb5mY3sYRosXZ/e3/90CjTEjrc2H0bRgMq64QSADLmFMb2x2b5WTeMN4uPobKdVK7Dxs5IdVZ0zzVjDGDJNA5ReKMuPkOoeSiD7f1rnusCkhqEy4Z6qN7jnlbWd5a39Yzd2KtOd7ZYjvriJ0JCG/GFqX7BT7pcReKIWc4OxwbC/WFt0BJ381FtDNgvNN4XfMY8x10rgCtoE+CiAV4DpQQ0zpJ1UWsFHZB9GefLnlwnzEdgCDldKHn+LG5zsgPMGY88c9B7aZwUPzmCWgK/KWbnvg3pugQemE908bQdS9Vw1nSZH0/tnt4A/HnCvXgjoCQB3BC2L5bLlbo3kDzT0EzYW0odMsJRBy6591i0mVWkYuHwQfX8yQLsvyu1qEdy1heDYfWX12OemNRaYK8ahgWXp2FM4FZEI+by8wp3tTmlvS+Ie7zTEc+waRfYCS869Ap1hriR6uggWXvJOwjYJ3HZGuYZ2NXiNnWI/eV85IwB5rVpCGfKQozN2ngOj8cE4/ZJDZlAplj60h2R6OKyHuPygACHqSYs1WvfED/Q+839DbPa5IvPhtX5sdtCxr+QTscut9or7mVgMNvJsBFbKIuNIsklgwAz/m6NAZQhH1bxEDG0saZ3gKX4nObNfzyF8FsaVet6TjsnU89wOlVO02bSE9J8p+la6LrwhPKjCEooN8lfQadS4zIoyXovCAC6fNGhAmN60ZhEYpD2JYPC6f1YkOBpwJRAKde4HfwfARMF+UkbMQm/FkX4YW+iKABPQEeYEBOw8b4hQcktmelFPuRpyj0wXAPSCALeaOkvmvbzi0zhUNJjNzBAd8WCXoOcAb5k9AH8wPVBg7/E0zA9S2DlieoXKh0k2npQsAtD1CDUltMfueGHwjdYoAc15Mqo+wM7dbuJFqDq3WT/uduOgeZtvlIMDPmZyHf03Yg5NiHxeZ/zcvUsswV61RxMBL+8h7onhQL7AQnYxGgzfZYybsx7cT/UTMcHROS9U2maVEwteQSSjarf0qpe2LuCqJhk3eszNcuh86WnGFwJzaI6s9ZCsKe3G0rS2Xzims/HrV88vz0haWZQZyUC7ADmJHi086eUoVBZbuKTYcVtuVNkZ7R0Q/L1X4S+G9Dvdk9tqwlc91s5bDOJr6nHek2MjewM6rRKWSabvPdthwOBd22qOf1CTOEDsDmlESViiiKCtaNIA/iozALADeWnR3fw52H/wl19USSyMmTf8Xk5+msjEU0q/7p/NXrSblqM6z7t5Gx9E728twAPSXmgq6QSHCcJqS565k79LMsDKk/DP23oU+8mItgAMzdLMz7CpERZvJ+cqssrOf0imfkTJ8ePYyiRvIAhs89qCOwcnHJgj4WGtytkQTluyIEX/TcOCJVTdELLmCiSJJOLZypIAzdAOFR81LTivauuWpkUj1/y31buxDnIRnQqzWJKqDxpOB16ls9B+9bM4Rb4AKziH0wKdWht4Tl/H1d9AIYnyVtAfnuzDiMkSUcP6nqxLmYMQe+/lV6anYgxBz2PjZTFpitAyuN8yClRu9rF0EhGdqx4/w0I4HtnJTSJhurQQzvOjoGZO+4iVlRTTeACGswGD5gG38FTMkxpbjDHaBzsDX/8A7RNnVY/NTjHnSveBjfwWDN626TBS+Wa3slemJv6Z9yA3cEEv3j96hL6iOBR7BosWH3mrGJYL22gatrBsGQyLG8RpfoCqgLq12ejAIMcmRtGtHRZgiJ0MeBfg9w/YnEKlbhlPYJ/K4OBUswuYekG6ZkRcEOc+/HMh/mvVPfvxf1IkXFIN/2Gh8a+ySqiS6yKn9C7qFW3aw7jGNKUSlYU/QIkR+X8NgbMfcw/xLeXD/iAFjGvTtkHpokmqtlU7T05uRkqgPCvRgank8LtecM1zcC9r+fcxZ9DDHaxLMzsefpdrorhnByaVGFTw0ycUW7LDWEFQGnaK1QRE9kbnLR7aEXbJmy+sQ3kRXqqC2JzcVlEqzBEv4vVeGJDJPZhFcmlnouk8jPshibtOp6Ga4EHG2gS3H1ydn9e1hTvCprd65eu8v105FFK8EOhH6zq3ouYXeAw8tvLRVmAMJOGdEc7gZwz48NO5byR34mEHAoyaGtxdyq1O88EM0IFAN21MOSTmeGc6gmJsYBcg2afiFveatQ6jBp/8inZ0C930rpg3AZszRL4exHI+IcAR9k90qV6H/ORJt5xK+LQEqco0O6f5kZ/GRnPohK3RtlvxCoqWN0IaCR9NXq/2hznxIbSle3ln7WMCQXuifrUu15BhdyLhjxBYRerK0XVIXIGhHk8iqa6zredyH8DffyXux5JoJUue8XkizEx8+pXSDSJL4kGcnkunLJfcm/4xRDZB/H0XPF/cbYQiTzoAIW13Xk9Y8rB8/pfobXhMB4YNV6KXDxQ5g1CvfSA0RZ76Q05p13aRB7gykE+tMDsjvy4YH2hkcAL3w+gI5J7GuozpcduWQfJeM091SVsE1gttG4tg1XdjUUwZrLDtKQUi8SQcK5kLFF67zmnPw55XcJgHXfGTSjLNAWbW8z6vzH6PUSFFmbBwyjBMOzPMhAkSusdUu+SGZJgL/vgj5XrEQiRogw20Y5sHCntJuY82launmIgPoQVL0KLyAmGl5xn3hLLQJaiIygqdK5sPdrm1j6CdEnme1iRUBJ5P63zmOS03mPzssXML9dqlA2+sdZUkQSQtS5yZ6Waw9y8slDUVJu0F9nlXeqNoGcWskwhtJldNmID1ON6y23LyqAdny9oWE2HWMH9O5vWg1Yx6iBfymITQ7WagCz2Yp8wFjc0wJgSC8w7ExHlEO+V+Gb3R3UOnD0lux2luWN0SmK60o7msNFY5op1B9aWesBHT9PxM54ngOQXCXBZY50rIXlhMqo5uUbOPoWcNy9hjI0eu3TTMkmK3iHAkUVIKSvFNTM6WUzeQoP401jB6VtJPcAa4R0tFkLy1HZ7qDVt9tS7UiU7rnFLyruD7nFImR6/CRsjQx+WEHcDNkp3KKrjn4pEviIyFHU37l34tZPneGPEAtYbN5pTzUu6ZhUJiGvd8Hxg01gGnE/j0HzsKnJdadUYlH9VAHjWmZhi9FiDhJfxRlbUAGOWzfW5DClikCp/HrwIUXnM47x10QbKMJzvssT6eKYCduVbFEiDc/h0FJrNSUq1LUse9rYFlIQFwhvXi5lox01rZzIRFkfX1425ZuqRIYC7VXE8NoiQHFdDMi02TWNiJG5tufevIZ/Yc6cb7CuZvZSEB2JzjkdTZOTDFfLvIZPNXEC394SGShN02cMrQhoTXHbw5dmtdvIGqcOHJzNTbq96PCAnMsy/T3ZkelIEKf3Pi73Yqm+m1HG2HASEHDkK6oSHw161HlzTpdozML+01lIo3eBdGRJutQRAwHYiRHVQ7uyrtf9IL5Lonn8kS0hyPZ72OcfnDs6/CztSFckFSijSpInshrpNrcL2VDmpwObmDOYUQOCIkYHiZ+NxKssVqBpUQfKmd94LWFDeGJQcb3gULuoFjmQgYQXTqg2U1jWjhJTxrjvh6tRgQfs1Z3jS9cf84qqBdpARcIe0fxyQLczZSDo4h7TMFDvQP/vlPun7SuEVuh5D4AIBwjprsR3SOdP0S4t5pJfkK2CHbu27HHFDnixqSD1h5jB4BR0tpGx4BDwfovNZqf1S6FcaYeeZzRG+tZwnkJAxXRlakL8R75z6/C3GBGIcmByUoSxf03RiwIhdxBWK+zuKoEHjfWC4dIWaIgZ+S1MUPwCAQx/rA0CriUHka6p+OnjbhMwBAJzb4N+TJCIiFOGteyVI1StaYoJMItEEvqHD8B6VLTwJT/ejCgFAvezb5I/ZmlUTY8feCVNH2oy5xt8ILdytI3coPOexEAEX0wREF1OQ/D8fM+JFu6pH5R68o86dK8VZPRw9ZDmoXkm7Re841l1BFOZdKGOfhDuotUO0dBJau/byCtU6FJXOi9EjtMVX43DGftHQ1ofXC9n0gLdf2RQoeoddiiZOVKg8xnwKgAQbsF3kFr7aZxQftMMMievmfo/df55YCKvMChicfRCmkiJowr8upU3pgS3AR0q7JSg5hdVFnvTFFQamHX1dzXXj+cGs5O6uPqrBNsrdcxw1c4yambeecCv7lAlLNKXvuiUjWh4Bx6oykH7mNZDH8A03eR15JN0pjpSa7EC33ORDjFUyIFc1GI2BNIpOINc+Sanr+tdJOho2PmdEb1b4co5md/7B4ysVYN1LGl0+CHPlhXZDRLBTrzsYd1bik+vvZdRUp42F8SVY1Z+gRnxSGfNhmgI8/E+IuH8DdUgDXf/srvqFzNqnUnA6wWII4WbFEmiSFXKqheaj7+sYeLriQxS88STrOVrrhDId6CXnJM9vsJmF2pa9zidypzrQVBwIgSvCrBeJstR6RnkuIB0Kew1wWpW1uxKBadgB0hsTDFhsb7FkhIFZzH9HVBIOCuEqYT86/HRjJOte0pOE09IjEpKljkaAmoptm+DpbcF5MyGNqo3shpWuseNJAaspchkRcT8qwoqKEk+KK7l7hWnvOv4YghKv1m0R9wnbqwMJpASdUEhlJwluZJjxch8mNZXU0WKyxuV3oAXvcgEXK2sEJLHD9DnL3rgLollNXVqptibuKJIPq0wLFHEt4mEUorksGzfVjO/9LYKHOtzr4SUndKEjtvgUSraTvc7t97skcjZkWAAG+2BYxf8/3SAKF2xquGOutdEs9ouYpQE6sKIJcVbbrKCLZbCNqlX7ytUWpzR4Ev5WbegjFJkWNZ2k4vIdFDoJADdRdqGb8yPMdNJ59cE9YLiA8gBrhlCk2+gQacsehmJ12WLnmpNMhXcdmCb+pKW1aU8vwmLrswEU+UgcyJXkoX5R0di1y2flhn8heNVRACVUQZYBHZ5KBX2zlXu2C8B90A2Ip1O+gEDX4H8VGgC36cYl5/4tatHwXjo/WRmon2nwqeeA0aotSehgdscbNFCSsD/8TogyHzNNcyvRzjntYyLUJHcGVXabYLp3Z72274jGMFL6f91YVxbSnotLxDjNpmZa+q75zmnsfbknjcWuMMWyN9POFcfqgxcCUbZrWkqzmnUelO8UVSkW5maATc1rPtnpKgeaWqgLUhTAXuue1imV8dsaKGvMnqgzIX0meWEtWtuL6Of+RkNue7Ageiy1yKp02gy/FSfLAk/VoPFcsD4YnqgbmYdnRZ9+MTnbij0TTlapLjoYuFTE3kS2nXn8ZtcP/YyWYCduxnhLKwUJqi7rZRmRL7e8+P4ObHTRZQLNCu88qODtIpQgD9RnTZcUXiDjWhAxmF9syISgPR0ebcaNw0/7wg9b4uIIbsIiBmG3LBrfMfNCCowLPdzvoase92iSPcrz/ZtEdf/x4ASylB2MXudCcTkiBqCrj13sJaphTeIxFYy1ggZ6B3cJFwAHWx0qUvKIA76KghywUtmHdTHgiiznomtUIsuYW0+lYPi+2GN4ZrvUAg9a3cvLLnNBbBzhuskJhG6rPLnJpr3XEF+POxIRnj5slQkyUppp2lCVMNHYzv5QD9kk7Z769ncjj33gtFz5eJRa/qqa3E8AxIEA/EF06ABQmFSYkTEQwZyFv6WmnnEXxCnjDm1nE6gv+DYEB/8hsKanTD6kHOVftk+qpFSOZGPMK2rSoAtTXkAxQjeYnpvJa19y4ehX6cDSRM+x6zC/cInahlOHgyTDuxyM52ZAzEB6mIvamJ+rHI8Efag0MaaNUryBDJxmojORJ1ZeYnBEQ2ECyxVLuR7ffHAUzQgTA6jyEErWzz1TE2G6QND3lQrxNEkFUi3YKwuU9fyuY7iexLgwvJsf9fR78FrW1AmKxrl/cSBa8eJ4boeKd9pZvHqn6lN5mTynxfq7RnXzZeFZO9S2oRmBzV+qrrpPTN2cI+nsqk7bkTGcPkR6/Oa0ZowzBnNJ5hBkfDxwZi+BKzQgb8HAViRaq8fENooCJqM4isAcMUr8+KX/Gnb6ewt2oQhsX2ebtJjNCEAj9miNSKVHeUsuW2Cw+ai5uZ5YqLsA/7zQ+qBoqzJ3PW6OpXcYz6Hn/Nk6y1dT7lnTSXiKq76fsB/KOEh2UdKKFFSvJptx3ipPxR7OskFq9o9AxseaDAnmrRlD91vx3c3lO7U5mYP5AkqSCahEKPOeQZTPHjef447NO5/hkGcNz/iS76ovttw4CbXPP0C59izS3d/LXSdbCm8yRK1rririwH6FUhT7wIU82N/vAJwLcUf540+OAM5VJJUSypUdHUzhI8RyItVdcn4fYPrXVm5neRmV5pc+2sFTy89QA/ngP4vjKcOLzvqVeuS5w0m0qgSgV9w54CIZQBKNcjL82jZQ6DtQSpntytnEFmPiEbeEMnxz2a8KpJgnj/UUf7LOJHTx4jBjq6NnTOCd9dr8yvpdOztCleDUWPbGC9rD7qKI+oXgaIuTqD/sPkn50ry8CWzDRPsl0MSP0kPzF1D2n9Y9lZQaOnsQOhHwc1NDBocj36phVHstqo52B7hTCiQvA3mO9UY/HdpgXwipO67WqAyzrw1EUYhe6xt9YMg/yXo7EIPUMowueI2rvds9F35ihkm1Y5ufWzUQ5Vth68vMDorkpjrilPBKnAPRudL5icGcndnyLcnKjXjwrP3N//S+AAYfJywCrto1PnYTOx9Pxsda+SYqTB77vMZwtogrSIyK4ZOD5lGMHZ9XuiV2EtjffcznnYq+BpESfcUEoN4cd3Yz0exCRMkm1LPvHk/ZVYDUl8lfHDZIDWosTJtyT7pnBg25hjXUD8YQkqgbaGc4azjkMcuefJLg5dlpxmSw9r2CPdDIsNJcA9KDGToUsT9I7dKbVyUcVORqsg2NzatGZU8ZTPAqxcRYxtqAFMGdYeThWzMJU56Td3HbkVJk0i86npZJ0E8khtFjMB6vONdhBR+hM9aSQYQdt3oiLSlsAXHqfQEJ0h6mqw1HkiZ/Mwdq3wjFc0MLdlyZhU1evjK/HITlkPgeDH0wXXAL8ai1ZrNAzejfuQQlPHrwDyUE+567PcypBDRzxce5V5VR7k7wJ98QcLf34Y5Bb04l3/wGIhqHlOJD+BP3y6LF9YJPaiSjsgRKV4fipb6sXDiFlg80jnAg1iGB5GivL9n7zeJePepnrG4sIW0b/bllvYY8h3UdLq4kYGhcf+qIpIzHYYNl/pqYYoMa5CScVeNf8P7KfxzYPZ3OvVZsTMRqWiYH0KGoY4QH/6Wi2ec+8Ii40qPirBwYKuFBMXM4+hF179Yr5yMCpJP9ePW9XxBSkb+45NjiH6pSx5URxu9CyqcknS/rQCfIBWIAgaiuhQkDu2xFBnaWP7nBUTok9CM5H8n/9z/av/wkz0f3mcxsE0OAssgt//S8YY705zo2UlYfKsIikCquBesNW4sfHmkH7/4ZC5bJk6c/aHys/pkHXHb3+Y3ngeXm+Lq/AF76ahTVaIpDmlat2MiIYVqzVHTluGtsq5sOpmsIX2iDfm3mnG/OVer746xDRAbi5m2B1Qtn0ivvR24R+BhA8OM0MHMqrxA1tn42OXSv3dvQ9Ndvj6Ay9AVOLQW2/eSa7pdPpkYMzNfg0DrlTwUd+GhEnwLmRQlLWDZqbe3gO6z48bARXRr7MFwP4lMTJmT8VvlEL7LlHIqlqXvjeuYM+NmlqGVPt2kzNVVQAipEcJXH45Rcb2XdoSsyWUhpn2BrUTcNkAz9LimF7mNyRUxOdLRYvJTDtYyjWruo40h0TaOBBqBrSyx9ryQ9sHgk50/pEr1iQAlr2oYGYjjYdEvaevhYRYWrTsc6HNIQS5TxyprCC6oCRhqoy0X+f1V5lO3M7v4YnhMUXIKK4wooVcxXCZ+6TYvEPJF/16iEAQ0OCE+ir1/mPpKNtUkniyuaRKHdV4TR+Msd5xDLw3wz7JAkfT7lfWEebhq1ahSV7+YEl+2HsH6ejqMedhqGRwbh6+00F+EGGfK7htcMBvDWXrGxRUuAlOpIbhSdungYsHTXimCWUbJ6yajjGiV3NynAJYFvgO/rVaxN3lW6uJXknwbIHe3PhVNSmfvcpDYuOKT4VaXzQ633NOmG2V2ChIcHlX/8QA4cbqRkhEAUSLN4OcU/1jdZsutO00hQan7l/Y3mSMBqFX/RZcG9by6YeeRuxaLvlOHmTSlLyx2MphG/8qVPwBw4y3OQ7LqklJEb5afGqnujIbNb5Opao0H446eqxUZyFi6nV24GO/nJmtZnfujXWz9ph3fM4+YqO3sgHM3P/C8bidc72lgLGcOdYXJSMyf/79//oswvyC1t1Vql9T10Vmk/aosIiV292Wp2iVvkvI6JSvvORhGjjx6Rz9yHCll3RNBY4cnj+F4RrTMs49+AoHWeZj6brkubQpPR42LGwjDDuuffYhc3eSHWtp3IGFpJWKj+3E2LWjs/CQHIaFGYILQNxS2jKZSwi3NOBf8UHFvgtTfZl3RRC76kICYjPg6TwRN1imx6dm4t5DCIbYOF1eGUFb8FDCLo+0StudPAUEsgrPlxGZ0by+PI2XQ/sndNXKiGWnbgXOZ+s5MqoTAOeqUm8W06aakmLutTrL23QdaHLcrG0G8SVmEQ4C3tDRzrmbkCxY39Y5zTPdUs9m98lh+RTV8wdZcAeni29QcbP4EFhliU1LU3y0h92xYHd6u1YOLJfFVBie1zHWW88VKi3+htD7ZXfDFHM1tCCf5vtjZxrDMT/DOYDQQpCqoVf3xhE7/kIWZqPk/Z+5uBEmd310WrFWR8M0WNrm3TjV2F/MlTRmbr5TQZzvvdXW7xy7mTyuJ/UUzfCTdsui5pJ08rR/lGqR2s6otQve/i9t2RrPnbxMkkXazlHQjPueolA9AUSSPq1Hug9CR7jRxdOZ0N4j4gUtwKz+LKU+RVa0q22HUx13KW2gFhfRjs8/+wzQHZOvJJR6Yn6vg1cMIM7fcgseFcsM9xM3LOVCEuauOnoO58SXLwILbwzMnn8n20rWbTYURQYzio1duSapYDPnR6+wirhMv/SH3nTlfY13fMKUm7H4Qg1G8zsZzy2bQ3cAY8iTVgg4dboA4b0Q1uY0i76I3k/gD7yHklfqPcnCX/1rWJgnqFv/gOoD+KfWg5iJL7/yTh50+F5RS2s/FByVvHoWPwc1u9rVdvjQTbjkeOPVL5th3UMoPlrnyMfH5V/j1+oiufyXcIIg6OOyX6b59PXcW4mWBUP/5bXLFKtj2tVkuiS8IHfBrDZmE5qPifxAkJ8FuVftbOvE3SwOu9rqBG2fe2g3up44n03utCzsEWr+LxzH+nzox0ZJzajgMn/zqDCCXwOV0N/9hk8UKuJn/DheDqOEjMZSTPEtTQy+4RDaH2mdoiBznWU0ggQRjWxYpgkjV5Zvton2/nBjpBofHvra5fNR1huVNlSRZjem3DhKNupA6e4cJwJp5f1+iHCrqQL4Nv+0GOlDQKfPdAfK7o3qi6gDF5B6JRrrUOL0dxDQ10JwY+1dn5f3o1/aY0ciE/aoP9IfW82LV1RASCickDwTZ4lBEBexEgnxhPMpGMYUB7BoPiuXNrH7Sh7ySjuxt208Vo+egOy8e988C3Ry4PVqS3MyUk+vOpZLZ9whJMa/dudKV/WyL5yO0sWXo+zreM7buWh8XLs8GLj9EGjX2Ydk+pbPGRxNhIEwZkSKiZN7XKCedo+2uGPN8uRMD2W4IoHUW4l35u3b+hVz2++wc3Heogve8aXe0ojA7Le+fdAqz775lFP333/DXRh1O+z//vmN/RaaTjvzvbv0ndVY9j732bf/PI++7vvvqOehF6G/4Zv/hMkX73zT/ytf+BbQ4opt/5t9rYmjktf4Fb4J3/9Nvvue3lP9U+DKnt5zHvM9Df/JjPJLVQl3Ph99n3293//Hg+l9PTj79/82xt6afbPvW1/0rCWgph0pp6gpJx8Mdj4q9vsn/7HP2TUR6J29gkTgcea7EjhKAaA9CBQVdntx/NreQkWX0av+DZArieKOUD33lD9MH1QnBIk/S/f/3+184As</source>
+  </file>
+  <file path="open-video.php" generated-path="open-video.html" hash="c5eb743b531dd56b89340104bc54736e" package="Core">
+    <docblock line="0">
+      <description>Open video</description>
+      <long-description>Renders the template for laoding videos from the CMF</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(__FILE__)</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJzNVm1PGzkQ/kx+xRRF3QQluwkpLQeFttdSDomCVLhPCK2c3Uniq9fes72k6Yn/fmN7Q0JIKnSnk+5Lsp555vF4Xjx++66clI1kZ6cBO3BZooQ7nqOilRN8RZmjNmAnCBaLUjCLMFIaBFM5l+MANjDSqvCgj18+16bvWWUnhPzCrJ1wZuBXVqGGt0W9jodu/d5YvhsrPT72Nne0GVfkw2488IKSZd/YmHiVRvCSTJUzzccTC7u9/gCurs/gTFrUklmyZKIDV4jfcganxfA3YDKHTzqG85nMifeCf1fS0wieoTQIE2vLgyTJNJL9HWaqKJQ0zqOkhphkOOvKrCvzZBD3EvhYQ8knj4UP1mo+rNz23QslnRh1xpmg1SfU/M4AGcLvslTaYg7ngTfEKWnwEbRe5DjiEvNWlKZfLy+v0zRqt+GvxlaQL4k7kHM6a4GtNP18dn6Spu32YeN+nsFTtFAwLiETzBhQI4qAVNbHBqxSInaoD0IAfvdBEyD4UDPN0QCjGGscoUaZkZ/EQpkygSr2vmr8s+IaU0WA1tynGKIko/wkHug/42BDpRWRd40kAWOZtkDRdPlt1P+pl7ZqCJfchs3QNJqmINVs6wgkTuHKLxyw6eghSF1RLIwzUeVIhSnHlauYERc4Z+keEykfy1Y0V1McPVP3eC4JPA8GVOQZplQOJfHQflZXeLjgy3FYjceuA45gxIRZ1mUsm2zWYCr4CC0vHGt/txfcL53L8w5rNOdfqcs04SJFndn1zRbbUkTBiAmhpsCyjKJJyQWhxuOQt8q4rlVSzEJ5cYqpbTXTq5Orq7PLi5soK0bR7U3kcDyPbkOxEaVGKi/MbE1HVM6zxtYEGV0ErehcZb6WDuaNE0HcHDKDaaWFL0TnWIGyIkNNzlORUTLDPnSQzS4cPk1WraJUhS+XoqYPQpozy4iOac1CWSzEN5Gjc0GrXSxmdeQomwnP+xQ98vGRhVEVpdtbBcrwG9GhIjg6fqDyNt0/TPyDWkRRRDynypBJ080EL+OifEUOR3ZWYrD0JokTtzvwj2mnOCzW8Xr5vyFW47t1vFRJUXsl3s8Mk6F9zaCLVXeKxnb7MSvYD7qZp8ZvPlMqprKna0JKKrQCk9eD3ut0r/9LShf6bm+vt9/f3Xsz2HeXg8yZzn8aU+/jauEsfHbFs1g5sOuHuh1YXnB5sy2KfJiGo5nt2za8fAmtTFVyM+IYeqFj6JZA6mnYgAQae00n8uAtt7Vf3mwbFHR4zAlzRNdA0HuAqYbG6hrnI3vbgVcdhyFkdBDVWNetLtz+e+lQtZ1BPyWicJ5HupLCNFU6r3VPTeAFbRQ9Ui5sauXci62mLUrX/EsNF8VrD/GmQ1NAC5SP5C6Djufe/yJdmGuYlw2W4P7HmzwjcmY1cub/FjqzOXb7/2HsgsnPLDx2WepANf7wQTev+zmD05DlPQ2F+T5PcGEGU4QtTUxD09jp6dHDKmHdNHk6wJcIXHMvr9trZoifTRqFf7Itpv5ix0eAlQsiPT25vqlvE75I+qp4Oa8b7qIwxp7w+YH5xCSrND3BbFq/htd5vQLZeHKXrecc2o9+99ZfeoQ8vHW4Icms9fhV4qzeHf8NZEPdbg==</source>
+  </file>
+  <file path="core/ajax/save-to-cmf.php" generated-path="core.ajax.save-to-cmf.html" hash="7ff088c4d0beda420645b502fea77edd" package="Core/Ajax">
+    <docblock line="0">
+      <description>Save to CMF</description>
+      <long-description>Implements saving to CMF by using the CMF class.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="20" package="Core/Ajax">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="20">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJztVt9zGjcQfoa/YsN4cuAajtppH+JAQjFxmdrQMU5fPMyNuBOgRCddJB0xk/H/3pV0Zw47aZtm2rzEg+fuVvvz0+4nvXiZrbN6eHhYh0OYkQ0FI2F4+Ro/rWScZpymVBgNmmyYWBXLsNhCrt33mjpBzInWncLsFcnNWiq4JMasGdHwC8mpghdp8d1Z2O9X2rDjjlSrvrPZUKWZFLA57pw4QUbid2SF7qWi4eAtuXXSWGZbxVZrA8fdH09gdj2GsTBUCWLQmvAjmFH6LiFwni5+BSISOFMduNiKBH1P2K0Uzg1nMRWawtqY7HkYxoqi/YbGMk2l0DarsFDR4WLbFnFbJOFJpxvCsFDFvJwuDIxRbJHb8O2JFFZMVcwIx68zqthGAxrCG5FJZWgCF96vxyqs18MQtCHKAMayCNSLZ+SkzdapU0nokgkKSkpTZ0toPvGCpBlE0dV0eh1FQasFH+s1L6+IjyBhCE9Kmw+fUfR6fDGKohb+ndbv6mUjnFMDKWHC7yrIJeIopHEIYwdIbjcaBpwDvXXQc+BsoYhiVANRmCVdUkVFjNWiF9xzvWuQsK7o+5wpGklUaJZpdiAIY7vTTtG9drwNdmhQgMAEM94T1fWDOF3WeiDoB9uBFqcDawWFCF9L7Ajn8gOQOEZgbQdzuVr51HKNXQdS8K0HlaFn0zyIZqPZbDyd3AQYI5jfBFaPJcHcQ4wuFUUQaWwKd+gqw16t1w5SjGG7tgfBx8bVaPb7dILOGs/hJjitLHfc+nB6NsKlxrPuSeMIGpcYdXDuJAF0bH3tPidilaNFu6+xzcRKt/uDyWR6PbjG/KLZ4I9RNLq6ml5FPyGCjbtHQeZOlKGpgXIBBQlz6OCe27rLss9H1zeB2WYUK4WnT2FfBE/QX9FlGMWhijD2YEm4tk5RuGEJlVFCDOmB245234lsWjxNFpGWucJ9gPtlrBJ3CW1rB3mGhjSJdt3m9KLhdPrbeHQT7OScaRPMT62R5A8NEKhI0YwTbK+KjbajECyQVfLMvn7eb8s59qVwGRMjlUtkV5xTwJ7Y4CxHueJ2u3VG1Hse+iIs6LYmi+4+iD1ULXQckjXbTl5QGTNtFw4Y8oQy0Xtky61DzHaE1x3sVJt7yN4EmZIGWxOBxMyCOVZayfSoWgZ+fAJzlD4A1QFSK3LdEBUleZo199LbU1khgSiqM2kpNqGGMO4L0rkfwl3P1PZGxsHmQas6b/ej0h2+xjKhFsbjbrdAcM+zUbl3fFdm5PzdKxSxS1NMlyqFp5WMc4Vj7YRrShKqmsFQ4tkiTNvu3XMgWYaHgoMkfKulCHzRfzf0ViPG8etB94H+PgvYmf/rqu2IP+aJz9vgUYVp3hPDw9DzUvqIHgrwKOJUwPTlsJToeueVOk+6z76C7SbT6HJ6Nn49HjrhrFrdfUyks+ow4RRj4gnEUr5jFJq9Pgh7IlRog97i6AMuLHOFlxoFHlW8+KxlzpNyQnEpbbkoGMK72+MYH8gSjW1DfDYNw5O2BT9A8+fuIf6On7VauBzeN8/usHnsZ25bynl6UGC8RqSQRnW+SJkxRds+ghpH5Cugnr0ZDtGyinDZGvbfdcenCQ5P4Aq7udsVdcdyFXJ3NaCA2fwLFvQ+/0MW9NvzLcjsO5f9H1z2hbjcT56Q5fB9J7h/RHDfnrQes5brAx+4gaVBcZdtnDolvBa/7P8Jb9CDWA==</source>
+  </file>
+  <file path="assets/js/__jquery-ui/development-bundle/demos/tabs/ajax/content3-slow.php" generated-path="assets.js.__jquery-ui.development-bundle.demos.tabs.ajax.content3-slow.html" hash="1184ec5ad3b1bf81eb5f19cb6a233daa" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJyNVU2P3TYMvO+v4LEFDAc9Z7FB0bRAgDZI0SJ3PpvPZipLXn24/fkdSrafF+ihl91NJJHDmeH4+cM6r0/Jiazf/fD9+6cPL0/P68tzyjH46eXPWRMNwWfxmf7mRC7wKCNtysTf+J+O8hzKNJNmyiH8RUxJcH/sn9/tJZ7frbXkryHKQrqmstAYXIiU8IgXyZ11wLMsuUTiUVdNg/qJxGnu6Ufxwp68DIRznNG3knLoSDLdeVCnCf/ndCqOe/rkrdpUhBSo44huYVTcBrJBnERNrziUGBKtIRWJQjycXRZOiSmLcyV1NOqQUeAASo4xBH4XYGanr4UxkacQB+3pYwEMKefBgehzcQ7/3MTR6niQyPk8+6UAFI68eM54vukmMfLeuKcvM6eKhcaijbaOdFkxmAIHeqcwspNEDEgLZyuSIJDTG0bs6bcQb4oBd+KPvr+XRkNCf9Cda3lDOCqgrlGy4rZRPpSIS5h8wM/FWhUeUeFjsNMUnNNBcxnVd41UmQBs1MlrSrrQYjdAJXi3MhLoLmVScHCQXInZlcAjt0MFk0bVA+txB1DUw38nDY8rvvjBegCKkwWeRZ1Xk6W4HIETPJndNpl1AA8PYZuxTq2MwVrLZvR6m81To+4VG80XEivf05uCGEQvXW+Qw5sXKzs61vP+WI0vMUDJkuvAlY/aPKsfdCzYvCEsSxgh508l8k1tTXYWu9ZJ8mOo3UNdI9O8aWzoHQCI41C6CvjmGBPBidg7CFPvVqoqMlujGa6ZrRtWQsy6WQ5jpvx/buwrFUuOmHyKvOnINp6RNFz1+4RVnSQCemapIJtfevoqKeutOBRgXNq9sUZdABWk3bkMOE9tTlfqMLahlXp57PhQbkgKrgzKe2qUPxiuz20xYVBASRgJT2OG07/qxguqAjIXCxaUFw9rn6LO+BWRLBYMJm6J/j83hNbiNvUcjyBr815yqaefs21glgXdK4KsGX8B0VW2azJsHLWklqEInnOG/BgPWuyhhCFs1ZvqVUTJb+L3kmXnUtpS2Msd9cn5dorT0x8AV/KuriVAjfg4B2/BMfJqL9q1c0lWDICVkpbIsMyxEJ9brm7Blbxy3kG1LDtfV8lwqy7NodkZPAeTC16guSCejNTS4lERZ4glwpZcvjfV/y2WgLSkFbpqtXawDyAgGLAzBAkWAwEG/soEON3ly3t0n2HoxS5f6UbKPd62LbyyctX5tPQeyZXqzvx2fHHq83vEKGqK2TiIjMinR6o4Nr859FKwfjCbOAEn0Ny+mfVmE/SNUui416sN9y9Qew5rmF33ODxUgQjrjLIZn7by1m9VveOwGuBfATgiRQ==</source>
+  </file>
+  <file path="login.php" generated-path="login.html" hash="89d11d7d8ebd50da9be3244f8f23ba7a" package="Core">
+    <docblock line="0">
+      <description>Login</description>
+      <long-description>Login page for logging in via open ID</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(__FILE__)</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="administrator/administrator-main.php" generated-path="administrator.administrator-main.html" hash="b653090ee98a0988ff62ae8e0b5410aa" package="Core/Administrator">
+    <docblock line="0">
+      <description>Main screen for administration functions</description>
+      <long-description>Shows all currently set administration options and allows adding new Open ID URLs as administrators and also specification of new CMF instances and selection of active CMF instance.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Administrator" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="16" package="Core/Administrator">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(__FILE__))</value>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="help.php" generated-path="help.html" hash="8e1b6aab8ae1ee974408bf0cd39e4d1a" package="Core">
+    <docblock line="0">
+      <description>Help</description>
+      <long-description>Displays the help page</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(__FILE__)</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJx1VN9P2zAQfiZ/xU1CSopoAuUNWIEBG5U6kFb2hFDkOpfUwrEz2ylU0/73nZ0E2ICn2Pfju8/33eX4pFk1UbazE8EOXKFs6OuPF8I2km0suBXCiuzQsAp75ylr3Uob+M6cWwlm4Qtr0cBx3d/Tpb+fWicmqTbVNOSs0VihFawn6UEwNIw/ECaca4MQLFw3GyOqlYPJ3v4BLG5nMFMOjWKOMpnchQXiQ8HgW728AqYKuDApzDeqINxr8aRVgJGCo7JE27nmMMu4QcpfI9d1rZX1jLI+xGbLzVjxsSqyg3Qvg/M+lDiFWDhzzohl68uPr7XyZjRcMEm3CzRibYES4adqtHFYwLzD7fqURaKE5FOBpVBYJHGe/7i5uc3zeDSC39FWZ39l3oVC0FtrTPL862x+meej0VH0Z1DnGzqomVDAJbMWdEkdUNqF3oDTWqY+6kxKwKfQNAlSLA0zAi0w6rHBEg0qTjwJhZSyHVQauBr81QqDuaaAZOCUQpxx0icLgeGYdjk0NjGxi7IMrGPGAXXT6xv13zxYkz5EKOG6YmijbVuTa7P1GRQ+wiJcfOC2h4fO6ofiJZnLtkCQTFWtn5hSSBxQxlMCFZVK4sFNfQxI4+lg6XCeE0ptOOY0Dg3hUD1nWjx6wStw2VaVUBW5Sibtax9nfPWxB3MpSnSi9qj7k72Ovl8ccFjTPjmiPZxyrzTFxX67UtfIuAtnUupHYJxTH0lWkLqqOsVaSysEWslNN1iCuumS7XxxuVjMbq7vYl6X8f1d7ONEEd93Y0aQBmmwkLsejqDCMm+tkBVokniueZiiw2FlYkj7FlIFRw+24+mSWcxbI8NIeqI1qpaADD2Dxo1k7erSkz6mdPRWtt5FonUnL9abIN4amlyX9z+RF4lf+P0XMnqn1PCE99KDz6AM++85RKFxihr0SrznGel+j8m/avq0k+lf6//CZw==</source>
+  </file>
+  <file path="assets/js/jquery-ui/development-bundle/demos/tabs/ajax/content3-slow.php" generated-path="assets.js.jquery-ui.development-bundle.demos.tabs.ajax.content3-slow.html" hash="1184ec5ad3b1bf81eb5f19cb6a233daa" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJyNVU2P3TYMvO+v4LEFDAc9Z7FB0bRAgDZI0SJ3PpvPZipLXn24/fkdSrafF+ihl91NJJHDmeH4+cM6r0/Jiazf/fD9+6cPL0/P68tzyjH46eXPWRMNwWfxmf7mRC7wKCNtysTf+J+O8hzKNJNmyiH8RUxJcH/sn9/tJZ7frbXkryHKQrqmstAYXIiU8IgXyZ11wLMsuUTiUVdNg/qJxGnu6Ufxwp68DIRznNG3knLoSDLdeVCnCf/ndCqOe/rkrdpUhBSo44huYVTcBrJBnERNrziUGBKtIRWJQjycXRZOiSmLcyV1NOqQUeAASo4xBH4XYGanr4UxkacQB+3pYwEMKefBgehzcQ7/3MTR6niQyPk8+6UAFI68eM54vukmMfLeuKcvM6eKhcaijbaOdFkxmAIHeqcwspNEDEgLZyuSIJDTG0bs6bcQb4oBd+KPvr+XRkNCf9Cda3lDOCqgrlGy4rZRPpSIS5h8wM/FWhUeUeFjsNMUnNNBcxnVd41UmQBs1MlrSrrQYjdAJXi3MhLoLmVScHCQXInZlcAjt0MFk0bVA+txB1DUw38nDY8rvvjBegCKkwWeRZ1Xk6W4HIETPJndNpl1AA8PYZuxTq2MwVrLZvR6m81To+4VG80XEivf05uCGEQvXW+Qw5sXKzs61vP+WI0vMUDJkuvAlY/aPKsfdCzYvCEsSxgh508l8k1tTXYWu9ZJ8mOo3UNdI9O8aWzoHQCI41C6CvjmGBPBidg7CFPvVqoqMlujGa6ZrRtWQsy6WQ5jpvx/buwrFUuOmHyKvOnINp6RNFz1+4RVnSQCemapIJtfevoqKeutOBRgXNq9sUZdABWk3bkMOE9tTlfqMLahlXp57PhQbkgKrgzKe2qUPxiuz20xYVBASRgJT2OG07/qxguqAjIXCxaUFw9rn6LO+BWRLBYMJm6J/j83hNbiNvUcjyBr815yqaefs21glgXdK4KsGX8B0VW2azJsHLWklqEInnOG/BgPWuyhhCFs1ZvqVUTJb+L3kmXnUtpS2Msd9cn5dorT0x8AV/KuriVAjfg4B2/BMfJqL9q1c0lWDICVkpbIsMyxEJ9brm7Blbxy3kG1LDtfV8lwqy7NodkZPAeTC16guSCejNTS4lERZ4glwpZcvjfV/y2WgLSkFbpqtXawDyAgGLAzBAkWAwEG/soEON3ly3t0n2HoxS5f6UbKPd62LbyyctX5tPQeyZXqzvx2fHHq83vEKGqK2TiIjMinR6o4Nr859FKwfjCbOAEn0Ny+mfVmE/SNUui416sN9y9Qew5rmF33ODxUgQjrjLIZn7by1m9VveOwGuBfATgiRQ==</source>
+  </file>
+  <file path="assets/js/timeline/examples/data.php" generated-path="assets.js.timeline.examples.data.html" hash="142f9c643033c65c94b1f5be928d855f" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <function namespace="" line="38" package="Default">
+      <name>getReqId</name>
+      <full_name>\getReqId()</full_name>
+      <docblock line="38">
+        <description>Retrieve the request id from the get/post data</description>
+        <long-description></long-description>
+        <tag name="return" description="$reqId       The request id, or 0 if not found" line="38" type="\{number}">
+          <type>\{number}</type>
+        </tag>
+      </docblock>
+    </function>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJytU02P0zAQvftXjKqVnFZVmxapQJayCNgDB4S2LCe0Qm46aS0cO9hOq26V/87Y2Y+UgtQDlizZ8968jCfz3lxVm4qx8RikBr9BsFipPewQytp5KKRSz8ivGikmV3QVHnJRIuyk33RRdkGHTyuYwxr9IhyT/iVjmG8M9NjamLXC0Va6Wih5L7w0enRTo92PXKC7ymiHyYEBbNE6QjOejmZ8SIGom/FWP0acF752GTc/49WLpcIs5ALkRrns+0FSArGsj4SnpcQSVcaPg35fYcZXwqOXJfKmC0Yh1Kv/IZMb7VGfX5HzVuo1b56Ru5ZlzS68Mae9zTTu4CN9NJmmk3QIL4cwed1vhhCgWqn2xD8YHfoa+86bu+Pi/iU0TU+FvhSFzKVQ0Hb3bKkXp1KfsTTnCbwiAXoXbbr8pagFVubcYkhr9qhwgkymDxB/rwQslQianf7TsWENzXWPRpvMMxgwGMAC6U/hFv80S2FNGWPkiHFlKEjTIULGO4u+thoOui6XaBt4ME+7bo9khmAspCAL0IZ8aWq9IokxsKLWefifHcNBMMGTEVMqEijDosg3kFz8WFzffLv+egvCRVJLhyCduHpJ85aEcOjyrA/zOfRa6/UeiR3tI/6MOhLQJvYnWjY+r2VfMoqxq7fsN5wnQJA=</source>
+  </file>
+  <file path="assets/js/jquery-ui/development-bundle/demos/tabs/ajax/content4-broken.php" generated-path="assets.js.jquery-ui.development-bundle.demos.tabs.ajax.content4-broken.html" hash="feb9562749e8ae1d0408c257ca44b6e5" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJyzsS/IKFDgykhNTEkt0lDyCAkJ0DfUM1AwMTBR8MsvUXDLL81LUdK05rK3AwAPQgvR</source>
+  </file>
+  <file path="core/ajax/annotation-file-functions.php" generated-path="core.ajax.annotation-file-functions.html" hash="903e08ef13bcd13c8c751af99d8a34e7" package="Core/Ajax">
+    <docblock line="0">
+      <description>Annotator file functions</description>
+      <long-description>Handles all file funtions of the annotation tool. Gets called via AJAX using HTTP POST from jQuery annotator.
+
+* write: tries to open specified file and writes data to it.
+* read: tries to open specified file and read data from it. Prints content.
+* error: no file specified, can't read from file, empty file content</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="23" package="Core/Ajax">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="23">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJytVm1P20gQ/hz/igGh2uGCTeF00kGhpfQFKgpcyUknVSdrscfJFmfX3V0Hoor/fjO7DoSgnkrvokSJZ+d9nmc2L1424ybK1tcjWIcDpbQTThuoZI1QtapwUitLZ3x8JFRZowVR13cK/hx0BW6MIII9icBpXafwHp2FgvSxhKkUcPDh4C9orVQjOBoOz+H87GIIldET+PJHi2Y296BNGmKuw7WRDnfAGUmRnQbdoALbYCErSV59HpRX0LNQCidYTbrUmxsU5Q9Ys1qw9dmQNZwbqTh7rRyqzhsao80OKB0s7xwNqEgVu+DGe+DzAeCkcbOg2/npWvlKtG5Mff4onBtLYeG1oPrhxaR7Ti/5+ZV1civVZrTvbaZoLPd2upVue0EjiisxQjjUBrODL+LGSwvdzIwcjR1sbT7fhovhMRxTbKP8ZEQ9gAvEq1LA+8nlka/+jUnhZKZK8n0qb7TybmpZoLIIY+eanSwrqDYnp1joyYRGzlllnYrNLmcbqthQZbadbmZw2KlSXl4XDhwN4LLl8BunWrEYTSFFTU9v0MipBTKEP1WjjaOxnAS/oVdZlGVgnTAOKBQ3IOq+cy9N+rsRq5RYSYVgtHaRrCBZCYIyifP809nZMM/jfh++Rb0gXxAPoJTUnQkmy995/u745G2e9+m1G91Gc6IQrmEipIKiFtbDfxn6nk7EE7zxna+hlpdGeBgKQ1lihQZVQcWSFxq5Da5SX7DBr600mGtSSOZpphBnBQ/aK/qfabAhBsddE6SSLnhCG60Vk6q3Bwqv4fDjO9+nnm+NpGOXrOVMv8+xmzUY/92HZ89gSQZ7exB7YoXWRb3H1kyaZesggxWyjv3JQxPmw7JJkHUmfkw9evux1ugwcCih8FSfqJlnM+qttM72B0zsibgiPrbUWjcWjrWYcDQimo6qZ/B8YUIWPlycnRKmiOEjisJFsf88OEy4bxv7lLGjc7uxf2+ZN8KN06U6Qra9VtVSXT3VeJdMb9mcPmu+yD2oeEs90dEAYvFL7N315iX5ySVrYRVxtY0lZIzRJq2pS2Jyictj7M+raXj7QexMi/E8R6xpHSyevuV1CNdjTpuD8V6nWcSQPi35xSZURa1tlzWXQ/K7uF3YUx0uDr+vDa1gnGK5Envl28hrPxnljKjvg/zHEfs/gSlgIe8uDeAYu/fyn8eICRDxrsLckpUKddX1ex59OX5KAUfI1QQw/br5+28Ba7edt+Wx9e5h8gB5D/z2HyOLGO9vmsD46L9XfMeKx5SIv61OZYl6deczaa4uLAiW3M6nGqD5qEBOtQPkcMwb/WuL1s3/VDAH/j032udQaroPSCmsspU50zrMR70F0C9yjcHKXPP/NH6GbXSTdUShCHesomuInepWlbG/7aKX+/8APCAppw==</source>
+  </file>
+  <file path="plugins/geonames/index.php" generated-path="plugins.geonames.index.html" hash="6c12f90ce1bfd1eef6b8eda4e860fab3" package="Core/Plugins/Geonames">
+    <docblock line="0">
+      <description>Geonames Search</description>
+      <long-description>Searches at Geonames for a given query. Creates JSON string and prints it. Preview of found place by using Google Maps Image.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Geonames" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Plugins/Geonames">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJyVVlFT2zgQfk5+xdaTwU4LNqVvKQmlNAXuoHAkfbhhOh5hC0eHI7mSnDZt+e+3K9kkBDo3VzoTe7X77erbb2XtH1Szqpu8fNmFl3DMlWRzbmDCmc5maCKrf0ErsyuPW6WBQSEWXMLXmutlDEeaM4tLf0wuPoGxWsgCmMyhwidrQNgYLjVfCP4N1C0C1LRWsozDzRJqQ+7HShUlh3NWGTids4LHTQ3vWG1nmPKcWTsTzMB7hklhf968xzf0/s5YsRcrXYxczIJrI5SExV78xhkqlt0hKBwpzZPLsi6ENEm7JeeRqWqpRTGzsLf7+g1MpqdwKi3XkllEYuU2ssHvcgbH85sTt7sPOoazpcwxzyfxXUkHU4qMS8NhZm01SJKMmEGqMjWfK2mowqRxMcnNckdmOzJP3sS7iScRXbFG5wuHFpm8qSn9ziclycx1JliJbx+4FgsDGAifZaW05TmceVzPW9LtJgnk/FZIDlop2xW3EL3whjwK0/Tq4mKapmG/Dz+7HW9fM29DLjSxE23+punH07Nxmvbx39vufXclIQtzJiRkJTOGGs2kVNbRB1apkjoKh2UJ/LvjtYRS3GimBQlMY5X8lmsuM9wKomBzjYeK3XY0/1oLzVOFDlFbZgxhklFLnaN7jH0MajvE8ogEY5m2gISTJLrNb+qsUeMipLA+GaqhRzAwBIlyJb20TpWTDQJZi4o1XSGzss6RtNYSo6VNDPhHjAuEtFEvvbyYTK9DNy/hlz5sbcGmEV4MIfTtAKCy3fC5cdPc1KV9NIbdTq9yhGmepyWTRU3yRgQuw7fdznrqo4uLP0/H1yF5YW7Xb+8gU6Y1Wz7x2QbHwc6o3dnOiC2YKNlNyR+SmQbpN4VsYmJRnfsu/e8VzR6uw4ppfEA1mPBL60ixTxExHCNJBNzYtNYlua2APFlkd5l6mbTosIuPyB9nyGP0m7SAR0rvji9hOILegpU1XxHkYRCn3el6/hjJPgibbXV4iUP/vNPWg9PmEuVFCQ9DiH1qcqSkr169dVR1n4TgD46IQtltaooYAiD/Rrsn0+lleuXDo3UckqdzdA0+53i+5pH3Hv/1eTyZpufj6cnFh/R4PCVY78ry/ISznOsoOMwyXtlgGwJWVXicuRlP/jFKBg7bw5tK0Uk4fEgl87YamigAovhyfHg1GAgz1lrp6CGqGQPwn5AV2s6ooIqNQUlELtc9NNS3PXPJ0OuqCTkisvo0XXu7bSNxvKQCTjmp75rbWkt4KHnm9ulG77bWdobPQi6wcFG4rTZtpqFMDS95ZjvY559BM6fB4PpngMPCy2AAATXXT1OrZeTCfSNxrK7Gk89n00k6Pr+c/o1SAPJ+3Fi0EtO1FsEgoKecm0yLigr5//j7uKRkMXo2z37SrAb3X+6dajsr/lebfUbzDiP1XthxkkKac6/TzYa8V/kyom/HA/wj6nzenqznhIdgGd4XUMDrKQjPD7OH6TkfbJOf+c7a1D8f5qbeGxtJkCYKLrnGmwwU/jYyZ9Xa+eu8ei0SrQ0h2BfzAozOhmEQ9wo0GjRcY7fKABkNDvCTjHUNA6S7jSwZ3oeC7WDNIgu0bP1Qau48VzhkckBbRvzgG4vfRG5nbvX744UZp4uMj0OjXVZ8qBXL8Rnf9R0efMMgXh0lQaZKpQd43v5ysh2sl0t8IdCv/9xC35WJVxClh7cMtRECKy0S8xQshGQUuEatFPBoYB77rw1AGK+d4+ilap1xf+6vohqP05zuB78ZmbU+UoJG7u4IiR7k9Ape92EfWjG2UmmL3oYm6t5rowlzp3djbDybcXIfQLwyHYz+BYsImdw=</source>
+  </file>
+  <file path="plugins/pre_annotations/pre_annotations.data-lookup.php" generated-path="plugins.pre_annotations.pre_annotations.data-lookup.html" hash="4df924a1167abb68e68a2c62ecdf0072" package="Core/Plugins/Pre_Annotations">
+    <docblock line="0">
+      <description>Pre annotations data lookup</description>
+      <long-description>Tries to find pre-annotatins in CMF and tries to create pre-annotation file based on the results</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Pre_Annotations" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="18" package="Core/Plugins/Pre_Annotations">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="18">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="plugins/geonames/settings.inc.php" generated-path="plugins.geonames.settings.inc.html" hash="05ee502e71a947d98e80f75a6662c3b6" package="Cores/Plugins/Geonames">
+    <docblock line="0">
+      <description>Geonames plugin settings</description>
+      <long-description></long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Cores/Plugins/Geonames" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <source>eJyVU8FS2zAQPeOv2ENnXDLECknaGVoI0DCEdNJAm1KmvTCKvdhqbMnVygnm6ytbCcTpoYMv9u57+3bfSj4+zZPcY62WBy0YoZI8Q4I8LWIhgdAYIWOyWAWf8cIkSsMXbkwiOMEnXqCG42wdB/MqPiMjuoHS8aCuWaImoSQsu0GvTuQ8XPAYYag0ErupOxHbtK4pocpLLeLEQLdz2IPZ9zGMpUEtubFSPD2AGeIi4jDK5lfAZQQXOoBJKSPbaCoelaxlUhGiJITEmPwDY6FGW7/EUGWZklSNyNYUYvOyLcO2jFgv6DAYrql2yJoL58ZoMS+q9u2pklUadSh4aqML1GJJYAvhVuZKG4xg4nTd4pj3Jl7b2zsBrjUv3/qEXIfJfaFTH04G4K+H5LkINuR6Qsf7PLue+gfe3ubx7e5UoUP8R4BW1BRolOVcW8CukuoiN8sLbhkZf/ymVg72e53taouSKVN02OR6OtpBUy5jB6LcgQqqji9b11ZXxDqore0Q/ziGv/+S3f/oeYxBrFScImQ8J7vQ6rX333VWrMAV2s1SYM++zlV7Zr/pVbvxF1g68fPxE5+VQ3V0V8S9yep9+0b/KI5+9vvp1YTf3S7l5a939w9fG87shJKUdgIPPCX0txw+f1qvzpvIYnh29ypbZOzdDW3YcLcSkUmcSL/bOFY/wepf25x4E3tSKnPIYdffntI7HfwFYV4p5g==</source>
+  </file>
+  <file path="core/ajax/download-annotations.php" generated-path="core.ajax.download-annotations.html" hash="b0b7f5cb36c63b36312d16c4ca13b787" package="Core/Ajax">
+    <docblock line="0">
+      <description>Download annotations</description>
+      <long-description>Implements display of annotation triples by a specified serializer</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="19" package="Core/Ajax">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="19">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJyNVO9P2zAQ/dz8FYdUkRa1yQZfJkoLXfmxakClwT4hFLnJpTU4dma7hW7if9/ZSWnV8WFRpMTnd+/ePV9yclrOyyA+OAjgAM7VixSKZcCkVJZZrqShuNsaF6XAAqU1kHFTCrYClW/hwGpOCAPTFTAwJaY855iBQc2Z4L9R10RnbGHnSsMNs3bOmYGvbIEaTop6HU3d+sxYfhgpPRv4nCVq44osD6MjHyhZ+sxmCCOlMR4+sVcfTVW50nw2t3D46fMR3N2PYSwtauklMtGBO8TnjMFVMf1G4jM41xFcr2RG3Lf8VUlPI3iK0iDMrS2P4zjVSPlLTFVRkCFOVVxDTDxddWXalVl8FH2KYVRDSZfHwtCSL9OFK9+9VdKFUafkCK3OyZqlAUqEn7JU2pJd1xVv5VUcxDEYy7QlG40zIKifiY+22r3AQTLMuUTQStmA59DaqwJZK0ySH5PJfZKE7Tb8CRpVfCvcocMkdwps7T6T5HJ8fZEkbbp6wVuwHpErtFAwLiEVzJjdGVBKRA41FALw1TsvQPCpZprTbDBNKjFHjTKlZomFjtxUVJFvWOOvBdeYKAK01jIjCOPUHbQH+teoyqHZDWsTuOS2YkITNNMib/RB4guMbi6dT02XBXWIXr13gbeLU4ptNZOri/uHcDOv4WMb9vfhow3Y60NYexo0mkwI9UL99CFnwmAvaORUgaVzSiYh3QHxWy5npjtgS8YFmwpMNnzki4HmM66gP4DmkgnP23DSPqrd73twBdoubvXC1W68Be4OKoL19l61X2XR7SbrnRXoBKFG+m2fj9QLwSnQXPIMVZIxy6i4c7I78KFeRdY0KLYaIi0fCF9jc07dOyoH8/bMUKJmFofvkzSZPmHqzmQ0mXwfXzyEmyET3NjwsQNbmjrwXzY/7Mh8bNeS5sgy1K1wpOhnIW3Xrko8hhCiXdotsqRK+oeTZrUH6ZxpyuovbN79Eq7LlJpLC5v+e4F32n1cp4O/D4nGcg==</source>
+  </file>
+  <file path="core/ajax/language-switch.php" generated-path="core.ajax.language-switch.html" hash="ee6ac69ed73008e190913bbb2eba0a6f" package="Core">
+    <docblock line="0">
+      <description>Language switch</description>
+      <long-description>Allows switching between available languages</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJxlU9FO2zAUfW6+4iIhkjCasDLtgUGBAWNIHUiDPU2T5Ti3jYVjd7bbUk38+66dFKY1D0l8cs7xyb3XJ2fzZp6U+/sJ7MOE69mCzxDcSnrREBTQC6XMyvWY1DOo0K8QNfAll4pXCkH1QtdLzvnCN8bCN+59I7mDz3yBFk7afl1UYX3uvBwVxs7GUbNE66TRsBwVRxGYc/EU0lwaixARYeZrK2eNh9Hh+yN4eLyFW+3Rau5JydUBPCA+1Rxu2uorcF3DlS1gstY1+d7JZ6OjjZICtUNovJ8fl6WwSPolCtO2RruQqOwprqzWQy2Gui6PisMSLnsqZYpcuPDeymoRth/eGR1gtEJyRasrtHLpgITwQ8+N9VjDpPPt6lQmcgrZTo1TqbHOUsa+398/MpbmOfxJBh3+D3wAtaR/bTH7/8nYl9vJNWM5XZ+Sl01Db9BDy6UGobhzYKZUE218rBZ4Y1TRNxjwOZZRgZKV5VaiA05VtzhFi1pQcnKh3rnOqojpLf5eSIvMECHbpCwgLQV1rIzE+Fp0Gpq0lNIlZQnOc+uB6hs6nvRPFtGsp0gtfbcZjdWua+nTenAKGlfwEBeBuBvsoUPDmLyJhVrUb4MJU6lw4zIck6mc6SzdfKbKRqfheIMEn9AcSdv7bJfdXD/+fKP/ymFvD7Zh2DmFtO9eVGvGreXrbebrhmTv6VA5CrU5Tuz1OHVOA+IIY54kdolD2m2/zEsahBzeQfbxkLoabqMPeX5A/QhlH7wkgwZ5jTZLJ0bEGTiGFIqtIBV3yCyqOOlxnJKz8V8SRFdP</source>
+  </file>
+  <file path="core/class/core.class.php" generated-path="core.class.core.class.html" hash="a039c96c624afe41d9049e1f871be0e7" package="Default">
+    <docblock line="0">
+      <description>Required classes and libraries</description>
+      <long-description></long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="30" package="Core">
+      <extends/>
+      <name>Core</name>
+      <full_name>\Core</full_name>
+      <docblock line="30">
+        <description>Core</description>
+        <long-description>This class provides the core functions of the ConnectME hypervideo annotation tool. (Main Class!)
+
+Those are:
+
+* Parse and load the settings file
+* Parse and load the language file
+* Parse the opened video and generate a video object out of it, which contains the video ID and locators
+* Parse the administration settings and generate an object of the selected CMF details (URL, access data, protected URL)
+* Parse the saving currenlty logged in user OpenID</long-description>
+        <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="30"/>
+        <tag name="version" description="v2.3" line="30"/>
+        <tag name="package" description="Core" line="30"/>
+        <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="30"/>
+        <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="30" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+      </docblock>
+      <property static="false" visibility="public" line="37" namespace="" package="Core">
+        <name>$settings</name>
+        <default>NULL</default>
+        <docblock line="37">
+          <description>Settings of the Hyper Annotation Video Suite</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains all annotation tool settings&lt;/p&gt;" line="37" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="44" namespace="" package="Core">
+        <name>$language</name>
+        <default>NULL</default>
+        <docblock line="44">
+          <description>Contains all language strings of the selected language to enable multi language support</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains language strings&lt;/p&gt;" line="44" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="52" namespace="" package="Core">
+        <name>$video</name>
+        <default>NULL</default>
+        <docblock line="52">
+          <description>Contains the ID and all locators of the currently selected video (if a video has been loaded)</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;video ID and locators&lt;/p&gt;" line="52" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="59" namespace="" package="Core">
+        <name>$cmf</name>
+        <default>NULL</default>
+        <docblock line="59">
+          <description>Contains information of the currently selected CMF instance (URL, username, password, protected URL)</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;CMF information&lt;/p&gt;" line="59" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="66" namespace="" package="Core">
+        <name>$userid</name>
+        <default>NULL</default>
+        <docblock line="66">
+          <description>Contains the OpenID of the currently logged in user</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;OpenID user URI&lt;/p&gt;" line="66" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="82" package="Core">
+        <name>__construct</name>
+        <full_name>\Core::__construct()</full_name>
+        <docblock line="82">
+          <description>Constructor</description>
+          <long-description>Includes all settings from the settings file, sets the tool base paths and includes the language from the selected language file.
+
+Fills @var settings, @var cmf, @var video and @var language
+
+Settings file is located at /core/includes/settings.inc.php
+
+Language files are located in /core/lang/*</long-description>
+          <tag name="return" description="true" line="82" type="bool">
+            <type>bool</type>
+          </tag>
+          <tag name="throws" description="Exception" line="82" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="174" package="Core">
+        <name>getVideoSources</name>
+        <full_name>\Core::getVideoSources()</full_name>
+        <docblock line="174">
+          <description>Get video sources</description>
+          <long-description>Tries to load video json string from cookie if set. The found result gets parsed and a video array containing the video ID and its locators is created.</long-description>
+          <tag name="var" description="&lt;p&gt;video source json string&lt;/p&gt;" line="174" type="" variable="$_COOKIE['video_source']"/>
+          <tag name="throws" description="Exception" line="174" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+          <tag name="return" description="video data" line="174" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="210" package="Core">
+        <name>getCMF</name>
+        <full_name>\Core::getCMF()</full_name>
+        <docblock line="210">
+          <description>Get CMF detials</description>
+          <long-description>Tries to parse administration settings to get the selected CMF instance. The default CMF details of the settings file will get used, if no administration settings file is available. Furthemore, it tries to generate a protected URL which includes username and password for accessing protected CMF functions like sparql update.
+
+CMF definition file is located at /core/includes/administration.inc.php</long-description>
+          <tag name="throws" description="Exception" line="210" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+          <tag name="return" description="CMF details" line="210" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <file path="annotator-main.php" generated-path="annotator-main.html" hash="f1a96f72087f667b5173b9365f6914ee" package="Core">
+    <docblock line="0">
+      <description>Annotator main screen</description>
+      <long-description>Gets all required data and renders template for displaying the main view of the annotation tool</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(__FILE__)</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJyFVVtv1DoQfm5+xSBVSrZik9K+UVjgcDuVSiux8ISQ5TiTrIVjB9vZsjrivzO2E7b0wnnaeC7fjOf7xvvsxbAZsuroKIMjeKW18dwbCz2XGpywiJocwfcevQOuFFj8PkqLDTTcc+C6IYtu0Drw2A+Ke4SWEBrp6LCTugO/wQS4lXgNpo0GnmpJo8Ebo6YqL/noN5T9gXu/kdzBP3xEC8/66VzW4fzSeXlSGtutYs6Wigec7Ul5Gg0DF994h/DaWIRoEWbYWdltPJwcPzmF9adzONcerY4dcPUY1ojfGg7v+/rfeKk3toSLnW4I91L+MDrCKClQO4SN98PTqqL5UP4Whel7o13oqJpCXFXvllosdVOdlscVvJ5CqacYC6+8t7IeQ/nlpdHBjFZIruj0Bq3cOqBE+KwHYz1N+yLhpjlVmWyheNRgKzU2Rc7Yx6urT4zliwX8lx0k+w3zY6KD7tpjwdi784u3jC0WZ9nPmXfiNhEkFHcuMHSLnTKqg8jHH3FoCpSsLbcSSRM0Y4stkgoE9UkoxJRLUGXsdVIMMxRQzD2VkFeC+KliYPwsUw4JMqfusqoC57n1QNMM/GbTL4vWYgqRWvpUDF126Hpy7Q6egyalreMhBB4GeEjWIIp9slBjg6C47sagmFYqnFGWKwKVnS7y2U1zjEjL1WxJOL8TSPgCGclhIByq5+2IZ3u8Buux68JKPIeWK3fTJ7jYPOxBpmSLXvYB9cnJcWp/CC3PW5cdzl8sME1xOZ/3eRnYLf2g8pRIe2yugQtBEyWCQZmuS9yNLmyy0WqXJCZprr44ZOu36/X51eWXXPRt/vVLHuJkk39NgiNIehGIY+EnOIIK3WUHG+T0OBT5hRFRT0/n5cmhnIZJFTxd3S1XNXfIRquiOO/yMLuJh3xG+StIuGuPeqReLM2EtEsaSa3TfB6+1dnd2pOLFJC+AvqdoK1s0LDwMO6lEm2LexBV39TMmZEk4/bh1MnUuN8NeGsZ3V0UvuVS8Voh24exmLrH3M/m4eh77yNGS2vt2fTC3od4K+S+i96g7f/ISn8lNzT9e3XS30nxp8hD1ovVL3VeRkk=</source>
+  </file>
+  <file path="plugins/pre_annotations/pre_annotations.get-all.php" generated-path="plugins.pre_annotations.pre_annotations.get-all.html" hash="1fbb0831fbdded9752bed70b8d54ef3b" package="Core/Plugins/Pre_Annotations">
+    <docblock line="0">
+      <description>Get all pre annotations</description>
+      <long-description>Tries to get all pre-annotations from pre-annotation file</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Pre_Annotations" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="18" package="Core/Plugins/Pre_Annotations">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="18">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJydVm1z2jgQ/ox/xZbL1KYFmybfkkKbplyTuaTJJXRubtKOR9gCdDWST5JJmQz//XZlAwaa6/WYTMDSvjz77KOVX7/Jp7nnRS9eePACPnALLMsg1xyYlMoyK5Q0uEW7Qy24AatgsjHr1MxgrNVsZxHGIuOV/1tW2KnScMWsnQpm4B0ruIbXs+o5HNHzW2PFYaj0pO985lwbijM/DI/cQs6Sr2zC4UxpHt1kxURIE91oHp9uAYa3icoXWkymFg67r47gbngBF9JyLZ0Ny9pwx/nXlMGH2egcy03hvQ7hciFTTPdRfFPShclEwqXhMLU2P46iRHP0n/NEzWaYiYBGlYmJRouOTDoyjY7CbgRnlSlCdbZwaq0Wo4LSdz4qSctcJ4Jl+PSeazE3gI7wSeZKW57CZRm3pC/CLkWQ8rGQHLRS1hNjCJ6VC2ngx/Ht9fUwjv1WCx69RrleW25DKrD2GQ92v+P414vLQRy38HPiLbfUMGNCQpIxY0CNa5pAGagsJKtTFAL/5njNIBMjzZxMGEpI8zHXXCZYCkbBHpsyVOjK0fzvQmDfFBoEK5gh+FFCnXWG7mdY+qBOfYRHJBjLtAUknJThVd+xWw0qEyGFLZNx4x2gJmPEHlM46IHkD04+ZAxew5knWZFySJQci0mh2SjjmMBaISfGaRgCls5Qam1IZmMwqtAJx4cwDFtegzpBRjH/Jow1+9VU8U3kgqCNdiyGuF4W5nrWqMyeoOSHQU68xhKjeA0qGKnXPI0zJicFnZce+Fz6JyVYgbzY4CA+u77+7WJw75OV/2WFggxkzLRmiz2bNmyx2emvWOr02ZyJjJhbJzVVxCcA7cZGcFQA/rmm0JiZi5Srim6syz3GKbOM3EsAbu2EfA5GzPB4plIqtjqvPoRPAnbmhc5KZ2ognQeKvMlz74vUITvIcUyhyil2dP/ZfP7jy8uI+Kw7YqZJrHmeMWzgyqMNPp6+tVkr9EO088usdAq4sQSDEq8qCP28Gm0V+NVo23l2GCM/XEenqAAUthL6+XB4E9+WWYJ6OhK/M3SUXHGczWlQWg9+/zS4G8ZXg+H59fv4w2BI0ipNWZqec5ZyHTRPk4TnttmGJstznIEOUPSXUbLpYpfhTa5ofPbWqWS6QkNnFYDkdjM4vT0+FmagtdLB2svJB/CTayHtJlqnPyHExqCO3CGGJfAMszx6lX7LZGh1W7mcqRRN4VkPb4NupUrUmFTAKSf0+jiubIH9XUOeujphjLvjQtsp/hZyjsDFxJXqhI3WRWZjwzOe2AZq47FZLpnm8f1jE88Dz5rH0CQdlvpbHQDkAq8DJ8Tbwd2ny+FdPLi6Gf6J5504LbRoHjfpFx75RIucUv58pOWXJSmt0dhQuMFbHbhGxR3Vg53Ri7i0wqZRN+MUbztkb4/TdypdBHRnlCcc428ct3goESDqgi5g3O26BWSWs2SK3drKim8GFcyqTw33r5oIbhjjnLYcy8GXETNVD7tvIs7+wHFfGwUPDw/hw5G7sVED3aj7KtLpuGOSKZ+xX5x1CXSnmNBVs+lkaVOpjCw6/Y0wq6yoM99fwd+P96RjGXvp/ruu1Kb1vo8bJ/D8+XeRuJFU4vgpINUUWcPYJ2MjT9LiKgKuVNLdFWxFam251pV0lPNUMNcW7KrK1GQRsRHdbon9Adf1iP+D8Zr7z/E+Y/mTtOPeDuv/BQt6/YDz5ZPaxPvFbS3rh+zly5P10aFaTEGUBlvebVy2Gu+N7eUWdOCw1YZXLehReP/7hfTg+zG7/xq2VYO6V8nOrKrvr98NvDf9fwB9UQBE</source>
+  </file>
+  <file path="plugins/maps_search/settings.inc.php" generated-path="plugins.maps_search.settings.inc.html" hash="0ff3d66475c9337f36de0226a603ba90" package="Cores/Plugins/Maps_Search">
+    <docblock line="0">
+      <description>Google Map search plugin settings</description>
+      <long-description></long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Cores/Plugins/Maps_Search" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <source>eJxVUV1PwjAUfXa/4j6YTImsg/lg/AAUEiRBYoI+m9LddI1b29x2KP56uw5N6Nv5uPectvdTW9mEDQYJDGBpjKwRXrgFh5xEBbZupdIBea+0dMHU+Wa89ZWhYPS+UtzBE2+R4L454mzX4ZnzapwZkpM4s0dyymjYj7MiEpaLTy4R5obQsdeY5FgIdx/bmB5dwtgDKVl5GOejArZvK1hpj6S5D9t4fQVbxM+Sw7LZPQPXJSwog/VBlyFro76NjmtqJVA7hMp7e8uYIAzzexSmaYx2XUt2tDi2Owy1GOqSFVnOYH60hp7RC4/ek9q1XfxwY3RHIwnF64AWSGrvIAzCu7aGPJaw7vf2b8eSc9mEK6pGwgNwIn64SFuqU3iYQHps1xkyGT+DW+Wy0DJyLCDmfKgjAkyvkrO/k36p0lf9kuv85kSqsHu+Xivy/ET7MabpldE4/ecv75Lp5Bf3e6Rx</source>
+  </file>
+  <file path="logout.php" generated-path="logout.html" hash="aa5af8def929514aad513d919eae5f3d" package="Core">
+    <docblock line="0">
+      <description>Logout</description>
+      <long-description>Logout page for logging users out</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="15" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(__FILE__)</value>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJx9U11vm0AQfA6/YitZAqwAqfPmpk5S58uSY0t1+lBFETpggVPgjt4dTqyq/717B1b61Cduh9m5YXa5uOzqzkumUw+msJaV7A2dPgroWIVQSgWNrCouKug1Kg0fvCvWm5rePzJjas40fGM9KrhoxzrObH2lDZ/FUlUL17MnDS4F7GfxuQM6lr/am5ZSITgkl91B8ao2MDv7fA67pxWshEElmKFO1pzCDvG1YHDfZg/ARAE3Kob1QRSku+HvUjiZhucoNEJtTDdPklwh9e8xl20rhbaOkpGik+wQiTwSRXIenyWwHKnkyXHh2hjFs95eH22ksDCqnLOGqhtUfK+BGuGH6KQyWMB60B1ySjxeQvCpwJILLAI/Tb9vt09p6och/PZOBvwf+BQKTt/aYpCmd6v1bZqG4Rfvz3FU92igZVxA3jBN4ygpASGNywaMlE1sWddNA/juQmug4ZliiqMGRhkrLFGhyMknqdCk9CAVO68Kf/VcYSqJEBw9xeAnOc0ncUR3jIce2iGf3HlJAtowZYDStPP1xmfq0GCkcMHNcBlqb5K35clXEPgGy8c7S5lYYRghOro2S4sWRtJWBgUzlNTPqI0KeJjzuaawDKekwpAsHhfX7ilV8STd3e52q+3m2ScN/+XZt2944b+Qbk/zMcF/KTWyAlXgr2Xu0p0fV8lqW6vRgjQM/Ro6WmRMY9qrhvouF38B5nwU7g==</source>
+  </file>
+  <file path="plugins/maps_search/show_map.php" generated-path="plugins.maps_search.show_map.html" hash="a3b034cb3ae0a2a5c2f67290d25ee34f" package="Core/Plugins/Maps_Search">
+    <docblock line="0">
+      <description>Google Maps search preview</description>
+      <long-description>Generates preview for a place by specifying longitude and latidude of it.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/Maps_Search" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <source>eJx1Vm1T2zgQ/hx+xV6uQxwmyAF6N9cQQylwlLlQuAs9pscwjGIrjsCWXEkOmA7//VaSHUInfCHet2cfrXZXDPeLWbEWbmyswQacSJlmDM5ooUEzquIZFIrNOXtAq3NggilqmG70MJUKKBQZjRlMKtAFi/m04iKFTIqUmzJhQEUCGTU8sYKcAjekxvtISzNDhDNqzIxTDZ9oyRQM81omEyt/1IZvE6nSPRczZ0pzKWC+TXacoqDxPU0ZHErFwousTLnQoT3E7dgfwnnFsqgUT2cGtvtbOzC+PIVTYZgSyEwKmvVgzNh9QuEkn3x2nI8UgVElEsz1hT9K4WAyHjOhGcyMKQZhGCuG8XMWyzyXQluWYe2iw0m1KeJNkYQ7pB/CYe2KPJ0vHBij+KS06Te/SGHVTMWcZigdMcXnGjAQvopCKsMSGHlcX7tw7d3tyfHl7tr+3trQXiLwKQRca2YCZ7nuYM07N11YX4fXapEu1LeixJw8/inkDaML7A6gSbnW4iLO8FZvpYhZ0MEkBq9eE1QTtHe6nt4vR+eHl98ujrFoeYay/wEYzhhN7Ad+5sxQEDRnUds2lj1yG2KJNyRM1OaCG1sYHdOMRVuk34NSM+VkOkGVkO1loHhGFbKJ2qWZbv7RmAw3Gdsb87zALs+pusdOGoZe6z20qdBkqgJpGPZowlhrjG61WpZzDyYyqeCHlVsYj402gP6uEwuaJHj2Rn7GP8PQwTXQseKFWca+o3PqtW3QKo7adU/RO/pIUjeLtOCaYG85HTbWRId333EkqnCL7JDtWiA5F+QOiWJGh/c65QJbI3iOc/EzuNWFKIV3en8e7RD2WKxrbDWpoinNNFvHxIoqznTkJl2v37MqOjh9ouPqUH64KtOd0cPvmxfq3/LDt/fvs88jevV1Lv7877fb6d9vsLJFfRckMsYeE6ZLcDiSKpiWIrbzAEHXl3lOFaRMxjLBvRCBwJXjyRN3kJPaFHRd1Rfhdb/wJ9YAOaRYSpVoxLn2I1MoLgws9/4uNncPVllt81vrzQINA1C7gtWImpFIA5/tun/TqxNfb914ni4cXc8Ly9YS8hxbT1LmA9jq97yI844balBnqpUYd4lNdJoMXiU9a9Tkn/ODo7ODC+f9vJxuBVWMWlwCSZk5zpj9/FSdJkEHPTZjKrBLO93eEl9/iCVkO0krwa0hqM/WKqTmNv6n89gDDSy6l5/rEi3guZjKB45r+GFFilM0XjljsBzXtAypP4If9nrxUjpN8uceNN0SKKbLzOgeaENNqZuOadmN6lUQRSv7buys5PyvRYwLqgHx6l/0rXqZjXHpu655cSL4itonjyW3uEVQr3ebIF9b4nYUxrzCWDi9VIjg0jv0PsEr3+4qZ1kwEdjC11e4cPJdU/88d5uF5mq7XAY2t22DnI9kPuLa2H8PAg/eg04madLpLc2iw0c4twaWlsIwbB6CoV2w9Z5I+Bx4ErVfuhDXpF2oUfuBJ2Y2eD2mqWXE8/TaW9tuWIvHXZgx++q/6e3NL+4TnFQ7c1vFI2iZ8QR+7ff7u3aNISNP17NE2v49c8BMJHxqQf4HvP3snA==</source>
+  </file>
+  <file path="plugins/dbpedia/dbpedia.data-lookup.php" generated-path="plugins.dbpedia.dbpedia.data-lookup.html" hash="d3801f8ae54dfd23dd1140e1cb6aa05d" package="Core/Plugins/DBPedia">
+    <docblock line="0">
+      <description>DBPedia data lookup</description>
+      <long-description>Searches for content of a specified DBPedia URI and returns the content. Parameters specify the response which shall get returned (e.g. http://www.w3.org/2000/01/rdf-schema#label)</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Plugins/DBPedia" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core/Plugins/DBPedia">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="core/ajax/get-settings.php" generated-path="core.ajax.get-settings.html" hash="ffa408e401afdad22f0cfb4a249a4557" package="Core/Ajax">
+    <docblock line="0">
+      <description>Get Settings</description>
+      <long-description>Gets settings and created JSON string out of it. It's used by JS/jQuery via AJAX to get settings specified in a PHP file on the server.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="20" package="Core/Ajax">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="20">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJxlVGFP2zAQ/Ux+xa1CSorahMEmTZSWZdBBEbSs6aZJCEVucm0NqZ3ZbqFC/PednRRVW74kfnf3fH73nNOzclF60cGBBwdwiQYSNIaLuaZ1DWnQNQZM5JApZAZzuE5GQ9BGUQDkyoCcATchDIyvYaUpYbqhnOjxxwrVBtacQXwd/wYjYU7bvFPqEjM+45TPBTC4u7qDGS8QpACzQMpTa1Rh3c1XtjILqeCWGbPgTMM3RuxwuqzX4dSuv2rDj0Kp5j1XQ/WaE936KDx2QMmyJzZHOJcKo/iRvTg0k+VG8fnCwNHhx2NIJgMYCINKMEPVrGiRNPiUM7hcTq+cEhcqhJuNyIl7yF+kcDQFz1BohIUx5UkUObX4GjO5XEqhbVdRnaKj6aYtsrbIo+PwMILzOpX6crkQG1J3urLbt4dSWBhVxllBqwtUfK2BCuGnKKWyE7mpeCutIs+LIpoPU1ZsbRXw6nfq0KDZcSk5zrhAUFIaj88g+FABeeCn6Xg0mqSp32zCq7dX4TtwC3JO8iwx+Pedpt8HN/00bdLT8d68XYMtGQ06K5jW1jJMCGmcwuQMWdhBQ1wUgC9O+gIKPlVMcSTzKeoSZ6hQZJVdaOa6ogrdiRX+WXGFqaSEYNtmCH6U2Um7RPcZVjXkfL8WgQtuKibU3r7NgS4IfHYecUotkOWoAv9ckimEaU82JZ4AK0uapus/etRSdCBbMEXm7q7MrP1lS8+KQj4DyzIagL0BhZzPqyPQTVEkhCg2lficOjDBfpr0k2QwGt772XLmP9z7No/n/kM1CqJUSGJjZmo6oirJ097e/pL2sO7ugv/aGPeTu9Ew6TdO4N7v7ERDFz4fXdhQ49PhcaMFjVvaNL50iA+hk6HdK5iYr6ik3asuu2734uFwNIkn1F+axL/6aX88Ho3Tz6R04+2/XR4cVFKpgW3AegILuiV0lv33X0GXRqzYJvC3iA/dHtRtbLEW+Gueo9yNOYACVqsdmJYE1srt4BXSfO/KDi4lU8kcg/duKt+e9f4CwaSmDw==</source>
+  </file>
+  <file path="plugins/dbpedia/index_update.php" generated-path="plugins.dbpedia.index_update.html" hash="c0ca3693674c35f5212b68067ceead1b" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <constant namespace="" line="6" package="Default">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="6">
+        <description>DBPedia resource extraction
+2012-11-23</description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <function namespace="" line="188" package="Default">
+      <name>checkForRedirect</name>
+      <full_name>\checkForRedirect()</full_name>
+      <docblock line="188">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+      <argument line="0">
+        <name>$entity</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$current_depth</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$plugin_settings</name>
+        <default></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="188" code="PPC:ERR-50011">No summary for function \checkForRedirect()</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="plugins/geonames/geonames.data-lookup.php" generated-path="plugins.geonames.geonames.data-lookup.html" hash="08568fdb33026224488275d7de15f1fe" package="Core">
+    <docblock line="0">
+      <description>Geonames data lookup</description>
+      <long-description>Generates preview for a specified geonames URI by using Google Maps Image API.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="17" package="Core">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>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</source>
+  </file>
+  <file path="core/class/administrator.class.php" generated-path="core.class.administrator.class.html" hash="dcfff9057ca4795e2c68f1a1753b76e8" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="23" package="Core\Administrator">
+      <extends/>
+      <name>Administrator</name>
+      <full_name>\Administrator</full_name>
+      <docblock line="23">
+        <description>Administrator</description>
+        <long-description>Administration functions of the ConnectME hypervideo annotation tool.
+
+Those are:
+
+* Check if a given URL responds and return the HTTP response
+* Parse the common log file and return its content
+* Parse the sparql query log and create a array out of it (with detail links to every query)
+* Parse a given file and return its content
+
+IMPORTANT: PEAR HTTP_Request library is used in this class (http://pear.php.net/package/HTTP_Request8)</long-description>
+        <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="23"/>
+        <tag name="version" description="v2.3" line="23"/>
+        <tag name="package" description="Core\Administrator" line="23"/>
+        <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="23"/>
+        <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="23" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+      </docblock>
+      <property static="false" visibility="public" line="30" namespace="" package="Core\Administrator">
+        <name>$settings</name>
+        <default>NULL</default>
+        <docblock line="30">
+          <description>Settings of the Hyper Annotation Video Suite</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains all annotation tool settings&lt;/p&gt;" line="30" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="37" namespace="" package="Core\Administrator">
+        <name>$language</name>
+        <default>NULL</default>
+        <docblock line="37">
+          <description>Contains all language strings of the selected language to enable multi language support</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains language strings&lt;/p&gt;" line="37" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="48" package="Core\Administrator">
+        <name>__construct</name>
+        <full_name>\Administrator::__construct()</full_name>
+        <docblock line="48">
+          <description>Constructor</description>
+          <long-description>Creates an instance of the core class and returns the settings and language object from it. They are passed to local parameters.
+
+Fills @var settings and @var language</long-description>
+          <tag name="return" description="true" line="48" type="bool">
+            <type>bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="71" package="Core\Administrator">
+        <name>getResponse</name>
+        <full_name>\Administrator::getResponse()</full_name>
+        <docblock line="71">
+          <description>Get Response</description>
+          <long-description>Validates a given URL by performing an HTTP GET request and delivering the response back.</long-description>
+          <tag name="param" description="&lt;p&gt;URL which gets validated&lt;/p&gt;" line="71" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="HTTP response object" line="71" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="HTTP request exception" line="71" type="\PEAR">
+            <type>\PEAR</type>
+          </tag>
+          <tag name="throws" description="Exception" line="71" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="103" package="Core\Administrator">
+        <name>getLog</name>
+        <full_name>\Administrator::getLog()</full_name>
+        <docblock line="103">
+          <description>Get Log</description>
+          <long-description>Reads all data from the common log file (path specified in the settings file) and returns it as string.</long-description>
+          <tag name="return" description="file content" line="103" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="PHP exception" line="103" type="\common">
+            <type>\common</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="121" package="Core\Administrator">
+        <name>getQueryList</name>
+        <full_name>\Administrator::getQueryList()</full_name>
+        <docblock line="121">
+          <description>Get query list</description>
+          <long-description>Reads all data from the query list file (path specified in the settings file) and returns an array of those queries.</long-description>
+          <tag name="return" description="one query in every row with a link to the query details file" line="121" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="throws" description="Exception" line="121" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="150" package="Core\Administrator">
+        <name>getFileContent</name>
+        <full_name>\Administrator::getFileContent()</full_name>
+        <docblock line="150">
+          <description>Get file content</description>
+          <long-description>Reads all data from a specified file and returns it as string.</long-description>
+          <tag name="param" description="&lt;p&gt;file path and name&lt;/p&gt;" line="150" type="string" variable="$file">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="file content" line="150" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="Exception" line="150" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="core/ajax/load-annotations.php" generated-path="core.ajax.load-annotations.html" hash="03f7064a6a924cf91d558e6f2d3130e2" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <constant namespace="" line="3" package="Default">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="3">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <function namespace="" line="186" package="Default">
+      <name>getContent</name>
+      <full_name>\getContent()</full_name>
+      <docblock line="186">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+      <argument line="0">
+        <name>$plugin</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$ressource</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$resourceplugins</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$selected_lang</name>
+        <default></default>
+        <type/>
+      </argument>
+      <argument line="0">
+        <name>$base_url</name>
+        <default></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="186" code="PPC:ERR-50011">No summary for function \getContent()</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="core/includes/administration.inc.php" generated-path="core.includes.administration.inc.html" hash="ab14f6fce1371751949eefab7ad5375f" package="Default">
+    <docblock line="0">
+      <description>Administrator settings</description>
+      <long-description>----------------------------------------------------------
+This file has been auto-generated. Please don't modify it!
+----------------------------------------------------------
+
+Last change: 2013-08-27 15:02:42</long-description>
+    </docblock>
+    <source>eJy1UV1v0zAUfV5+xSVCYq2az7bbKJSp6jYatlG2lSENocqNbxNvjh3ZTqLw60naApV4QUP4xfK5x+ccnfv2NE9zy+t2LegeTGjGBNNGESMVaDSGiUQ3k3boPPu0vxcp07BmHCElGlaIAkhhpJOgwMYOqQufOBKNQKV4ZSCTlK1rYObFP3u3AldEG4hTIhIcQegHfcc/ccJjCIYjPxwNwobjWdZL0hYAYyBKkfqw8+Yn9NUm+9Vo+9svkp0ak488LyPGODJH4WZ1ezHqxjLz7B5sGLqhVFXlJlImHDcjEseyEEZ78sRj9JTR8SQyc1I9Vf25/PikbhZ3wcVs4ZQDOeNVPS/SaRFG6w/+vmaGbk1SKbeKXs2+3DwMb42Pk/houJ4cvx7W03R2OXgofZY4zjPi8OQ8S1UkzeX58vHs/XVU1uIoXw4ezT2/Lz87kb3fE8/oaqlloWLcb8nalSVIhjaM34F9R/j3VaESuEWNRMUpTK8v4AxL5DLPUJg2aqFR/f6ysWjhnGhdSUW3cPsKwr7dO7ALxbfYbimxFAJj05Skd3Zq5+YS49HWbLMhjbyh4VYw6PTgL+NesRL/f85cSVrEhknxZ1i/07b/A7fTJAM=</source>
+  </file>
+  <file path="core/class/cmf.class.php" generated-path="core.class.cmf.class.html" hash="0c177ea747501873e29e085b5c932fed" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="18" package="Core">
+      <extends/>
+      <name>CMF</name>
+      <full_name>\CMF</full_name>
+      <docblock line="18">
+        <description>CMF</description>
+        <long-description>Contains all methods which are required to transfer data to the CMF. Furthermore it includes methods to create Semantic Web tripes and to display them using the ConnectME ontology.
+
+IMPORTANT: PEAR HTTP_Request library is used in this class (http://pear.php.net/package/HTTP_Request8)
+IMPORTANT: ARC2 ARC2 library is used in this class (https://github.com/semsol/arc2)
+IMPORTANT: Graphite Graphite library is used in this class (http://graphite.ecs.soton.ac.uk/)</long-description>
+        <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="18"/>
+        <tag name="version" description="v2.3" line="18"/>
+        <tag name="package" description="Core" line="18"/>
+        <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="18"/>
+        <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="18" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+      </docblock>
+      <property static="false" visibility="public" line="25" namespace="" package="Core">
+        <name>$settings</name>
+        <default>NULL</default>
+        <docblock line="25">
+          <description>Settings of the Hyper Annotation Video Suite</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains all annotation tool settings&lt;/p&gt;" line="25" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" line="32" namespace="" package="Core">
+        <name>$language</name>
+        <default>NULL</default>
+        <docblock line="32">
+          <description>Language strings of the Hyper Annotation Video Suite</description>
+          <long-description></long-description>
+          <tag name="var" description="&lt;p&gt;Contains all language strings of the annotation tool&lt;/p&gt;" line="32" type="object" variable="">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="43" package="Core">
+        <name>__construct</name>
+        <full_name>\CMF::__construct()</full_name>
+        <docblock line="43">
+          <description>Constructor</description>
+          <long-description>Creates an instance of the cmf class and returns the settings and language object from it. They are passed to local parameters.
+
+Fills @var settings and @var language</long-description>
+          <tag name="return" description="true" line="43" type="bool">
+            <type>bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="67" package="Core">
+        <name>generateAnnotationObject</name>
+        <full_name>\CMF::generateAnnotationObject()</full_name>
+        <docblock line="67">
+          <description>Generate Annotation Object</description>
+          <long-description>Reads all data from a specified annotation file on the server and serialized its data using the ConnectME ontology. The output type can be specified by selecting a serializer (n3 triples, turtle, RDF/XML).</long-description>
+          <tag name="param" description="&lt;p&gt;Path of the currently used annotation file on the server&lt;/p&gt;" line="67" type="string" variable="$annotation_file">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Video array which contains the currently selected video ID and its locators&lt;/p&gt;" line="67" type="array" variable="$video_data">
+            <type>array</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Allows selecting a serializer for data display (Supported: n3, rdfxml, turtle)&lt;/p&gt;&#10;" line="67" type="string" variable="$selected_serializer">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="Contains the serialized data using the ConnectME ontology" line="67" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="Exception" line="67" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$annotation_file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$video_data</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0">
+          <name>$selected_serializer</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="192" package="Core">
+        <name>validateURI</name>
+        <full_name>\CMF::validateURI()</full_name>
+        <docblock line="192">
+          <description>Validate URI</description>
+          <long-description>Tries to get response from a specified URI/URL using the private method getResponse</long-description>
+          <tag name="param" description="&lt;p&gt;Speified URI/URL&lt;/p&gt;&#10;" line="192" type="string" variable="$video_uri">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="True if the URI/URL responded and returned HTTP 200" line="192" type="bool">
+            <type>bool</type>
+          </tag>
+          <tag name="return" description="Error message if URI/URL did not respond" line="192" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="Exception" line="192" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$video_uri</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="225" package="Core">
+        <name>getResponse</name>
+        <full_name>\CMF::getResponse()</full_name>
+        <docblock line="225">
+          <description>Get Response</description>
+          <long-description>Tries to get response from a specified URI/URL</long-description>
+          <tag name="param" description="&lt;p&gt;Speified URI/URL&lt;/p&gt;&#10;" line="225" type="string" variable="$input_url">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="Received headers of specified URI/URL" line="225" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="throws" description="Exception" line="225" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$input_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="249" package="Core">
+        <name>parseJson</name>
+        <full_name>\CMF::parseJson()</full_name>
+        <docblock line="249">
+          <description>Parse Json</description>
+          <long-description>Parses a annotation file which is located on the server and tries to extract its containing JSON string.</long-description>
+          <tag name="param" description="&lt;p&gt;Annotation file name&lt;/p&gt;" line="249" type="string" variable="$input">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="JSON object based on file content" line="249" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="Exception" line="249" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$input</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="288" package="Core">
+        <name>convertToSeconds</name>
+        <full_name>\CMF::convertToSeconds()</full_name>
+        <docblock line="288">
+          <description>Convert to seconds</description>
+          <long-description>Converts an input time string from hh:mm:ss or mm:ss into seconds</long-description>
+          <tag name="param" description="&lt;p&gt;Time string&lt;/p&gt;" line="288" type="string" variable="$input">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="Seconds based on input time string" line="288" type="integer">
+            <type>integer</type>
+          </tag>
+          <tag name="throws" description="Exception" line="288" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$input</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="325" package="Core">
+        <name>toLog</name>
+        <full_name>\CMF::toLog()</full_name>
+        <docblock line="325">
+          <description>To Log</description>
+          <long-description>Writes specified input string to a log file</long-description>
+          <tag name="param" description="&lt;p&gt;String which shall get written to log&lt;/p&gt;" line="325" type="string" variable="$input">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;(Optional) Filename of log file; Default gets used, if not set&lt;/p&gt;&#10;" line="325" type="string" variable="$filename">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="Seconds based on input time string" line="325" type="integer">
+            <type>integer</type>
+          </tag>
+          <tag name="throws" description="Exception" line="325" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$input</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$filename</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="351" package="Core">
+        <name>transmitToLMDB</name>
+        <full_name>\CMF::transmitToLMDB()</full_name>
+        <docblock line="351">
+          <description>Transmit to LMDB</description>
+          <long-description>Communicates with the CMF/LMDB by using SPARQL queries. Uses SPARQL UPDATE and the SPARQL webservice of the CMF/LMDB.
+Every query gets logged in the log file and can get accessed by an authorized administrator.</long-description>
+          <tag name="param" description="&lt;p&gt;Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)&lt;/p&gt;&#10;" line="351" type="string" variable="$lmdb_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)&lt;/p&gt;&#10;" line="351" type="string" variable="$service_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;SPARQL query which gets sent to the CMF/LMDB&lt;/p&gt;&#10;" line="351" type="string" variable="$sparql_query">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="HTTP response generated by PEAR HTTP_Request library" line="351" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="Exception" line="351" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$lmdb_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$service_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$sparql_query</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="408" package="Core">
+        <name>updateAnnotations</name>
+        <full_name>\CMF::updateAnnotations()</full_name>
+        <docblock line="408">
+          <description>Update annotations</description>
+          <long-description>Parses the currently used annotation file and loops through all existing annotation. Every new annotation gets added to the CMF, existing ones get updated and deleted ones get removed from the CMF instande.
+The HTTP resspose of the CMF gets returned by this method.</long-description>
+          <tag name="param" description="&lt;p&gt;Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)&lt;/p&gt;&#10;" line="408" type="string" variable="$lmdb_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)&lt;/p&gt;&#10;" line="408" type="string" variable="$service_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Video array which contains the currently selected video ID and its locators&lt;/p&gt;" line="408" type="string" variable="$video_locators">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Currently used annotation file name&lt;/p&gt;" line="408" type="string" variable="$annotations_file">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="HTTP response generated by PEAR HTTP_Request library" line="408" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="Exception" line="408" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$lmdb_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$service_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$video_locators</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$annotations_file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="517" package="Core">
+        <name>createAnnotations</name>
+        <full_name>\CMF::createAnnotations()</full_name>
+        <docblock line="517">
+          <description>Create Annotations</description>
+          <long-description>Parses the currently used annotation file and uses the private method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+(no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.</long-description>
+          <tag name="param" description="&lt;p&gt;Base URL of the CMF/LMDB; Required Username/Password have to get included in this URL (e.g. http://username:password@URL)&lt;/p&gt;&#10;" line="517" type="string" variable="$lmdb_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Path of the SPARQL service of the CMF/LMDB (normally: sparql/update)&lt;/p&gt;&#10;" line="517" type="string" variable="$service_url">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Video array which contains the currently selected video ID and its locators&lt;/p&gt;" line="517" type="string" variable="$video_locators">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Currently used annotation file name&lt;/p&gt;" line="517" type="string" variable="$annotations_file">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="HTTP response generated by PEAR HTTP_Request library" line="517" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="Exception" line="517" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$lmdb_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$service_url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$video_locators</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$annotations_file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="554" package="Core">
+        <name>createAnnotationTriples</name>
+        <full_name>\CMF::createAnnotationTriples()</full_name>
+        <docblock line="554">
+          <description>Create Annotation Triples</description>
+          <long-description>Parses the currently used annotation file and uses the method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+(no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.</long-description>
+          <tag name="param" description="&lt;p&gt;Data of the currently selected annotation&lt;/p&gt;" line="554" type="string" variable="$annotation">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Number of the currently selected annotation (annotation array row identifier)&lt;/p&gt;&#10;" line="554" type="string" variable="$annotation_number">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Video array which contains the currently selected video ID and its locators&lt;/p&gt;" line="554" type="string" variable="$video_data">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;ID of the currently selected video&lt;/p&gt;" line="554" type="string" variable="$video_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Type of operation which shall get performed in the CMF with the selected annotation (INSERT, UPDATE, DELETE)&lt;/p&gt;&#10;" line="554" type="string" variable="$type">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="HTTP response generated by PEAR HTTP_Request library" line="554" type="object">
+            <type>object</type>
+          </tag>
+          <tag name="throws" description="Exception" line="554" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$annotation</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$annotation_number</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$video_data</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$video_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0">
+          <name>$type</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="" line="717" package="Core">
+        <name>writeToFile</name>
+        <full_name>\CMF::writeToFile()</full_name>
+        <docblock line="717">
+          <description>Write To File</description>
+          <long-description>Parses the currently used annotation file and uses the method createAnnotationTriples to create all annotation triples which have to get inserted into the CMF. In the case of inserting data for the first time
+(no annotations of the selected video exist in the CMF) a n3 string gets created and this string is inserted in the CMF.</long-description>
+          <tag name="param" description="&lt;p&gt;Object which shall get written into file (will get JSON encoded before writing to file)&lt;/p&gt;&#10;" line="717" type="object" variable="$input">
+            <type>object</type>
+          </tag>
+          <tag name="param" description="&lt;p&gt;Name of file to write to&lt;/p&gt;" line="717" type="string" variable="$filename">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="True if $input successfully written to file" line="717" type="bool">
+            <type>bool</type>
+          </tag>
+          <tag name="return" description="Error message in case of error" line="717" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="Exception" line="717" type="\PHP">
+            <type>\PHP</type>
+          </tag>
+        </docblock>
+        <argument line="0">
+          <name>$input</name>
+          <default></default>
+          <type>object</type>
+        </argument>
+        <argument line="0">
+          <name>$filename</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="core/ajax/to-log.php" generated-path="core.ajax.to-log.html" hash="2df59a9d86f1bab3ddc8db403ace4ca3" package="Core/Ajax">
+    <docblock line="0">
+      <description>To log</description>
+      <long-description>Allows using cmf class function toLog from JS/jQuery via AJAX and HTTP POST.</long-description>
+      <tag name="author" description="Matthias Bauer &amp;lt;matthias.bauer@sti2.org&amp;gt;" line="0"/>
+      <tag name="version" description="v2.3" line="0"/>
+      <tag name="package" description="Core/Ajax" line="0"/>
+      <tag name="copyright" description="2013 STI International, Seekda GmbH and Dr. Lyndon Nixon" line="0"/>
+      <tag name="license" description="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License" line="0" link="http://creativecommons.org/licenses/by-nc-nd/3.0/"/>
+    </docblock>
+    <constant namespace="" line="20" package="Core/Ajax">
+      <name>__ROOT__</name>
+      <full_name>\\__ROOT__</full_name>
+      <value>dirname(dirname(dirname(__FILE__)))</value>
+      <docblock line="20">
+        <description></description>
+        <long-description></long-description>
+      </docblock>
+    </constant>
+    <source>eJxdU2tP2zAU/Vz/iouESIJozOBbeXYwXiqPrZ20aZoiN7lpDYmd2U5pNfHfd+0EaSL5YN+T+zg+Pjk+a5YN47u7DHZhpqHSC9r5YFxV+tVCa6VaQF6XkFfCWihblTupFTg90Qsoja7hbsqfv7ZoNrCSAsZ34x8gVAE3s9kTPD1OZ2nf8ly0bqkN3AvnllJY+CyoCo7rPk7nPj63Th6k2ixOQ80KjfXzVgfpYQAakb+IBcKFNsjHz2Id0Fw3GyMXSwcH+58OYTq7hVvl0Cjh2YpqD6aIL4WA63p+E+hdmhQmG1VQ7we51iq0qWSOyiIsnWtGnOcGqX6Fua5rraxnxfsUy+ebocqHquCH6T6Hiz6VeIVcGDtn5Lz144cPWnkYTS5FRdElGrmyQIXwXTXaOCxg0vXttOKMcQ7WCeOAZnkFWL9mAY2To5BSYCkVgtHaMVlCvNUBRRxl2bfHx1mWRUkCf9mgw/+D96CQJE+N8cc1y65uJ1+yLKHniL2xd39co4NaSNVbQZeko9JO9H7QVdobB3AdpK+gknMjjEQLwhBLLNGgyum01IXu3Hat0nBig39aaTDTlBC/00wh4rm/6ZAYtmlXQ8aNehGkkq7rhJZtk1kHJ6DwFS7ur7xO274Keoi2HhsEtSRVuHg78y79FRXCieh3Ajs78AGDrROIOiHZwA8Yngb/x/SZNP05rIfk95EcWZLVSdIwSYg5vaklFzSWuC3RfpwUeLwxrMhxdEWNkcpB9KBJGfrpSt2qIgoXwM5O/wF9xyiI</source>
+  </file>
+  <package name="Core" full_name="Core">
+    <package name="Administrator" full_name="Core\Administrator"/>
+  </package>
+  <package name="Core/Administrator" full_name="Core/Administrator"/>
+  <package name="Core/Ajax" full_name="Core/Ajax"/>
+  <package name="Core/Plugins/DBPedia" full_name="Core/Plugins/DBPedia"/>
+  <package name="Core/Plugins/Geonames" full_name="Core/Plugins/Geonames"/>
+  <package name="Core/Plugins/Maps_Search" full_name="Core/Plugins/Maps_Search"/>
+  <package name="Core/Plugins/Pre_Annotations" full_name="Core/Plugins/Pre_Annotations"/>
+  <package name="Cores/Plugins/Geonames" full_name="Cores/Plugins/Geonames"/>
+  <package name="Cores/Plugins/Maps_Search" full_name="Cores/Plugins/Maps_Search"/>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <deprecated count="0"/>
+</project>

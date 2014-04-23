@@ -1,0 +1,372 @@
+<?php
+/**
+ * Main screen for administration functions
+ *
+ * Shows all currently set administration options and allows adding new Open ID URLs as administrators and also specification of new CMF instances and selection of active CMF instance.
+ *
+ * @author Matthias Bauer <matthias.bauer@sti2.org>
+ * @version v2.3
+ * @package Core/Administrator
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+// define root
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(dirname(__FILE__)));
+}
+
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+require_once(__ROOT__. '/core/class/administrator.class.php');
+
+// start session
+session_start();
+
+// init classes
+$smarty	= new Smarty();
+$core = new Core();
+$administrator	= new Administrator();
+
+ini_set('display_errors', '1');
+
+// include administration file
+include(__ROOT__. '/core/includes/administration.inc.php');
+
+
+$smarty->assign('language', $core->language);
+
+//$smarty->force_compile = true;
+$smarty->debugging = false;
+$smarty->caching = false;
+$smarty->cache_lifetime = 120;
+$smarty->setTemplateDir(__ROOT__.'/administrator/templates');
+$smarty->setCompileDir(__ROOT__.'/administrator/templates_c');
+
+$smarty->assign('root', __ROOT__);
+
+// page template
+$template_name = 'administrator-main.tpl';
+
+session_start();
+
+$save_success = false;
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	header('Location: http://' .$core->settings->base_url);
+}
+
+// menu parameters
+$userid = $_SESSION['cmf']['userid'];
+$smarty->assign('userid', $userid);
+
+$smarty->assign('base_url', 'http://'.$core->settings->base_url);
+
+if (in_array($userid, $admin['administrators'])) {
+	// show admin interface
+	if (isset($_POST['save-settings'])) {
+		$active_admin_found = false;
+		$valid_lmdb = array();
+		$active_valid_lmdb = false;
+		// settings save has been submitted
+		
+		// post value container
+		$store_values = array();
+		// errors
+		$errors = array();
+		
+		// extract open id urls
+		foreach ($_POST as $key => $val) {
+			$pattern = '/^admin-/';
+			if (preg_match($pattern, $key) == 1) {
+				$response = $administrator->getResponse($val);
+				if (is_object($response)) {
+					if ($response->getResponseCode() == 200) {
+						$store_values[] = $key;
+						if ($val == $userid) {
+							$active_admin_found = true;
+						}
+					}
+					else {
+						$errors[] = $key;
+					}
+				}
+				else {
+					$errors[] = $key;
+					$message = $response. '<br />';
+				}
+			}
+		}
+		
+		foreach ($_POST as $key => $val) {
+			$pattern = '/^lmdb\-[0-9]+\-url/';
+			if (preg_match($pattern, $key) == 1) {
+				$response = $administrator->getResponse($val);
+				if (is_object($response)) {
+					if ($response->getResponseCode() == 200) {
+						$store_values[] = $key;
+						$valid_lmdb[] = $key;
+					}
+					else {
+						$errors[] = $key;
+					}
+				}
+				else {
+					$errors[] = $key;
+					$message = $response. '<br />';
+				}
+			}
+		}
+		
+		// var_dump($store_values);
+		
+		// is active administrator still in list?
+		if ($active_admin_found != true) {
+			// error => active admin not found
+			$errors[] = '';
+			$message = $core->language->strings->ADMIN_ERROR_ACCOUNT;
+		}
+		
+		// does at least one valid lmdb has been submitted?
+		if (count($valid_lmdb) <= 0) {
+			// error => no valid lmdb found
+			$errors[] = '';
+			$message = $core->language->strings->ADMIN_ERROR_LMDB;
+		}
+		else {
+			// is at least one lmdb active
+			$set_true = false;
+			foreach ($valid_lmdb as $key => $val) {
+				$lmdb_key = preg_replace('/\D/', '', $val);
+				if (isset($_POST['lmdb-' .$lmdb_key. '-selected']) && ($_POST['lmdb-' .$lmdb_key. '-selected'] == "on")) {
+					if ($set_true == false) {
+						$active_valid_lmdb = true;
+						$set_true == true;
+					}
+					else {
+						$active_valid_lmdb = false;
+					}
+				}
+			}
+		}
+		
+		if ($active_valid_lmdb == false) {
+			// error => no valid and active lmdb found
+			$errors[] = '';
+			$message = $core->language->strings->ADMIN_ERROR_ACTIVE_LMDB;
+		}
+			
+		// no error => save settings
+		if (count($errors) <= 0) {
+			$save_success = true;
+			
+			// save submitted data to settings file
+			$string = '';
+			$string .= '<?php'."\n";
+			$string .= '/**'."\n";
+			$string .= ' *	Administrator settings'."\n";
+			$string .= ' *'."\n";
+			$string .= ' *	----------------------------------------------------------'."\n";
+			$string .= " *	This file has been auto-generated. Please don't modify it!"."\n";
+			$string .= ' *	----------------------------------------------------------'."\n";
+			$string .= ' *'."\n";
+			$string .= ' *	Last change: ' .date('Y-m-d H:i:s', time())."\n";
+			$string .= ' */'."\n"."\n";
+			$string .= '$admin = array();'."\n"."\n";
+			$string .= '$admin["administrators"] = array(';
+			
+			foreach ($store_values as $value) {
+				$pattern = '/^admin-/';
+				if (preg_match($pattern, $value) == 1) {
+					$string .= '"' .$_POST[$value]. '", ';
+				}
+			}
+			$string = substr($string, 0, strlen($string) - 2);
+			$string .= ');'."\n"."\n";
+			
+			$string .= '$admin["lmdb_sources"] = array('."\n";
+			foreach ($store_values as $value) {
+				$pattern = '/^lmdb\-[0-9]+\-url/';
+				if (preg_match($pattern, $value) == 1) {
+					$lmdb_key = preg_replace('/\D/', '', $value);
+					$string .= 'array("name" => "' .$_POST['lmdb-' .$lmdb_key. '-name']. '", "username" => "' .$_POST['lmdb-' .$lmdb_key. '-username']. '", "password" => "' .$_POST['lmdb-' .$lmdb_key. '-password']. '",	"url" => "' .$_POST['lmdb-' .$lmdb_key. '-url']. '", "selected" => ';
+					if (isset($_POST['lmdb-' .$lmdb_key. '-selected']) && ($_POST['lmdb-' .$lmdb_key. '-selected'] == 'on')) {
+						$string .= '1), ';
+					}
+					else {
+						$string .= '0), ';
+					}
+				}
+			}
+			if (substr($string, (strlen($string) - 2), 1) == ',') {
+				$string = substr($string, 0, (strlen($string) - 2));
+			}
+			$string .= ');'."\n"."\n";
+			
+			// write string to settings file
+			// delete old settings file
+			if (is_writable(__ROOT__. '/core/includes/administration.inc.php')) {
+				copy(__ROOT__. '/core/includes/administration.inc.php', __ROOT__. '/core/includes/administration.inc.php.tmp');
+				unlink(__ROOT__. '/core/includes/administration.inc.php');
+				if ($settings_file = fopen(__ROOT__. '/core/includes/administration.inc.php', 'w+')) {
+					if (fwrite($settings_file, $string)) {
+						$output = '<h1>' .$core->language->strings->ADMIN_SUCESSFULLY_SAVED. '</h1>';
+					}
+					else {
+						// error: could not write to file
+						$output = '<h1>' .$core->language->strings->ADMIN_ERROR_FILE_WRITE. '</h1>';
+						copy(__ROOT__. '/core/includes/administration.inc.php.tmp', __ROOT__. '/core/includes/administration.inc.php');
+					}
+				}
+				else {
+					// error: could not open file
+					$output = '<h1>' .$core->language->strings->ADMIN_ERROR_FILE_OPEN. '</h1>';
+					copy(__ROOT__. '/core/includes/administration.inc.php.tmp', __ROOT__. '/core/includes/administration.inc.php');
+				}
+			}
+			else {
+				// error: file not writable
+				$output = '<h1>' .$core->language->strings->ADMIN_ERROR_FILE_WRITABLE. '</h1>';
+			}
+			
+			$output .= '<ul class="settings"><li><button name="continue-to-settings" type="submit" class="btn btn-primary" title="Continue">' .$core->language->strings->ADMIN_BUTTON_CONTINUE. '</button></li></ul>';
+			unlink(__ROOT__. '/core/includes/administration.inc.php.tmp');
+			
+		}
+		// else => show error(s)
+		else
+		{
+			// get administrators
+			$output = '';
+			$output .= '<h1 class="error-headline">' .$core->language->strings->ADMIN_ERROR_GENERAL;
+			if (isset($message) && ($message != '')) {
+				$output .= '<br />' .$message;
+			}
+			$output .= '</h1><ul id="admin-list" class="settings">';
+			foreach ($_POST as $key => $val) {
+				$pattern = '/^admin-/';
+				if (preg_match($pattern, $key) == 1) {
+					$admin_key = preg_replace('/\D/', '', $key);
+					$output .= '<li><label for="' .$key. '">Admin ' .$admin_key. ' Open ID</label><input name="' .$key. '" id="' .$key. '" type="text" value="' .$val. '"';
+					if (in_array($key, $errors)) {
+						$output .= ' class="error"';
+					}
+					$output .= '/><input type="hidden" class="entry-id" name="entry-id" value="' .$admin_key. '" /><button name="remove-admin-' .$admin_key. '" id="remove-admin-' .$admin_key. '" type="button" class="btn btn-danger remove-admin" title="' .$core->language->strings->ADMIN_REMOVE_ADMIN. '' .$admin_key. '"> - </button></li>';	
+					$last_key = $admin_key;
+				}
+			}
+			$output .= '<li class="add-button"><label for="add-admin"></label><input type="hidden" name="last_admin_id" id="last_admin_id" value=""><button name="add-admin" id="add-admin" type="button" class="btn btn-success" title="' .$core->language->strings->ADMIN_ADD_ADMIN. '"> + </button></li></ul>';
+			
+			// get lmdb sources
+			$lmf_selected = false;
+			$output .= '<ul id="lmdb-list" class="settings">';
+			foreach ($_POST as $key => $val) {
+				$pattern = '/^lmdb\-[0-9]+\-name/';
+				if (preg_match($pattern, $key) == 1) {
+					$lmdb_key = preg_replace('/\D/', '', $key);
+					$output .= '<li><label for="lmdb-' .$lmdb_key. '">LMDB ' .$lmdb_key. '</label>';
+					$output .= '<ul class="lmdb-detail" id="lmdb-' .$lmdb_key. '">';
+					$checkbox_set = false;
+					foreach ($_POST as $key2 => $val2) {
+						$pattern2 = '/^lmdb\-' .$lmdb_key. '\-name/';
+						$pattern3 = '/^lmdb\-' .$lmdb_key. '\-/';
+						if ((preg_match($pattern3, $key2) == 1)) { // && (preg_match($pattern2, $key2) != 1)) {
+							$label = explode('lmdb-' .$lmdb_key. '-', $key2);
+							$label = $label[1];
+							$output .= '<li><label for="' .$key2. '">' .$label. '</label><input name="' .$key2. '"';
+							if (in_array($key2, $errors)) {
+								$output .= ' class="error"';
+							}
+							$output .= ' type="';
+							if ($label == 'selected') {
+								$output .= 'checkbox" ';
+								$checkbox_set = true;
+								$lmf_selected = true;
+								if ($val2 == 'on') {
+									$output .= 'checked="checked" ';
+								}
+								$output .= '/>';
+							}
+							else {
+								$output .= 'text" value="' .$val2. '" />';
+							}
+							$output .= '</li>';
+						}
+					}
+					if ($checkbox_set != true) {
+						$output .= '<li><label for="lmdb-' .$lmdb_key. '-selected">selected</label><input name="lmdb-' .$lmdb_key. '-selected" type="checkbox" /></li>';
+					}
+					$output .= '<li><label for="remove-lmdb-' .$lmdb_key. '"></label><input type="hidden" class="entry-id" name="entry-id" value="' .$lmdb_key. '" /><button name="remove-lmdb-' .$lmdb_key. '" id="remove-lmdb-' .$lmdb_key. '" type="button" title="' .$core->language->strings->ADMIN_REMOVE_LMDB. ' ' .($admin_key + 1). '" class="btn btn-danger remove-lmdb"> - </button></li>';
+					$output .= '</li></ul>';
+				}
+			}
+			$output .= '<li class="add-button"><label for="add-lmdb"></label><button name="add-lmdb" id="add-lmdb" type="button" class="btn btn-success" title="' .$core->language->strings->ADMIN_ADD_LMDB. '"> + </button></li></ul>';
+			
+			if ($lmf_selected == false) {
+				// error select lmf required
+				
+			}
+			
+		}
+	}
+	else {
+	
+		// get settings file content
+	
+		$output = '';	
+	
+		// get administrators
+		$output .= '<ul id="admin-list" class="settings">';
+		foreach ($admin['administrators'] as $admin_key => $admin_value) {
+			$output .= '<li><label for="admin-' .$admin_key. '">Admin ' .($admin_key + 1). ' Open ID</label><input name="admin-' .$admin_key. '" id="admin-' .$admin_key. '" type="text" value="' .$admin_value. '" /><input type="hidden" class="entry-id" name="entry-id" value="' .$admin_key. '" /><button name="remove-admin-' .$admin_key. '" id="remove-admin-' .$admin_key. '" type="button" class="btn btn-danger remove-admin" title="' .$core->language->strings->ADMIN_REMOVE_ADMIN. ' ' .($admin_key + 1). '"> - </button></li>';	
+			$last_key = $admin_key;
+		}
+		$output .= '<li class="add-button"><label for="add-admin"></label><input type="hidden" name="last_admin_id" id="last_admin_id" value=""><button name="add-admin" id="add-admin" type="button" class="btn btn-success" title="' .$core->language->strings->ADMIN_ADD_ADMIN. '"> + </button></li></ul>';
+		
+		// get lmdb sources
+		$output .= '<ul id="lmdb-list" class="settings">';
+		foreach ($admin['lmdb_sources'] as $admin_key => $admin_value) {
+			$output .= '<li><label for="lmdb-' .$admin_key. '">LMDB ' .($admin_key + 1). '</label>';
+			$output .= '<ul class="lmdb-detail" id="lmdb-' .$admin_key. '">';
+			foreach ($admin_value as $admin_key_l2 => $admin_value_l2) {
+				$output .= '<li><label for="lmdb-' .$admin_key. '-' .$admin_key_l2. '">' .$admin_key_l2. '</label><input name="lmdb-' .$admin_key. '-' .$admin_key_l2. '" type="';
+				if ($admin_key_l2 == 'selected') {
+					$output .= 'checkbox" ';
+					if ($admin_value_l2 == 1) {
+						$output .= 'checked="checked" ';
+					}
+					$output .= '/>';
+				}
+				else {
+					$output .= 'text" value="' .$admin_value_l2. '" />';
+				}
+				$output .= '</li>';
+			}
+			$output .= '<li><label for="remove-lmdb-' .$admin_key. '"></label><input type="hidden" class="entry-id" name="entry-id" value="' .$admin_key. '" /><button name="remove-lmdb-' .$admin_key. '" id="remove-lmdb-' .$admin_key. '" type="button" title="' .$core->language->strings->ADMIN_REMOVE_LMDB. ' ' .($admin_key + 1). '" class="btn btn-danger remove-lmdb"> - </button></li>';
+			$output .= '</li></ul>';
+		}
+		$output .= '<li class="add-button"><label for="add-lmdb"></label><button name="add-lmdb" id="add-lmdb" type="button" class="btn btn-success" title="' .$core->language->strings->ADMIN_ADD_LMDB. '"> + </button></li></ul>';	
+	}	
+	
+	$smarty->assign('output', $output);
+	
+	$smarty->assign('save_success', $save_success);
+
+	
+	// show settings and allow edit
+}
+else {
+	// not allowed => redirect to annotator
+	header('Location: http://' .$base_url);
+}
+
+
+// render template
+$smarty->display($template_name);
+
+?>

@@ -1,0 +1,153 @@
+
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> {
+<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> .
+<http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.mp4#t=40,50"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.ogv#t=40,50"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.webm#t=40,50"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/George_W._Bush> .
+<http://connectme.at/annotation/cad87f54233b71bb020cf9ffe6663951> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/cad87f54233b71bb020cf9ffe6663951> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/cad87f54233b71bb020cf9ffe6663951> .
+<http://connectme.at/annotation/cad87f54233b71bb020cf9ffe6663951> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/cad87f54233b71bb020cf9ffe6663951> <http://purl.org/dc/terms/created> "2013-06-07T13:16:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/cad87f54233b71bb020cf9ffe6663951> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/George_W._Bush> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> {
+<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> .
+<http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.mp4#t=70,80"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.ogv#t=70,80"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.webm#t=70,80"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Let_the_Eagle_Soar> .
+<http://connectme.at/annotation/e90d7f274b0d408cd1686dc362f0e573> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/e90d7f274b0d408cd1686dc362f0e573> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/e90d7f274b0d408cd1686dc362f0e573> .
+<http://connectme.at/annotation/e90d7f274b0d408cd1686dc362f0e573> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/e90d7f274b0d408cd1686dc362f0e573> <http://purl.org/dc/terms/created> "2013-06-07T13:16:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/e90d7f274b0d408cd1686dc362f0e573> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Let_the_Eagle_Soar> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> {
+<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> .
+<http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.mp4#t=90,100"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.ogv#t=90,100"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.webm#t=90,100"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://connectme.at/ontology#hasContent> <https://itunes.apple.com/at/movie/fahrenheit-9-11/id469241509> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/openannotation/extensions/Bookmark> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/13f5e9aa77bf4182cba6ac65c0ccf35c> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://purl.org/dc/terms/created> "2013-06-07T13:16:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://connectme.at/ontology#preferredLabel> "Watch NOW"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://connectme.at/annotation/13f5e9aa77bf4182cba6ac65c0ccf35c> <http://www.openannotation.org/ns/hasBody> <https://itunes.apple.com/at/movie/fahrenheit-9-11/id469241509> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> {
+<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> .
+<http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.mp4#t=60,70"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.ogv#t=60,70"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.webm#t=60,70"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> <http://connectme.at/ontology#implicitlyShows> <http://dbpedia.org/resource/Michael_Moore> .
+<http://connectme.at/annotation/07d5c2db65cb857616839d620c6094a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/07d5c2db65cb857616839d620c6094a7> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/07d5c2db65cb857616839d620c6094a7> .
+<http://connectme.at/annotation/07d5c2db65cb857616839d620c6094a7> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/07d5c2db65cb857616839d620c6094a7> <http://purl.org/dc/terms/created> "2013-06-07T13:16:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/07d5c2db65cb857616839d620c6094a7> <http://www.openannotation.org/ns/hasBody> <http://dbpedia.org/resource/Michael_Moore> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> {
+<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> .
+<http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.mp4#t=35,45"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.ogv#t=35,45"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.w3.org/ns/ma-ont#locator> "http://devserver.sti2.org/connectme/tmp_video/fahrenheit911.webm#t=35,45"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/4992982> .
+<http://connectme.at/annotation/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/14fbc5c0b82d9d166792d87121cd5b2d> .
+<http://connectme.at/annotation/14fbc5c0b82d9d166792d87121cd5b2d> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/14fbc5c0b82d9d166792d87121cd5b2d> <http://purl.org/dc/terms/created> "2013-06-07T13:16:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/14fbc5c0b82d9d166792d87121cd5b2d> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/4992982> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+  }
+}
+;
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/e73db0aafbf298e778e6be09b59b98f0>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/e73db0aafbf298e778e6be09b59b98f0>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/2846b2dbe8711b9a5fafa44910346221>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/e36034512b74188453434de89ebb21c4>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://devserver.sti2.org/connectme/tmp_video/fahrenheit911>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/e033189b0c5cc33212b3f93e93195fd9>)
+}
+Code: 200; Message: 

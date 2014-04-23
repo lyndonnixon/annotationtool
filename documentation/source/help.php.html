@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Help
+ *
+ * Displays the help page
+ *
+ * @author Matthias Bauer &lt;matthias.bauer@sti2.org&gt;
+ * @version v2.3
+ * @package Core 
+ * @copyright 2013 STI International, Seekda GmbH and Dr. Lyndon Nixon
+ * @license http://creativecommons.org/licenses/by-nc-nd/3.0/ Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+ *
+ */
+if (!defined('__ROOT__')) {
+	define('__ROOT__', dirname(__FILE__));
+}
+/**
+ * Get main class of annotation tool.
+ * All external libraries are referenced in this class.
+ */
+require_once(__ROOT__. '/core/class/core.class.php');
+
+// start session
+session_start();
+
+// init classes
+$smarty	= new Smarty();
+$core = new Core();
+
+// include language file
+$smarty-&gt;assign('language', $core-&gt;language);
+
+//$smarty-&gt;force_compile = true;
+$smarty-&gt;debugging = false;
+$smarty-&gt;caching = false;
+$smarty-&gt;cache_lifetime = 120;
+
+// page template
+$template_name = 'help.tpl';
+
+// allow access to logged in users only
+if (!isset($_SESSION['cmf']['userid'])) {
+	// redirect to login page
+	header('Location: http://' .$core-&gt;settings-&gt;base_url);
+}
+
+// menu parameters
+$userid = $_SESSION['cmf']['userid'];
+$smarty-&gt;assign('userid', $userid);
+
+$smarty-&gt;assign('current_version', $core-&gt;settings-&gt;current_version);
+$smarty-&gt;assign('base_url', $core-&gt;settings-&gt;base_relative);
+
+
+// render template
+$smarty-&gt;display($template_name);
+
+?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

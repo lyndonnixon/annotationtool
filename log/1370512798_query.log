@@ -1,0 +1,67 @@
+
+WITH <http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+INSERT {
+<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b> <http://www.w3.org/ns/ma-ont#hasFragment> <http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263> .
+<http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ma-ont#MediaFragment> .
+<http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263> <http://www.w3.org/ns/ma-ont#locator> "http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b.webm#t=2,10"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263> <http://connectme.at/ontology#implicitlyShows> <http://sws.geonames.org/2768723> .
+<http://connectme.at/annotation/68447a52f45cb8af5de3a2b95bcb5263> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openannotation.org/ns/Annotation> .
+<http://connectme.at/annotation/68447a52f45cb8af5de3a2b95bcb5263> <http://www.openannotation.org/ns/hasTarget> <http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263> .
+<http://connectme.at/annotation/68447a52f45cb8af5de3a2b95bcb5263> <http://purl.org/dc/terms/creator> <http://matt-open.myopenid.com/> .
+<http://connectme.at/annotation/68447a52f45cb8af5de3a2b95bcb5263> <http://purl.org/dc/terms/created> "2013-06-06T09:59:58+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://connectme.at/annotation/68447a52f45cb8af5de3a2b95bcb5263> <http://www.openannotation.org/ns/hasBody> <http://sws.geonames.org/2768723> .
+<http://matt-open.myopenid.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/68447a52f45cb8af5de3a2b95bcb5263>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/67b33968eda424b41bee5a8c894db815>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/3bfceb591e515b935b316c44a2f308e5>)
+};
+DELETE {
+	?annotation ?p ?v.
+	?fragment ?r ?s.
+	<http://mediaserver2.experimedia.eu/ex5/encoded/95ebd517e1814fb4b33b9066933f404b/95ebd517e1814fb4b33b9066933f404b>  <http://www.w3.org/ns/ma-ont#hasFragment> ?fragment.
+}
+WHERE {
+	?annotation <http://www.openannotation.org/ns/hasTarget> ?fragment.
+	?annotation ?p ?v.
+	OPTIONAL {
+		?fragment ?r ?s
+	}
+	FILTER (?fragment = <http://connectme.at/fragment/e41c9e091f9e7e296e780f49c37c7f54>)
+}
+Code: 200; Message: 

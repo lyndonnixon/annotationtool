@@ -1,0 +1,19 @@
+		<!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-1.7.1.js"></script>
+    <script src="assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.hover-dropdown.min.js"></script>
+    <script src="assets/js/video-js/video.js"></script>
+    <script src="assets/js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js"></script>
+    <script src="assets/js/jquery.imgareaselect/scripts/jquery.imgareaselect.pack.js"></script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="assets/js/colorbox/jquery.colorbox-min.js"></script>
+    <script src="assets/js/jquery-loadmask/jquery.loadmask.min.js"></script>
+    <script src="assets/js/bubbletip/js/jQuery.bubbletip-1.0.6.js"></script>
+    <script src="http://www.google.com/jsapi"></script>
+    <script src="assets/js/timeline/timeline-modified.js"></script>
+    <script src="assets/js/underscore.min.js"></script>
+    <script src="assets/js/cmf.js"></script>
+    <script src="assets/js/jquery.annotator.js"></script>
